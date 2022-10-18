@@ -85,68 +85,6 @@
       "endDate": "2022-10-18T08:26:41.605Z"
     }
   ],
-  "roomAttendees": [
-    {
-      "id": 0,
-      "user": {
-        "id": 0,
-        "firstname": "",
-        "lastname": "",
-        "username": "",
-        "email": "",
-        "password": "",
-        "shippingAddress": "",
-        "shippingCity": "",
-        "shippingZipCode": 0,
-        "shippingCountry": "",
-        "createDate": "2022-10-18T08:35:47.644Z",
-        "updateDate": "2022-10-18T08:35:47.644Z"
-      },
-      "room": {
-        "id": 0,
-        "owner": {
-          "id": 0,
-          "firstname": "",
-          "lastname": "",
-          "username": "",
-          "email": "",
-          "password": "",
-          "shippingAddress": "",
-          "shippingCity": "",
-          "shippingZipCode": 0,
-          "shippingCountry": "",
-          "createDate": "2022-10-18T08:35:47.644Z",
-          "updateDate": "2022-10-18T08:35:47.644Z"
-        },
-        "sneakers": {
-          "id": 0,
-          "brand": "",
-          "model": "",
-          "size": 0,
-          "stateOfWear": 0,
-          "createdDate": "2022-10-18T08:35:47.644Z",
-          "updateDate": "2022-10-18T08:35:47.644Z",
-          "user": {
-            "id": 0,
-            "firstname": "",
-            "lastname": "",
-            "username": "",
-            "email": "",
-            "password": "",
-            "shippingAddress": "",
-            "shippingCity": "",
-            "shippingZipCode": 0,
-            "shippingCountry": "",
-            "createDate": "2022-10-18T08:35:47.644Z",
-            "updateDate": "2022-10-18T08:35:47.644Z"
-          }
-        },
-        "initialPrice": 0,
-        "startDate": "2022-10-18T08:35:47.644Z",
-        "endDate": "2022-10-18T08:35:47.644Z"
-      }
-    }
-  ],
   "picture": [
     {
       "id": 0,
@@ -172,48 +110,6 @@
           "shippingCountry": "",
           "createDate": "2022-10-18T08:41:25.360Z",
           "updateDate": "2022-10-18T08:41:25.360Z"
-        }
-      }
-    }
-  ],
-  "follows": [
-    {
-      "id": 0,
-      "user": {
-        "id": 0,
-        "firstname": "",
-        "lastname": "",
-        "username": "",
-        "email": "",
-        "password": "",
-        "shippingAddress": "",
-        "shippingCity": "",
-        "shippingZipCode": 0,
-        "shippingCountry": "",
-        "createDate": "2022-10-18T08:44:45.149Z",
-        "updateDate": "2022-10-18T08:44:45.149Z"
-      },
-      "sneakers": {
-        "id": 0,
-        "brand": "",
-        "model": "",
-        "size": 0,
-        "stateOfWear": 2,
-        "createdDate": "2022-10-18T08:44:45.149Z",
-        "updateDate": "2022-10-18T08:44:45.149Z",
-        "user": {
-          "id": 0,
-          "firstname": "",
-          "lastname": "",
-          "username": "",
-          "email": "",
-          "password": "",
-          "shippingAddress": "",
-          "shippingCity": "",
-          "shippingZipCode": 0,
-          "shippingCountry": "",
-          "createDate": "2022-10-18T08:44:45.149Z",
-          "updateDate": "2022-10-18T08:44:45.149Z"
         }
       }
     }
