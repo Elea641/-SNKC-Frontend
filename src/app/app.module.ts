@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +14,8 @@ import { AuctionComponent } from './auction/auction.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { SneakersComponent } from './sneakers/sneakers.component';
 import { SearchComponent } from './search/search.component';
+import { routes } from './app.routes';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +30,12 @@ import { SearchComponent } from './search/search.component';
     AuctionComponent,
     FavoriteComponent,
     SneakersComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
