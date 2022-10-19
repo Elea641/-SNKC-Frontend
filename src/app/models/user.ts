@@ -1,3 +1,5 @@
+import { Sneakers } from "./sneakers";
+
 export class User {
     constructor(
         public id: number, 
@@ -6,6 +8,9 @@ export class User {
         public username: string,
         public email: string,
         public password: string,
+        public sneakers: Sneakers[],
+        public sneakersFollowed: Sneakers[],
+        public usersFollowed: User[],
         public shippingAddress: string,
         public shippingCity: String,
         public shippingZipCode: number,
@@ -16,6 +21,8 @@ export class User {
         public billingAddress?: string,
         public billingCity?: string,
         public billingZipCode?: number,
-        public billingCountry?: string, 
+        public billingCountry?: string,
+         
     ) {}
 }
+

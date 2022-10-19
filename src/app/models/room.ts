@@ -9,6 +9,7 @@ export class Room {
         public initialPrice: number,
         public startDate: Date,
         public endDate : Date,
+        public attendees: User[],
         public winnerAuction?: User,
     ) {}
 }
