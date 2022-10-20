@@ -17,6 +17,7 @@ import { SneakersComponent } from './sneakers/sneakers.component';
 import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
+import { SneakersCardComponent } from './sneakers-card/sneakers-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     FavoriteComponent,
     SneakersComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    SneakersCardComponent
   ],
   imports: [
     BrowserModule,
