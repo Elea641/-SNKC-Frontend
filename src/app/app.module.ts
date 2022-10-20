@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
-
 import { AppComponent } from './app.component';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
@@ -17,10 +17,13 @@ import { SneakersComponent } from './sneakers/sneakers.component';
 import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
     LoginComponent,
     RegisterComponent,
     ContactComponent,
@@ -33,6 +36,7 @@ import { HomeComponent } from './home/home.component';
     SneakersComponent,
     SearchComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,
