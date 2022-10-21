@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Route } from '@angular/router';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -16,4 +16,5 @@ export class FooterComponent{
   public imgPinterestLogo: string ="";
   
   constructor() { }
+
 }

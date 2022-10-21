@@ -3,13 +3,13 @@
     <div class="backGround">
         <div class="containerLiens">
             <div class="trait_dessus"><hr></div>
-            <p id="lienProfil">{{profil}}</p>
+            <a [routerLink]="['/profile/:id']" id="lienProfil">{{profil}}</a>
             <div class="trait_dessus"><hr></div>
-            <p id="lienContact">{{contact}}</p>
+            <a [routerLink]="['contact']" id="lienContact">{{contact}}</a>
             <div class="trait_dessus"><hr></div>
-            <p id="lienFaqs">{{faqs}}</p>
+            <a [routerLink]="['faqs']" id="lienFaqs">{{faqs}}</a>
             <div class="trait_dessus"><hr></div>
-            <p id="lienLegal">{{legal}}</p>
+            <a [routerLink]="['legal-notice']" id="lienLegal">{{legal}}</a>
             <div class="trait_dessus"><hr></div>
         </div>
         <div id="logo_icons">
