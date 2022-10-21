@@ -17,6 +17,7 @@ import { SneakersComponent } from './sneakers/sneakers.component';
 import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
+import { LikeComponent } from './like/like.component';
 import { FooterComponent } from './footer/footer.component';
 
 
@@ -35,8 +36,8 @@ import { FooterComponent } from './footer/footer.component';
     FavoriteComponent,
     SneakersComponent,
     SearchComponent,
-    HomeComponent
-
+    HomeComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
