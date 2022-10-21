@@ -18,6 +18,7 @@ import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { SneakersCardComponent } from './sneakers-card/sneakers-card.component';
+import { LikeComponent } from './like/like.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FooterComponent } from './footer/footer.component';
     SneakersComponent,
     SearchComponent,
     HomeComponent,
-    SneakersCardComponent
+    SneakersCardComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
