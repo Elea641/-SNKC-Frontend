@@ -4,6 +4,7 @@ import { AuctionComponent } from "./auction/auction.component";
 import { AuctionsComponent } from "./auctions/auctions.component";
 import { CollectionComponent } from "./collection/collection.component";
 import { ContactComponent } from "./contact/contact.component";
+import { FaqsComponent } from "./faqs/faqs.component";
 import { FavoriteComponent } from "./favorite/favorite.component";
 import { HomeComponent } from "./home/home.component";
 import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'contact', component: ContactComponent}, 
     {path: 'legal-notice', component: LegalNoticeComponent}, 
+    {path: 'faqs', component: FaqsComponent}, 
     {path: 'profile/:id', component: ProfileComponent},
     {path: 'profile/:id/update', component: ProfileComponent},
     {path: 'profile/:id/delete', component: ProfileComponent},

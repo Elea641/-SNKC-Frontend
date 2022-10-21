@@ -20,6 +20,8 @@ import { HomeComponent } from './home/home.component';
 import { SneakersCardComponent } from './sneakers-card/sneakers-card.component'; 
 import { LikeComponent } from './like/like.component';
 import { FooterComponent } from './footer/footer.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +39,11 @@ import { FooterComponent } from './footer/footer.component';
     SneakersComponent,
     SearchComponent,
     HomeComponent,
+    FaqsComponent,
     SneakersCardComponent,
-    LikeComponent
+    LikeComponent,
+    CreatedSneakersComponent
+
   ],
   imports: [
     BrowserModule,
