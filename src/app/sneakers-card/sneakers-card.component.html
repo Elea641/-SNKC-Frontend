@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card__thumbnail">
         <img
-            src="https://martinvalen.com/13249-medium_default/plateforme-sneakers-basket-blanc-noir.jpg">
+            [src]="sneakers?.pictures?.[0]?.url">
         <div class="hover">
             <div class="text">
-                <p>Model</p>
+                <p>{{sneakers?.model}}</p>
                 <hr>
-                <p>Brand</p>
+                <p>{{sneakers?.brand}}</p>
             </div>
         </div>
     </div>
