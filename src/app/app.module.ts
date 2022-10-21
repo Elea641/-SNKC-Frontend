@@ -18,6 +18,7 @@ import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FooterComponent } from './footer/footer.component';
     FavoriteComponent,
     SneakersComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    FaqsComponent
 
   ],
   imports: [
