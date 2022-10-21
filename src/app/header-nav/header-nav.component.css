@@ -1,0 +1,138 @@
+.navbar{
+  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.right{
+  display: flex;
+}
+
+#imgLogo {
+  height: 80px;
+  width: 80px;
+}
+
+.imgProfile {
+  order: 1;
+}
+
+.imgProfile>label>img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.imgSearch{
+  order: 2;
+}
+
+.imgSearch>label>img{
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+
+.icon{
+  fill: rgb(4, 4, 4);
+  cursor: pointer;
+}
+
+.icon2{
+  fill: rgb(4, 4, 4);
+  cursor: pointer;
+}
+
+.navbar1 input, .nav-menu1, .dropdown{
+  display: none;
+}
+
+[id^=btn2]:checked + ul{
+  display: block;
+  list-style-type: none;
+}
+
+.nav-menu1{
+  background-color: #00adb5;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 335px;
+  height: 150px;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+
+.nav-item1 a, .drop-item a, .show{
+  color: white;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 1.2rem;
+}
+
+.burger {
+  order: 3;
+}
+
+.navbar input, .nav-menu, .dropdown{
+  display: none;
+}
+
+[id^=btn]:checked + ul{
+  display: block;
+  list-style-type: none;
+}
+
+.nav-menu{
+  background-color: #00adb5;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 335px;
+  height: 350px;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+
+.nav-item a, .drop-item a, .show{
+  color: white;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 1.2rem;
+}
+
+.nav-menu a:hover, .show:hover{
+  color: rgb(5, 5, 5);
+}
+
+
+/* @media screen and (min-width: 768px){
+  .icon{
+      display: none;
+  }
+  .nav-menu{
+      display: initial;
+      position: static;
+
+  }
+  .nav-item{
+      display: inline-block;
+      margin-left: 20px;
+      position: relative;
+  }
+  .dropdown{
+      position: absolute;
+      background-color: black;
+      top: 70px;
+      right: 0;
+      padding-right: 40px;
+      width: max-content;
+  }
+} */
