@@ -55,16 +55,16 @@
 }
 }
 
-@media screen and (min-width: 768px)  { 
+@media screen and (min-width: 768px)  {
   .card {
-    
+
     width: 12rem;
     height: 16rem;
     margin: 1rem;
-    
+
   }
-  
-  
+
+
   .text {
     color: #fff;
     font-size: 40px;
@@ -76,4 +76,3 @@
     transform: translate(-50%, -50%);
   }
 }
-  

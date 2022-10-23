@@ -1,10 +1,15 @@
+.trait_dessus{
+  width: 80%;
+  margin-left: 10%;
+}
 .navbar{
-  background-color: #ffffff;
+  opacity: 1;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: sticky;
+  top: 0px;
 }
 
 .right{
@@ -14,6 +19,7 @@
 #imgLogo {
   height: 80px;
   width: 80px;
+  border-radius: 30%;
 }
 
 .imgProfile {
@@ -61,12 +67,18 @@
   background-color: #00adb5;
   position: absolute;
   top: 70px;
-  left: 0;
   right: 0;
-  width: 335px;
-  height: 150px;
-  margin-top: 30px;
-  border-radius: 30px;
+  width: 15%;
+  height: 140%;
+  margin-top: 20px;
+  border-radius: 20px;
+
+}
+
+.nav-menu1 a:hover, .show:hover{
+  border-radius: 10%;
+  background: #74c2cc;
+
 }
 
 .nav-item1 a, .drop-item a, .show{
@@ -74,6 +86,7 @@
   text-decoration: none;
   line-height: 70px;
   font-size: 1.2rem;
+  margin-left: 20%;
 }
 
 .burger {
@@ -87,18 +100,18 @@
 [id^=btn]:checked + ul{
   display: block;
   list-style-type: none;
+
 }
 
 .nav-menu{
   background-color: #00adb5;
-  position: absolute;
+  position:absolute;
   top: 70px;
-  left: 0;
   right: 0;
-  width: 335px;
-  height: 350px;
-  margin-top: 30px;
+  width: 15%;
+  margin-top: 20px;
   border-radius: 30px;
+
 }
 
 .nav-item a, .drop-item a, .show{
@@ -106,33 +119,35 @@
   text-decoration: none;
   line-height: 70px;
   font-size: 1.2rem;
+  margin-left: 20%;
 }
 
 .nav-menu a:hover, .show:hover{
-  color: rgb(5, 5, 5);
+  border-radius: 10%;
+  background: #74c2cc;
 }
 
 
 /* @media screen and (min-width: 768px){
   .icon{
-      display: none;
+    display: none;
   }
   .nav-menu{
-      display: initial;
-      position: static;
+    display: initial;
+    position: static;
 
   }
   .nav-item{
-      display: inline-block;
-      margin-left: 20px;
-      position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
   }
   .dropdown{
-      position: absolute;
-      background-color: black;
-      top: 70px;
-      right: 0;
-      padding-right: 40px;
-      width: max-content;
+    position: absolute;
+    background-color: black;
+    top: 70px;
+    right: 0;
+    padding-right: 40px;
+    width: max-content;
   }
 } */

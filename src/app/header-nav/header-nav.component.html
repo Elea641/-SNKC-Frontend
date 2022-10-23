@@ -1,7 +1,6 @@
-<!-- <body> -->
   <nav class="navbar">
     <div class="imgLogo">
-      <img src="assets/LOGO SNK.jpg" id="imgLogo" href="#">
+      <img src="assets/LOGO SNK.jpg" id="imgLogo" [routerLink]="['/']">
     </div>
     <div class="right">
       <div class="burger">
@@ -15,45 +14,43 @@
         <input type="checkbox" id="btn">
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="#">Ajouter une paire</a>
+            <a [routerLink]="['sneakers/:id/create']">{{createdSneakers}}</a>
           </li>
-          <hr>
+          <div class="trait_dessus"><hr></div>
           <li class="nav-item">
-            <a href="#">Ma collection</a>
+            <a [routerLink]="['collection/:id']">{{collection}}</a>
           </li>
-          <hr>
+          <div class="trait_dessus"><hr></div>
           <li class="nav-item">
-            <a href="#">Salle d'enchères</a>
+            <a [routerLink]="['auctions']">{{auctions}}</a>
           </li>
-          <hr>
+          <div class="trait_dessus"><hr></div>
           <li class="nav-item">
-            <a href="#">Mes favoris</a>
+            <a [routerLink]="['favorite']">{{favorite}}</a>
           </li>
         </ul>
       </div>
 
       <div class="imgProfile">
         <label for="btn2" class="icon2">
-        <img src="assets/GAB.jpg">
-      </label>
-      <input type="checkbox" id="btn2">
+          <img src="assets/GAB.jpg">
+        </label>
+        <input type="checkbox" id="btn2">
         <ul class="nav-menu1">
           <li class="nav-item1">
-            <a href="#">Mon compte</a>
+            <a [routerLink]="['profile/:id']">{{profile}}</a>
           </li>
-          <hr>
+          <div class="trait_dessus"><hr></div>
           <li class="nav-item1">
-            <a href="#">Déconnection</a>
+            <a [routerLink]="[]">{{disconnect}}</a>
           </li>
-
-          </ul>
+        </ul>
       </div>
       <div class="imgSearch">
         <label for="btnSearch" class="icon3">
-        <img src="assets/search.png" id="imgSearch">
-      </label>
-      <input type="checkbox" id="seach">
+          <img src="assets/search.png" id="imgSearch">
+        </label>
+        <input type="search" id="search">
       </div>
     </div>
   </nav>
-
