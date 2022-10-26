@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sneakers } from '../models/sneakers';
+import { SneakersService } from '../services/sneakers.service';
 
 @Component({
   selector: 'app-collection',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionComponent implements OnInit {
 
-  constructor() { }
+  sneakers!: Sneakers[];
+  
+  constructor(private sneakersService: SneakersService) { }
 
   ngOnInit(): void {
+    this.sneakers = this.sneakersService.getAllSneakers();
   }
 
 }

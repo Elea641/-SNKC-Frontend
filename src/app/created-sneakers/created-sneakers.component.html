@@ -1,1 +1,64 @@
-<p>created-sneakers works!</p>
+<div class="background">
+  <div class="containerForm">
+    <div class="form-card">
+      <h1>AJOUTER SNEAKERS</h1>
+      <form [formGroup]="createdSneakersForm">   
+        <div class="colorForm">
+          <div class="form-group">
+            <label for="pictures">URL de l'image</label>
+            <input id="pictures" type="text" formControlName="pictures">
+          </div>
+          <div class="form-group">
+            <label for="brand">Marque</label>
+            <input id="brand" type="text" formControlName="brand">
+          </div>
+          <div class="form-group">
+            <label for="model">Modèle</label>
+            <input id="model" type="text" formControlName="model">
+          </div>
+          <div class="form-group">
+            <label for="size">Taille</label>
+            <input id="size" type="text" formControlName="size">
+          </div>
+          <div class="form-group">
+            <label for="stateOfWear">Etat sneakers</label>
+            <select id="stateOfWear" formControlName="stateOfWear">
+            <option id="optionForm" *ngFor="let state of states" [value]="getStateOfWearValue(state)">{{state}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dateOfPurchase">Année d'achat</label>
+            <input id="dateOfPurchase" type="date" formControlName="dateOfPurchase">
+          </div>
+          <div class="form-group">
+            <label for="authentification">Preuve d'authentification</label>
+            <input id="authentification" type="text" formControlName="authentification">
+          </div>
+          <div class="form-group">
+            <label for="mainColor">Couleur</label>
+            <select id="mainColor" formControlName="mainColor">
+            <option id="optionForm" *ngFor="let color of colors" [value]="getColorsValue(color)">{{color}}</option>
+            </select>
+          </div>
+          <div class="action-buttons">
+            <button type="submit" (click)="onSubmitForm()" [disabled]="createdSneakersForm.invalid">Enregistrer votre Sneakers </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="containerPreview">
+    <div class="sneakers-card" *ngIf="createdPreview$ | async as sneakers">
+      <h1>PREVIEW SNEAKERS</h1>
+      <p>Postée {{ sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
+      <h2>Marque : {{createdSneakersForm.controls['brand'].value | uppercase }}</h2>
+      <h3>Model : {{createdSneakersForm.controls['model'].value | lowercase}}</h3>
+      <img [src]="sneakers.pictures" [alt]="sneakers.brand">
+      <p>Taille : {{createdSneakersForm.controls['size'].value}}</p>
+      <p>L'état global de ma sneakers : {{getStateOfWearValuePreview(createdSneakersForm.controls['stateOfWear'].value)}}</p>
+      <p *ngIf="sneakers.createdDate">Date d'achat : {{createdSneakersForm.controls['dateOfPurchase'].value | date: 'd MMMM yyyy'}}</p>
+      <p *ngIf="sneakers.authentification">L'authentification est : {{ sneakers.authentification}}</p>
+      <p *ngIf="sneakers.mainColor">Ma couleur : {{getColorsValuePreview(createdSneakersForm.controls['mainColor'].value)}}</p>
+    </div>
+  </div>
+</div>
