@@ -2,6 +2,7 @@
     <div class="imgLogo">
       <img src="assets/LOGO SNK.jpg" id="imgLogo" [routerLink]="['/']">
     </div>
+    <!-- menu burger -->
     <div class="right">
       <div class="burger">
         <label for="btn" class="icon">
@@ -11,7 +12,7 @@
             <rect y="70" width="100" height="15"></rect>
           </svg>
         </label>
-        <input type="checkbox" id="btn">
+        <input class="bug" type="checkbox" id="btn">
         <ul class="nav-menu">
           <li class="nav-item">
             <a [routerLink]="['sneakers/:id/create']">{{createdSneakers}}</a>
@@ -30,12 +31,12 @@
           </li>
         </ul>
       </div>
-
+<!-- menu déroulant photo -->
       <div class="imgProfile">
         <label for="btn2" class="icon2">
-          <img src="assets/GAB.jpg">
+          <img src="assets/GAB.jpg" class="profile" id="profile">
         </label>
-        <input type="checkbox" id="btn2">
+        <input class="bug" type="checkbox" id="btn2">
         <ul class="nav-menu1">
           <li class="nav-item1">
             <a [routerLink]="['profile/:id']">{{profile}}</a>
@@ -46,11 +47,15 @@
           </li>
         </ul>
       </div>
+<!-- menu déroulant recherche -->
       <div class="imgSearch">
-        <label for="btnSearch" class="icon3">
+        <div class="searchContain">
+          <input *ngIf="isDisplayingSearchBar" type="search" id="search" placeholder=" Rechercher ...">
+        </div>
+        <button (click)="onClick()">
           <img src="assets/search.png" id="imgSearch">
-        </label>
-        <input type="search" id="search">
+        </button>
+
       </div>
     </div>
   </nav>

@@ -10,18 +10,19 @@ export class HeaderNavComponent implements OnInit {
   public collection: string = "Ma collection";
   public auctions: string = "Salle d'enchères";
   public favorite: string = "Mes favoris";
-
   public imgLogo: string ="imgLogo";
-
   public profile: string = "Gérer mon profil";
   public disconnect: string = "Déconnection";
-
   public search:string = "Rechercher";
-
+  public isDisplayingSearchBar: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
+  onClick(): void {
+    this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
+  }
 }
