@@ -12,7 +12,7 @@ export class User {
         public sneakersFollowed: Sneakers[],
         public usersFollowed: User[],
         public shippingAddress: string,
-        public shippingCity: String,
+        public shippingCity: string,
         public shippingZipCode: number,
         public shippingCountry: string, 
         public createDate: Date,

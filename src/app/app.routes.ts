@@ -4,6 +4,7 @@ import { AuctionComponent } from "./auction/auction.component";
 import { AuctionsComponent } from "./auctions/auctions.component";
 import { CollectionComponent } from "./collection/collection.component";
 import { ContactComponent } from "./contact/contact.component";
+import { CreatedSneakersComponent } from "./created-sneakers/created-sneakers.component";
 import { FaqsComponent } from "./faqs/faqs.component";
 import { FavoriteComponent } from "./favorite/favorite.component";
 import { HomeComponent } from "./home/home.component";
@@ -32,7 +33,7 @@ const routes: Routes = [
     {path: 'auction/:id/payment', component: AuctionComponent},
     {path: 'favorite', component: FavoriteComponent},
     {path: 'sneakers/:id', component: SneakersComponent},
-    {path: 'sneakers/:id/create', component: SneakersComponent},
+    {path: 'sneakers/:id/create', component: CreatedSneakersComponent},
     {path: 'sneakers/:id/update', component: SneakersComponent},
     {path: 'sneakers/:id/delete', component: SneakersComponent},
     {path: 'search', component: SearchComponent},

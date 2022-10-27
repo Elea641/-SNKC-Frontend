@@ -2,7 +2,6 @@ import { StateOfWear } from "./enum/stateofwear";
 import { Colors } from "./enum/colors";
 import { User } from "./user";
 import { Picture } from "./picture";
-import { count } from "rxjs";
 
 export class Sneakers {
     constructor(

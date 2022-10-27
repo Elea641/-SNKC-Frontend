@@ -61,17 +61,17 @@
       }
 
       a:focus {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #74c2cc;
       }
 
       a:hover {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #74c2cc;
       }
 
       a:active {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #41a1ae;
         color: black;
       }
@@ -238,17 +238,17 @@
       }
 
       a:focus {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #74c2cc;
       }
 
       a:hover {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #74c2cc;
       }
 
       a:active {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #41a1ae;
         color: black;
       }
@@ -442,17 +442,17 @@
       }
 
       a:focus {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #74c2cc;
       }
 
       a:hover {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #74c2cc;
       }
 
       a:active {
-        border-radius: 10%;
+        border-radius: 2rem;
         background: #41a1ae;
         color: black;
       }

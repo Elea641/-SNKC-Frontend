@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
@@ -23,6 +23,9 @@ import { LikeComponent } from './like/like.component';
 import { FooterComponent } from './footer/footer.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
 
 @NgModule({
   declarations: [
@@ -45,14 +48,22 @@ import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.co
     SneakersCardComponent,
     LikeComponent,
     CreatedSneakersComponent
-
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ 
+    { provide: LOCALE_ID, useValue: 'fr-FR'}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    registerLocaleData(fr.default);
+  }
+}
