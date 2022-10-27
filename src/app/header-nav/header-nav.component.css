@@ -179,7 +179,7 @@ display: none;
 }
 
 .navbar{
-background-color: white;
+  background-color: white;
   opacity: 1;
   padding: 10px;
   display: flex;
@@ -224,7 +224,6 @@ background-color: white;
   border-radius: 20px;
   border: 1px solid white;
   text-align: center;
-
 }
 
 .nav-menu1 a:hover, .show:hover{
@@ -487,4 +486,3 @@ display: none;
   background: #74c2cc;
 }
 }
-

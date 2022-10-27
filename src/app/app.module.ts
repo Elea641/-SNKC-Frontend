@@ -48,7 +48,6 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
     FaqsComponent,
     SneakersCardComponent,
     LikeComponent,
-    CreatedSneakersComponent,
     AuctionCreationComponent,
     CreatedSneakersComponent
   ],
