@@ -21,8 +21,8 @@
   "sneakers": [
     {
       "id": 2,
-      "brand": "Nike",
-      "model": "Air",
+      "brand": "Air Max",
+      "model": "Nike",
       "size": 0,
       "stateOfWear": 2,
       "createdDate": "2022-10-19T08:19:18.238Z",
@@ -80,10 +80,21 @@
       "pictures": [
         {
           "id": 0,
-          "url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/375999/20/sv01/fnd/EEA/fmt/png"
+          "url": "https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/qkhgcptmdr5i0lljxhot/chaussures-air-max-air-max-day.jpg"
         }
       ],
       "follows": []
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "nike",
+      "model": "sb",
+      "size": "37",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-11",
+      "authentification": null,
+      "mainColor": "3",
+      "id": 3
     }
   ],
   "room": [
@@ -143,7 +154,7 @@
   "picture": [
     {
       "id": 0,
-      "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+      "url": "https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/qkhgcptmdr5i0lljxhot/chaussures-air-max-air-max-day.jpg"
     }
   ],
   "auction": [

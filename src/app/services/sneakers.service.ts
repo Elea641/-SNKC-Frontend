@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Sneakers } from '../models/sneakers';
 
@@ -13,7 +13,7 @@ export class SneakersService {
   constructor(private http: HttpClient) { }
 
   getSneakersById(id: string): Observable<Sneakers> {
-  return this.http.get<Sneakers>(`${this.baseUrl}/${id}`)
+    return this.http.get<Sneakers>(`${this.baseUrl}/${id}`)
   }
 
   getAllSneakersByUserId(id: string): Observable<Sneakers[]> {

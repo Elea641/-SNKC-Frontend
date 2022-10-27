@@ -1,10 +1,13 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import * as fr from '@angular/common/locales/fr';
+import { registerLocaleData } from '@angular/common';
 
+import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
@@ -18,7 +21,7 @@ import { SneakersComponent } from './sneakers/sneakers.component';
 import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
-import { SneakersCardComponent } from './sneakers-card/sneakers-card.component'; 
+import { SneakersCardComponent } from './sneakers-card/sneakers-card.component';
 import { LikeComponent } from './like/like.component';
 import { FooterComponent } from './footer/footer.component';
 import { FaqsComponent } from './faqs/faqs.component';
@@ -28,6 +31,7 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderNavComponent,
     FooterComponent,
     LoginComponent,
     RegisterComponent,
@@ -45,16 +49,23 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
     SneakersCardComponent,
     LikeComponent,
     CreatedSneakersComponent,
-    AuctionCreationComponent
-
+    AuctionCreationComponent,
+    CreatedSneakersComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ 
+    { provide: LOCALE_ID, useValue: 'fr-FR'}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    registerLocaleData(fr.default);
+  }
+}
