@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
@@ -18,7 +18,7 @@ import { UserService } from '../services/user.service';
 })
 
 export class CreatedSneakersComponent implements OnInit {
- 
+
   createdSneakersForm! : FormGroup;
   stateOfWearType! : FormControl;
   createdPreview$!: Observable <Sneakers>;
@@ -27,9 +27,6 @@ export class CreatedSneakersComponent implements OnInit {
   states: string[];
   colors: string[];
   sneakersByUserId: Sneakers[] | undefined;
-
-  
-
 
 constructor(private formBuilder: FormBuilder,
   private route: ActivatedRoute,
@@ -116,6 +113,5 @@ constructor(private formBuilder: FormBuilder,
   getColorsValuePreview(color: string): string {
     return HelperService.colorsToString(parseInt(color));
   }
-
 }
 
