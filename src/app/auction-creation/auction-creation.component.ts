@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
 import { SneakersService } from '../services/sneakers.service';
@@ -24,7 +24,8 @@ export class AuctionCreationComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private http: HttpClient
+    private http: HttpClient, 
+    private router: Router
   ) { }
 
   selectChangeHandler(event: any) {
@@ -47,7 +48,8 @@ export class AuctionCreationComponent implements OnInit {
           })
         });
       });
-    })
+    });
+    this.router.navigate(['/auction/:id'])
   }
 
   ngOnInit(): void {
@@ -58,9 +60,12 @@ export class AuctionCreationComponent implements OnInit {
       });
     });
     this.roomForm = this.formBuilder.group({
-      sneakers: [null],
-      initialPrice: [null],
-      endDate: [null]
+      sneakers: [null, [Validators.required]],
+      initialPrice: [null, [Validators.required]],
+      endDate: [null, [Validators.required]]
+    },
+    {
+      updatOn: 'blur'
     });
   }
 }

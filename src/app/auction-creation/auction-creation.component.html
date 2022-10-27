@@ -19,7 +19,7 @@
             <input id="endDate" type="date" formControlName="endDate">
         </div>
         <div class="action-buttons">
-            <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+            <button type="submit" (click)="onSubmitForm()" [disabled]="roomForm.invalid">Enregistrer</button>
         </div>
 
     </form>
