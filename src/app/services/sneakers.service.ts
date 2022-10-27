@@ -8,12 +8,15 @@ import { Sneakers } from '../models/sneakers';
 })
 export class SneakersService {
 
-  baseUrl: string = "http://localhost:3000/";
+  baseUrl: string = "http://localhost:3000/sneakers";
 
   constructor(private http: HttpClient) { }
 
   getSneakersById(id: string): Observable<Sneakers> {
-  return this.http.get<Sneakers>(`${this.baseUrl}sneakers/${id}`)
+  return this.http.get<Sneakers>(`${this.baseUrl}/${id}`)
+  }
 
+  getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
+    return this.http.get<Sneakers[]>(`${this.baseUrl}?user.id=${id}`)
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Routes } from "@angular/router";
+import { AuctionCreationComponent } from "./auction-creation/auction-creation.component";
 import { AuctionComponent } from "./auction/auction.component";
 import { AuctionsComponent } from "./auctions/auctions.component";
 import { CollectionComponent } from "./collection/collection.component";
@@ -26,8 +27,8 @@ const routes: Routes = [
     {path: 'profile/:id/delete', component: ProfileComponent},
     {path: 'collection/:id', component: CollectionComponent},
     {path: 'auctions/:id', component: AuctionsComponent},
+    {path: ':id/auction/create', component: AuctionCreationComponent},
     {path: 'auction/:id', component: AuctionComponent},
-    {path: 'auction/:id/create', component: AuctionComponent},
     {path: 'auction/:id/delete', component: AuctionComponent},
     {path: 'auction/:id/payment', component: AuctionComponent},
     {path: 'favorite', component: FavoriteComponent},

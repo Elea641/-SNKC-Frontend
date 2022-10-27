@@ -13,24 +13,16 @@ export class SneakersCardComponent implements OnInit {
 
   sneakers: Sneakers | undefined;
 
-  constructor(private sneakersService: SneakersService, private route: ActivatedRoute) { 
+  constructor(private sneakersService: SneakersService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
 
-     this.route.paramMap.subscribe((params: ParamMap) => {
-      const sneakersId = <string> params.get("id");
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const sneakersId = <string>params.get("id");
       this.sneakersService.getSneakersById(sneakersId).subscribe((response: Sneakers) => {
         this.sneakers = response;
       });
-
-
     });
-    
-
-  
-
-    
   }
-
 }
