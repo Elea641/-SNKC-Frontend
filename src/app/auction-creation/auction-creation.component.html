@@ -1,0 +1,26 @@
+<div class="form-card">
+    <h2>Créer ma salle d'enchères</h2>
+    <form [formGroup]="roomForm">
+
+        <div class="form-group">
+            <label for="sneakers-select">Choose a sneakers :</label>
+            <select name="sneakers" id="sneakers-select" (change)="selectChangeHandler($event)" formControlName="sneakers">
+                <option default>Choisissez la paire de sneakers</option>
+                <option *ngFor="let sneakers of sneakersByUserId" value="{{sneakers.id}}">
+                    {{sneakers.brand}} - {{sneakers.model}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="initialPrice">Prix de départ :</label>
+            <input id="initialPrice" type="number" formControlName="initialPrice">
+        </div>
+        <div class="form-group">
+            <label for="endDate">Date de fin :</label>
+            <input id="endDate" type="date" formControlName="endDate">
+        </div>
+        <div class="action-buttons">
+            <button type="submit" (click)="onSubmitForm()" [disabled]="roomForm.invalid">Enregistrer</button>
+        </div>
+
+    </form>
+</div>

@@ -8,7 +8,7 @@ import { StateOfWear } from '../models/enum/stateofwear';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
 import { HelperService } from '../services/helper.service';
-import { UsersService } from '../services/users.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-created-sneakers',
@@ -29,7 +29,7 @@ export class CreatedSneakersComponent implements OnInit {
 
 constructor(private formBuilder: FormBuilder,
   private route: ActivatedRoute,
-  private userService: UsersService,
+  private userService: UserService,
   private http: HttpClient,
   ) {
     this.states = Object.keys(StateOfWear).filter(
@@ -80,7 +80,7 @@ constructor(private formBuilder: FormBuilder,
     const sneakers = <Sneakers> this.createdSneakersForm.getRawValue();
     this.route.paramMap.subscribe((params: ParamMap) => {
     const userId = <string>params.get("id");
-      this.userService.getUsersById(userId).subscribe((reponse: User) => {
+      this.userService.getUserById(userId).subscribe((reponse: User) => {
         sneakers.user = reponse;
       });
     });
