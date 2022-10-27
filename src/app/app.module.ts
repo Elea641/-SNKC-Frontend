@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { HeaderNavComponent } from './header-nav/header-nav.component';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -17,7 +18,7 @@ import { SneakersComponent } from './sneakers/sneakers.component';
 import { SearchComponent } from './search/search.component';
 import { routes } from './app.routes';
 import { HomeComponent } from './home/home.component';
-import { SneakersCardComponent } from './sneakers-card/sneakers-card.component'; 
+import { SneakersCardComponent } from './sneakers-card/sneakers-card.component';
 import { LikeComponent } from './like/like.component';
 import { FooterComponent } from './footer/footer.component';
 import { FaqsComponent } from './faqs/faqs.component';
@@ -26,6 +27,7 @@ import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.co
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderNavComponent,
     FooterComponent,
     LoginComponent,
     RegisterComponent,

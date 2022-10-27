@@ -1,0 +1,61 @@
+  <nav class="navbar">
+    <div class="imgLogo">
+      <img src="assets/LOGO SNK.jpg" id="imgLogo" [routerLink]="['/']">
+    </div>
+    <!-- menu burger -->
+    <div class="right">
+      <div class="burger">
+        <label for="btn" class="icon">
+          <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="15"></rect>
+            <rect y="35" width="100" height="15"></rect>
+            <rect y="70" width="100" height="15"></rect>
+          </svg>
+        </label>
+        <input class="bug" type="checkbox" id="btn">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a [routerLink]="['sneakers/:id/create']">{{createdSneakers}}</a>
+          </li>
+          <div class="trait_dessus"><hr></div>
+          <li class="nav-item">
+            <a [routerLink]="['collection/:id']">{{collection}}</a>
+          </li>
+          <div class="trait_dessus"><hr></div>
+          <li class="nav-item">
+            <a [routerLink]="['auctions']">{{auctions}}</a>
+          </li>
+          <div class="trait_dessus"><hr></div>
+          <li class="nav-item">
+            <a [routerLink]="['favorite']">{{favorite}}</a>
+          </li>
+        </ul>
+      </div>
+<!-- menu déroulant photo -->
+      <div class="imgProfile">
+        <label for="btn2" class="icon2">
+          <img src="assets/GAB.jpg" class="profile" id="profile">
+        </label>
+        <input class="bug" type="checkbox" id="btn2">
+        <ul class="nav-menu1">
+          <li class="nav-item1">
+            <a [routerLink]="['profile/:id']">{{profile}}</a>
+          </li>
+          <div class="trait_dessus"><hr></div>
+          <li class="nav-item1">
+            <a [routerLink]="[]">{{disconnect}}</a>
+          </li>
+        </ul>
+      </div>
+<!-- menu déroulant recherche -->
+      <div class="imgSearch">
+        <div class="searchContain">
+          <input *ngIf="isDisplayingSearchBar" type="search" id="search" placeholder=" Rechercher ...">
+        </div>
+        <button (click)="onClick()">
+          <img src="assets/search.png" id="imgSearch">
+        </button>
+
+      </div>
+    </div>
+  </nav>

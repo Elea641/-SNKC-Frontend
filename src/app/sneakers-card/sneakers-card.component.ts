@@ -13,7 +13,7 @@ export class SneakersCardComponent implements OnInit {
 
   sneakers: Sneakers | undefined;
 
-  constructor(private sneakersService: SneakersService, private route: ActivatedRoute) { 
+  constructor(private sneakersService: SneakersService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -26,11 +26,11 @@ export class SneakersCardComponent implements OnInit {
 
 
     });
-    
 
-  
 
-    
+
+
+
   }
 
 }
