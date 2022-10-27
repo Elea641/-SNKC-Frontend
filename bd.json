@@ -86,15 +86,444 @@
       "follows": []
     },
     {
+      "id": 3,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 4,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 5,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 6,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 7,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 8,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 9,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 10,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 11,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 11,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 11,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 11,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 11,
+      "brand": "Air Max",
+      "model": "Nike",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
       "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
-      "brand": "nike",
-      "model": "sb",
-      "size": "37",
-      "stateOfWear": "2",
-      "dateOfPurchase": "2022-10-11",
+      "brand": "jJj",
+      "model": "j",
+      "size": "jj",
+      "stateOfWear": "1",
+      "dateOfPurchase": "2022-10-28",
       "authentification": null,
-      "mainColor": "3",
-      "id": 3
+      "mainColor": "4",
+      "id": 12
     }
   ],
   "room": [
