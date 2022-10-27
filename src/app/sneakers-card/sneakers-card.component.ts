@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Sneakers } from '../models/sneakers';
-import { SneakersService } from '../services/sneakers.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-
 
 @Component({
   selector: 'app-sneakers-card',
@@ -10,19 +7,13 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./sneakers-card.component.css']
 })
 export class SneakersCardComponent implements OnInit {
-
-  sneakers: Sneakers | undefined;
-
-  constructor(private sneakersService: SneakersService, private route: ActivatedRoute) {
+  
+  @Input() sneakers: Sneakers | undefined;
+  
+  constructor() {
   }
-
+  
   ngOnInit(): void {
-
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      const sneakersId = <string>params.get("id");
-      this.sneakersService.getSneakersById(sneakersId).subscribe((response: Sneakers) => {
-        this.sneakers = response;
-      });
-    });
+    
   }
 }
