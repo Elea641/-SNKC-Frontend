@@ -18,11 +18,11 @@ import { SneakersComponent } from "./sneakers/sneakers.component";
 
 
 const routes: Routes = [
-    {path: 'login', component: LoginComponent}, 
+    {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-    {path: 'contact', component: ContactComponent}, 
-    {path: 'legal-notice', component: LegalNoticeComponent}, 
-    {path: 'faqs', component: FaqsComponent}, 
+    {path: 'contact', component: ContactComponent},
+    {path: 'legal-notice', component: LegalNoticeComponent},
+    {path: 'faqs', component: FaqsComponent},
     {path: 'profile/:id', component: ProfileComponent},
     {path: 'profile/:id/update', component: ProfileComponent},
     {path: 'profile/:id/delete', component: ProfileComponent},
@@ -32,7 +32,7 @@ const routes: Routes = [
     {path: 'user/:id/auctions', component: AuctionComponent},
     {path: 'auction/:id/delete', component: AuctionComponent},
     {path: 'auction/:id/payment', component: AuctionComponent},
-    {path: 'favorite', component: FavoriteComponent},
+    {path: 'user/:id/favorite', component: FavoriteComponent},
     {path: 'sneakers/:id', component: SneakersComponent},
     {path: 'sneakers/:id/create', component: CreatedSneakersComponent},
     {path: 'sneakers/:id/update', component: SneakersComponent},
@@ -40,7 +40,7 @@ const routes: Routes = [
     {path: 'search', component: SearchComponent},
     {path: '', pathMatch: 'full', component: HomeComponent},
     {path: '**', redirectTo: ''}
-    
+
 ]
 
 export { routes };
