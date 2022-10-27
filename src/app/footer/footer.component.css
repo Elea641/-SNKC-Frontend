@@ -9,7 +9,7 @@
     }
 
     #container2{
-      
+
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -17,7 +17,7 @@
 
     #container1{
         width: 100%;
-       
+
     }
     #cSNKC{
         text-align: center;
@@ -27,7 +27,7 @@
         width: 100%;
         padding-bottom: 10%;
     }
-   
+
     .backGround{
         background-color: #00adb5;
         padding: 10%;
@@ -64,12 +64,12 @@
         border-radius: 2rem;
         background: #74c2cc;
       }
-      
+
       a:hover {
         border-radius: 2rem;
         background: #74c2cc;
       }
-      
+
       a:active {
         border-radius: 2rem;
         background: #41a1ae;
@@ -104,7 +104,7 @@
         margin-right: 25%;
         margin-top: 20px;
         margin-bottom: 20px;
-      
+
     }
 
     #lienLegal{
@@ -114,7 +114,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
+
     #logoFooter{
         margin-top: 150px;
         width: 100%;
@@ -122,15 +122,15 @@
         display: flex;
         justify-content: center;
     }
-    
+
     #logo{
         border-radius: 30px;
         max-height: 150px;
         max-width: 350px;
         transform: rotate(15deg);
-        
+
     }
-    
+
     #icon{
         position: relative;
         margin-top: 50px;
@@ -140,9 +140,9 @@
         display: flex;
         justify-content: center;
         transform: rotate(15deg);
-    
+
     }
-    
+
     #iconFacebook{
         margin-left: 40px;
         margin-right: 40px;
@@ -150,7 +150,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
     #iconInstagram{
         margin-left: 40px;
         margin-right: 40px;
@@ -158,7 +158,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
     #iconPinterest{
         margin-left: 40px;
         margin-right: 40px;
@@ -166,7 +166,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
 }
 
 
@@ -182,7 +182,7 @@
     }
 
     #container2{
-      
+
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -202,12 +202,12 @@
 
     .backGround{
         background-color: #00adb5;
-    
+
         padding: 5%;
         display: flex;
         justify-content: space-around;
         flex-direction: row;
-        
+
     }
     .containerLiens{
         height: 40%;
@@ -241,12 +241,12 @@
         border-radius: 2rem;
         background: #74c2cc;
       }
-      
+
       a:hover {
         border-radius: 2rem;
         background: #74c2cc;
       }
-      
+
       a:active {
         border-radius: 2rem;
         background: #41a1ae;
@@ -281,7 +281,7 @@
         margin-right: 25%;
         margin-top: 20px;
         margin-bottom: 20px;
-      
+
     }
 
     #lienLegal{
@@ -291,7 +291,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
+
     #logoFooter{
         margin-left: 25PX;
         margin-right: 25PX;
@@ -303,15 +303,15 @@
         justify-content: center;
         order: 1;
     }
-    
+
     #logo{
         border-radius: 30px;
         max-height: 150px;
         max-width: 900px;
         transform: rotate(15deg);
-        
+
     }
-    
+
     #icon{
         order: 2;
         position: relative;
@@ -325,9 +325,9 @@
         display: flex;
         justify-content: center;
         transform: rotate(15deg);
-    
+
     }
-    
+
     #iconFacebook{
         margin-left: 40px;
         margin-right: 40px;
@@ -335,7 +335,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
     #iconInstagram{
         margin-left: 40px;
         margin-right: 40px;
@@ -343,7 +343,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
     #iconPinterest{
         margin-left: 40px;
         margin-right: 40px;
@@ -358,12 +358,12 @@
         color: white;
         ;
     }
-    
+
     #logo_icons{
-        flex-direction: column; 
+        flex-direction: column;
     }
  }
- 
+
 
 
  @media screen and (min-width: 993px) {
@@ -377,7 +377,7 @@
     }
 
     #container2{
-      
+
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -402,7 +402,7 @@
         display: flex;
         justify-content: space-around;
         flex-direction: row;
-        
+
     }
 
     .containerLiens{
@@ -422,7 +422,7 @@
         margin-bottom: 10%;
         order: 3;
     }
-    
+
     #trait_dessus{
         border-top: 5px white solid;
         width : 100px;
@@ -445,12 +445,12 @@
         border-radius: 2rem;
         background: #74c2cc;
       }
-      
+
       a:hover {
         border-radius: 2rem;
         background: #74c2cc;
       }
-      
+
       a:active {
         border-radius: 2rem;
         background: #41a1ae;
@@ -482,7 +482,7 @@
         margin-right: 25%;
         margin-top: 20px;
         margin-bottom: 20px;
-      
+
     }
 
     #lienLegal{
@@ -493,7 +493,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
+
     #logoFooter{
         margin-left: 25PX;
         margin-right: 25PX;
@@ -505,15 +505,15 @@
         justify-content: center;
         order: 1;
     }
-    
+
     #logo{
         border-radius: 30px;
         max-height: 200px;
         max-width: 900px;
         transform: rotate(15deg);
-        
+
     }
-    
+
     #icon{
         order: 2;
         position: relative;
@@ -527,9 +527,9 @@
         display: flex;
         justify-content: center;
         transform: rotate(15deg);
-    
+
     }
-    
+
     #iconFacebook{
         margin-left: 40px;
         margin-right: 40px;
@@ -537,7 +537,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
     #iconInstagram{
         margin-left: 40px;
         margin-right: 40px;
@@ -545,7 +545,7 @@
         max-width: 33%;
         display: flex;
     }
-    
+
     #iconPinterest{
         margin-left: 40px;
         margin-right: 40px;
@@ -560,11 +560,11 @@
         color: white;
         ;
     }
-    
+
     #logo_icons{
-        flex-direction: column; 
+        flex-direction: column;
     }
  }
- 
+
 
 

@@ -21,8 +21,8 @@
   "sneakers": [
     {
       "id": 2,
-      "brand": "",
-      "model": "",
+      "brand": "Air Max",
+      "model": "Nike",
       "size": 0,
       "stateOfWear": 2,
       "createdDate": "2022-10-19T08:19:18.238Z",
@@ -44,7 +44,12 @@
         "createDate": "2022-10-19T08:19:18.238Z",
         "updateDate": "2022-10-19T08:19:18.238Z"
       },
-      "pictures": [],
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/qkhgcptmdr5i0lljxhot/chaussures-air-max-air-max-day.jpg"
+        }
+      ],
       "follows": []
     },
     {
@@ -116,7 +121,7 @@
   "picture": [
     {
       "id": 0,
-      "url": ""
+      "url": "https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/qkhgcptmdr5i0lljxhot/chaussures-air-max-air-max-day.jpg"
     }
   ],
   "auction": [
