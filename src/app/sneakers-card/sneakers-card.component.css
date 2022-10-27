@@ -4,8 +4,6 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  width: 8rem;
-  height: 11rem;
   margin: 1rem;
   border-radius: 25% 10%;
 }
@@ -57,11 +55,7 @@
 
 @media screen and (min-width: 768px)  {
   .card {
-
-    width: 12rem;
-    height: 16rem;
     margin: 1rem;
-
   }
 
 
