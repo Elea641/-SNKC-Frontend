@@ -7,16 +7,20 @@ import { Sneakers } from '../models/sneakers';
   providedIn: 'root'
 })
 export class SneakersService {
-
+  
   baseUrl: string = "http://localhost:3000/sneakers";
-
+  
   constructor(private http: HttpClient) { }
-
+  
   getSneakersById(id: string): Observable<Sneakers> {
     return this.http.get<Sneakers>(`${this.baseUrl}/${id}`)
   }
-
+  
   getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
     return this.http.get<Sneakers[]>(`${this.baseUrl}?user.id=${id}`)
+  }
+  
+  get(): Observable<Sneakers[]> {
+    return this.http.get<Sneakers[]>(`${this.baseUrl}`)
   }
 }
