@@ -28,7 +28,40 @@
       "createdDate": "2022-10-19T08:19:18.238Z",
       "updateDate": "2022-10-19T08:19:18.238Z",
       "user": {
-        "id": 0,
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:19:18.238Z",
+        "updateDate": "2022-10-19T08:19:18.238Z"
+      },
+      "pictures": [
+        {
+          "id": 0,
+          "url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/160ac08e-9b45-4f74-a9cc-c8502b58658b/chaussure-de-golf-air-max-90-g-pJK8MK.png"
+        }
+      ],
+      "follows": []
+    },
+    {
+      "id": 3,
+      "brand": "Puma",
+      "model": "15003",
+      "size": 0,
+      "stateOfWear": 2,
+      "createdDate": "2022-10-19T08:19:18.238Z",
+      "updateDate": "2022-10-19T08:19:18.238Z",
+      "user": {
+        "id": 4,
         "firstname": "",
         "lastname": "",
         "username": "",

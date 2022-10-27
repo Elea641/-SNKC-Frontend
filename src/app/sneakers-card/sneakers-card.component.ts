@@ -18,19 +18,11 @@ export class SneakersCardComponent implements OnInit {
 
   ngOnInit(): void {
 
-     this.route.paramMap.subscribe((params: ParamMap) => {
-      const sneakersId = <string> params.get("id");
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const sneakersId = <string>params.get("id");
       this.sneakersService.getSneakersById(sneakersId).subscribe((response: Sneakers) => {
         this.sneakers = response;
       });
-
-
     });
-
-
-
-
-
   }
-
 }
