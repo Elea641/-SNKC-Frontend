@@ -524,6 +524,67 @@
       "authentification": null,
       "mainColor": "4",
       "id": 12
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "bjh",
+      "model": "bkb",
+      "size": "kjbk",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-04",
+      "authentification": null,
+      "mainColor": null,
+      "id": 13
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "bjh",
+      "model": "bkb",
+      "size": "kjbk",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-04",
+      "authentification": null,
+      "mainColor": null,
+      "id": 14
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "bjh",
+      "model": "bkb",
+      "size": "kjbk",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-04",
+      "authentification": null,
+      "mainColor": null,
+      "id": 15
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "hHUH",
+      "model": "UH",
+      "size": "UH",
+      "stateOfWear": "4",
+      "dateOfPurchase": "2022-11-03",
+      "authentification": null,
+      "mainColor": null,
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:14:02.386Z",
+        "updateDate": "2022-10-19T08:14:02.386Z"
+      },
+      "id": 16
     }
   ],
   "room": [
