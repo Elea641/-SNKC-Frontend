@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Colors } from '../models/enum/colors';
@@ -24,9 +24,15 @@ export class CreatedSneakersComponent implements OnInit {
   createdPreview$!: Observable <Sneakers>;
   onValidation: boolean = true;
   urlRegex!: RegExp;
-  states: string[];
+  states: number[];
   colors: string[];
   sneakersByUserId: Sneakers[] | undefined;
+  pictures: FormArray = new FormArray([
+    new FormControl(
+      null, [Validators.required, Validators.pattern(this.urlRegex)]
+    )
+  ]
+  );
 
 constructor(private formBuilder: FormBuilder,
   private route: ActivatedRoute,
@@ -36,10 +42,7 @@ constructor(private formBuilder: FormBuilder,
   private sneakersService: SneakersService
   ) {
     this.states = Object.keys(StateOfWear).filter(
-      (stateOfWear: string) => parseInt(stateOfWear)).map(
-        (stateOfWear: string) => {
-          return HelperService.stateOfWearToString(<StateOfWear> parseInt(stateOfWear));
-        });
+      (stateOfWear: string) => parseInt(stateOfWear)).map((key: string) => parseInt(key));
         
     this.colors = Object.keys(Colors).filter(
       (colors: string) => parseInt(colors)).map(
@@ -53,11 +56,11 @@ constructor(private formBuilder: FormBuilder,
       this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
       
       this.createdSneakersForm = this.formBuilder.group({
-        pictures: [null, [Validators.required, Validators.pattern(this.urlRegex)]],
+        pictures: this.pictures,
         brand: [null, [Validators.required]],
         model: [null, [Validators.required]],
         size: [null, [Validators.required]],
-        stateOfWear: [null , [Validators.required]],
+        stateOfWear: [null , [Validators.required, Validators.pattern(/[0-9]+/)]],
         dateOfPurchase: [null],
         authentification: [null],
         mainColor: [null],
@@ -79,24 +82,22 @@ constructor(private formBuilder: FormBuilder,
    }
    onSubmitForm(): void {
     const sneakers = <Sneakers> this.createdSneakersForm.getRawValue();
+    console.log(sneakers)
     this.route.paramMap.subscribe((params: ParamMap) => {
       const userId = <string>params.get("id");
       this.userService.getUserById(userId).subscribe((reponse: User) => {
         sneakers.user = reponse;
         this.http.post('http://localhost:3000/sneakers', sneakers).subscribe(res => {
-        console.log(JSON.stringify(res));
+          this.router.navigate(['/sneakers/:id']);
       });
     });
   });
-  this.router.navigate(['/sneakers/:id'])
+ 
 }
 
-  getStateOfWearValue(state: string): StateOfWear {
-    return HelperService.stringToStateOfWear(state);
-  }
   
-  getStateOfWearValuePreview(stateOfWear: string): string {
-    return HelperService.stateOfWearToString(parseInt(stateOfWear));
+  stateOfWearToString(stateOfWear: number): string {
+    return HelperService.stateOfWearToString(stateOfWear);
   }
 
   getColorsValue(color: string): Colors {
