@@ -1,1 +1,7 @@
-<p>auctions works!</p>
+<div class="list">
+    <div *ngFor="let room of roomsByUserId">
+        <a [routerLink]="['/auction/', room.id]">
+            <app-auction-card [room]="room"></app-auction-card>
+        </a>
+    </div>
+</div>
