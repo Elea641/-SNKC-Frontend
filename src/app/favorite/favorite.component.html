@@ -1,10 +1,9 @@
 <h1>MES FAVORIS</h1>
 <div class="containerFavorite">
-  <div>
-    <a [routerLink]="['/sneakers/']">
-      <app-sneakers-card></app-sneakers-card></a>
+  <div class="sneakersLike" >
+    <div>
+      <app-sneakers-card [sneakers]="" *ngIf=""></app-sneakers-card>
+    </div>
       <app-like></app-like>
   </div>
 </div>
-
-
