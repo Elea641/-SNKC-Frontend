@@ -1,0 +1,18 @@
+.container {
+    margin-left: 13%;
+    margin-right: 13%;
+}
+
+h1 {
+    padding-bottom: 5rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+
+
+p {
+    margin-bottom: 3rem;
+    text-align: justify;
+    
+}
