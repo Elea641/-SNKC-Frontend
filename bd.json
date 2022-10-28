@@ -695,7 +695,25 @@
             "name": ""
           }
         ],
-        "follows": []
+        "follows": [
+          {
+            "id": 1,
+            "firstname": "",
+            "lastname": "",
+            "username": "",
+            "email": "",
+            "password": "",
+            "sneakers": [],
+            "sneakersFollowed": [],
+            "usersFollowed": [],
+            "shippingAddress": "",
+            "shippingCity": "",
+            "shippingZipCode": 0,
+            "shippingCountry": "",
+            "createDate": "2022-10-19T08:14:02.386Z",
+            "updateDate": "2022-10-19T08:14:02.386Z"
+          }
+        ]
       },
       "initialPrice": 0,
       "startDate": "2022-10-19T08:25:34.413Z",

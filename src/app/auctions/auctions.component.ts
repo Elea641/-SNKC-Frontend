@@ -11,7 +11,7 @@ import { RoomService } from '../services/room.service';
 })
 export class AuctionsComponent implements OnInit {
 
-  roomsByUserId: Room[] | undefined;
+  usersRooms: Room[] | undefined;
 
   constructor(private roomService: RoomService, private http: HttpClient, private route: ActivatedRoute) { }
 
@@ -19,7 +19,7 @@ export class AuctionsComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       const userId = <string>params.get("id");
       this.roomService.getAllRoomsByUserId(userId).subscribe((response: Room[]) =>
-        this.roomsByUserId = response);
+        this.usersRooms = response);
     })
   }
 }
