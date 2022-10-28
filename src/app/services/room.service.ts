@@ -10,12 +10,17 @@ export class RoomService {
 
   baseUrl: string = "http://localhost:3000/room";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
   getRoomById(id: string): Observable<Room> {
-    return this.http.get<Room>(`${this.baseUrl}/${id}`)
+    return this.http.get<Room>(`${this.baseUrl}/${id}`);
   }
 
   getAllRoomsByUserId(id: string): Observable<Room[]> {
-    return this.http.get<Room[]>(`${this.baseUrl}/?user.id=${id}`)
+    return this.http.get<Room[]>(`${this.baseUrl}/?user.id=${id}`);
+  }
+
+  postRoom(room: Room): Observable<Room> {
+    return this.http.post<Room>(`${this.baseUrl}`, room);
   }
 }
