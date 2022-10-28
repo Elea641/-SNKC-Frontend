@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Sneakers } from '../models/sneakers';
 import { SneakersService } from '../services/sneakers.service';
+import { Colors } from '../models/enum/colors';
+import { StateOfWear } from '../models/enum/stateofwear';
 
 @Component({
   selector: 'app-sneakers',
@@ -11,16 +12,22 @@ import { SneakersService } from '../services/sneakers.service';
 })
 export class SneakersComponent implements OnInit {
 
-  sneakers$!: Observable<Sneakers>;
-  sneakersId!: Sneakers;
+sneakersById: Sneakers | undefined;
+ 
 
   constructor(private sneakersService: SneakersService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    const sneakersId = this.route.snapshot.params["id"];
-    this.sneakers$ = this.sneakersService.getSneakersById(sneakersId);
-    this.sneakers$.subscribe((value) => {console.log(value);})
+    this.route.paramMap.subscribe((params: ParamMap)  => {
+      const sneakersId = <string>params.get("id");
+      this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
+        this.sneakersById = reponse;
+        console.log(this.sneakersById)
+      })
+    })
+
+  
   }
 }

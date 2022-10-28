@@ -1,15 +1,14 @@
 <h1>SNEAKERS</h1>
 <div id="containerButton">
-<div class="containerCollection" *ngIf="sneakers$ | async as sneakers">
-    <h1>PREVIEW SNEAKERS</h1>
-    <p>Postée {{ sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
-    <h2>Marque : {{sneakers.brand | uppercase }}</h2>
-    <h3>Model : {{sneakers.model | lowercase}}</h3>
-    <img [src]="sneakers.pictures" [alt]="sneakers.brand">
-    <p>Taille : {{sneakers.size}}</p>
-    <p>L'état global de ma sneakers : {{sneakers.stateOfWear}}</p>
-    <p *ngIf="sneakers.createdDate">Date d'achat : {{sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm'}}</p>
-    <p *ngIf="sneakers.authentification">L'authentification est : {{ sneakers.authentification}}</p>
-    <p *ngIf="sneakers.mainColor">Ma couleur : {{sneakers.mainColor}}</p>
+<div class="containerCollection">
+    <p>Postée {{ sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
+    <h2>Marque : {{sneakersById?.brand | uppercase }}</h2>
+    <h3>Model : {{sneakersById?.model | lowercase}}</h3>
+    <img [src]="sneakersById?.pictures?.[0]?.url" [alt]="sneakersById?.brand">
+    <p>Taille : {{sneakersById?.size}}</p>
+    <p>L'état global de ma sneakers : {{sneakersById?.stateOfWear}}</p>
+    <p *ngIf="sneakersById?.createdDate">Date d'achat : {{sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm'}}</p>
+    <p *ngIf="sneakersById?.authentification">L'authentification est : {{ sneakersById?.authentification}}</p>
+    <p *ngIf="sneakersById?.mainColor">Ma couleur : {{sneakersById?.mainColor}}</p>
   </div>
 </div>

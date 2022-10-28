@@ -50,13 +50,6 @@ constructor(private formBuilder: FormBuilder,
           
       ngOnInit(): void {
 
-        this.route.paramMap.subscribe((params: ParamMap) => {
-          const userId = <string>params.get("id");
-          this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
-            this.sneakersByUserId = response;
-          });
-        });
-
       this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
       
       this.createdSneakersForm = this.formBuilder.group({
