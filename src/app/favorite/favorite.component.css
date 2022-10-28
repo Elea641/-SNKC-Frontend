@@ -1,0 +1,42 @@
+@media screen and (min-width: 390px){
+  .containerFavorite{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+  }
+
+  div {
+      width: 35%;
+      padding: 1rem;
+  }
+
+  h1 {
+      font-size: 40px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 20px;
+  }
+
+    select{
+      background-color: white;
+      width: 50%;
+      border-radius: 2rem;
+      font-size: 16px;
+      text-align: center;
+    }
+
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+      div {
+          width: 25%;
+      }
+      }
+
+  @media screen and (min-width: 993px) {
+      div {
+          width: 20%;
+      }
+      }

@@ -21,6 +21,7 @@
   align-items: center;
   position: sticky;
   top: 0px;
+  z-index: 2;
 }
 
 #imgLogo {
@@ -187,6 +188,7 @@ display: none;
   align-items: center;
   position: sticky;
   top: 0px;
+  z-index: 2;
 }
 
 #imgLogo {
@@ -350,6 +352,7 @@ display: none;
   align-items: center;
   position: sticky;
   top: 0px;
+  z-index: 2;
 }
 
 #imgLogo {

@@ -34,7 +34,7 @@ const routes: Routes = [
     {path: 'auction/:id/payment', component: AuctionComponent},
     {path: 'user/:id/favorite', component: FavoriteComponent},
     {path: 'sneakers/:id', component: SneakersComponent},
-    {path: 'sneakers/:id/create', component: CreatedSneakersComponent},
+    {path: 'user/:id/sneakers/create', component: CreatedSneakersComponent},
     {path: 'sneakers/:id/update', component: SneakersComponent},
     {path: 'sneakers/:id/delete', component: SneakersComponent},
     {path: 'search', component: SearchComponent},

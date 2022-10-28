@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Sneakers } from '../models/sneakers';
 import { SneakersService } from '../services/sneakers.service';
+import { UserService } from '../services/user.service';
+import { LikeComponent } from '../like/like.component';
 
 @Component({
   selector: 'app-favorite',
@@ -10,17 +12,19 @@ import { SneakersService } from '../services/sneakers.service';
 })
 export class FavoriteComponent implements OnInit {
 
-  constructor(private sneakerService: SneakersService,
+  favoriteSneakersById: Sneakers | undefined;
+
+
+  constructor(private sneakersService: SneakersService, private UserService: UserService,
      private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.route.paramMap.subscribe((params: ParamMap) => {
-    //   const userId = <string>params.get("id");
-    //   this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
-    //     this.sneakersByUserId = response;
-    //     console.log(this.sneakersByUserId)
-    //   });
-    // });
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const userId = <string>params.get("id");
+      this.sneakersService.getSneakersById(userId).subscribe((response: Sneakers) => {
+        this.favoriteSneakersById = response;
+        console.log(this.favoriteSneakersById)
+      });
+    });
   }
-
 }
