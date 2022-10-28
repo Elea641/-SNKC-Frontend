@@ -1,7 +1,5 @@
 @media screen and (min-width: 100px) {
-    .container {
-        display: flex;
-    }
+
     .card {
         width: 18rem;
         margin: 2rem;
@@ -37,6 +35,10 @@
         text-align: center;
         padding: 15px 20px;
         box-sizing: border-box;
+    }
+
+    .time {
+        margin: 2rem;
     }
 }
 
