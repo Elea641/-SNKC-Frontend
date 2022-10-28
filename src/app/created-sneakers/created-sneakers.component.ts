@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Colors } from '../models/enum/colors';
 import { StateOfWear } from '../models/enum/stateofwear';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
 import { HelperService } from '../services/helper.service';
+import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -25,6 +26,8 @@ export class CreatedSneakersComponent implements OnInit {
   urlRegex!: RegExp;
   states: string[];
   colors: string[];
+  sneakersByUserId: Sneakers[] | undefined;
+
   
 
 
@@ -32,6 +35,8 @@ constructor(private formBuilder: FormBuilder,
   private route: ActivatedRoute,
   private userService: UserService,
   private http: HttpClient,
+  private router: Router,
+  private sneakersService: SneakersService
   ) {
     this.states = Object.keys(StateOfWear).filter(
       (stateOfWear: string) => parseInt(stateOfWear)).map(
@@ -47,8 +52,14 @@ constructor(private formBuilder: FormBuilder,
           }
           
       ngOnInit(): void {
-        
-        
+
+        this.route.paramMap.subscribe((params: ParamMap) => {
+          const userId = <string>params.get("id");
+          this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
+            this.sneakersByUserId = response;
+          });
+        });
+
       this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
       
       this.createdSneakersForm = this.formBuilder.group({
@@ -70,7 +81,6 @@ constructor(private formBuilder: FormBuilder,
       ...formValue,
      id: 0,
      updateDate: new Date(),
-     user: "",
      follows: 0,
      createdDate: new Date(),      
   }))
@@ -80,15 +90,17 @@ constructor(private formBuilder: FormBuilder,
    onSubmitForm(): void {
     const sneakers = <Sneakers> this.createdSneakersForm.getRawValue();
     this.route.paramMap.subscribe((params: ParamMap) => {
-    const userId = <string>params.get("id");
+      const userId = <string>params.get("id");
       this.userService.getUserById(userId).subscribe((reponse: User) => {
         sneakers.user = reponse;
+        this.http.post('http://localhost:3000/sneakers', sneakers).subscribe(res => {
+        console.log(JSON.stringify(res));
       });
     });
-    this.http.post('http://localhost:3000/sneakers', sneakers).subscribe(res => {
-      console.log(JSON.stringify(res));
-    });
-  }
+  });
+  this.router.navigate(['/sneakers/:id'])
+}
+
   getStateOfWearValue(state: string): StateOfWear {
     return HelperService.stringToStateOfWear(state);
   }

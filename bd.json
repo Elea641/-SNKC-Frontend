@@ -524,13 +524,74 @@
       "authentification": null,
       "mainColor": "4",
       "id": 12
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "bjh",
+      "model": "bkb",
+      "size": "kjbk",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-04",
+      "authentification": null,
+      "mainColor": null,
+      "id": 13
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "bjh",
+      "model": "bkb",
+      "size": "kjbk",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-04",
+      "authentification": null,
+      "mainColor": null,
+      "id": 14
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "bjh",
+      "model": "bkb",
+      "size": "kjbk",
+      "stateOfWear": "2",
+      "dateOfPurchase": "2022-10-04",
+      "authentification": null,
+      "mainColor": null,
+      "id": 15
+    },
+    {
+      "pictures": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "brand": "hHUH",
+      "model": "UH",
+      "size": "UH",
+      "stateOfWear": "4",
+      "dateOfPurchase": "2022-11-03",
+      "authentification": null,
+      "mainColor": null,
+      "user": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:14:02.386Z",
+        "updateDate": "2022-10-19T08:14:02.386Z"
+      },
+      "id": 16
     }
   ],
   "room": [
     {
       "id": 1,
       "owner": {
-        "id": 0,
+        "id": 1,
         "firstname": "",
         "lastname": "",
         "username": "",
@@ -547,15 +608,15 @@
         "updateDate": "2022-10-19T08:25:34.413Z"
       },
       "sneakers": {
-        "id": 0,
-        "brand": "",
-        "model": "",
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Belart",
         "size": 0,
         "stateOfWear": 2,
         "createdDate": "2022-10-19T08:25:34.413Z",
         "updateDate": "2022-10-19T08:25:34.413Z",
         "user": {
-          "id": 0,
+          "id": 1,
           "firstname": "",
           "lastname": "",
           "username": "",
@@ -571,12 +632,17 @@
           "createDate": "2022-10-19T08:25:34.413Z",
           "updateDate": "2022-10-19T08:25:34.413Z"
         },
-        "pictures": [],
+        "pictures": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0562/9240/9498/products/airjordan4_offwhite_sailmuslim-LEFTSIDE_64437e91-b898-4393-9049-0cb9860ea3cc.jpg?v=1633386875&width=533",
+            "name": ""
+          }
+        ],
         "follows": []
       },
       "initialPrice": 0,
       "startDate": "2022-10-19T08:25:34.413Z",
-      "endDate": "2022-10-19T08:25:34.413Z",
+      "endDate": "2022-10-30T08:25:34.413Z",
       "attendees": []
     }
   ],
@@ -590,7 +656,7 @@
     {
       "id": 1,
       "winner": {
-        "id": 0,
+        "id": 1,
         "firstname": "",
         "lastname": "",
         "username": "",
@@ -607,7 +673,7 @@
         "updateDate": "2022-10-19T08:31:16.105Z"
       },
       "room": {
-        "id": 0,
+        "id": 1,
         "owner": {
           "id": 0,
           "firstname": "",
@@ -626,15 +692,15 @@
           "updateDate": "2022-10-19T08:31:16.105Z"
         },
         "sneakers": {
-          "id": 0,
-          "brand": "",
-          "model": "",
+          "id": 1,
+          "brand": "Nike",
+          "model": "Air Belart",
           "size": 0,
           "stateOfWear": 2,
           "createdDate": "2022-10-19T08:31:16.105Z",
           "updateDate": "2022-10-19T08:31:16.105Z",
           "user": {
-            "id": 0,
+            "id": 1,
             "firstname": "",
             "lastname": "",
             "username": "",
@@ -653,12 +719,12 @@
           "pictures": [],
           "follows": []
         },
-        "initialPrice": 0,
+        "initialPrice": 150,
         "startDate": "2022-10-19T08:31:16.105Z",
-        "endDate": "2022-10-19T08:31:16.105Z",
+        "endDate": "2022-10-31T08:31:16.105Z",
         "attendees": []
       },
-      "offer": 0,
+      "offer": 300,
       "date": "2022-10-19T08:31:16.105Z"
     }
   ]
