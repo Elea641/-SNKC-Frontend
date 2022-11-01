@@ -10,7 +10,7 @@ export class AuctionCardComponent implements OnInit {
 
   @Input() room: Room | undefined;
 
-    constructor() { }
+    constructor() {}
 
   ngOnInit(): void {
   }
