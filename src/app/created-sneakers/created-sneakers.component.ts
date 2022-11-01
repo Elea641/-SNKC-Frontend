@@ -18,7 +18,7 @@ import { UserService } from '../services/user.service';
 })
 
 export class CreatedSneakersComponent implements OnInit {
- 
+
   createdSneakersForm! : FormGroup;
   stateOfWearType! : FormControl;
   createdPreview$!: Observable <Sneakers>;
@@ -28,7 +28,7 @@ export class CreatedSneakersComponent implements OnInit {
   colors: string[];
   sneakersByUserId: Sneakers[] | undefined;
 
-  
+
 
 
 constructor(private formBuilder: FormBuilder,
@@ -43,14 +43,14 @@ constructor(private formBuilder: FormBuilder,
         (stateOfWear: string) => {
           return HelperService.stateOfWearToString(<StateOfWear> parseInt(stateOfWear));
         });
-        
+
     this.colors = Object.keys(Colors).filter(
       (colors: string) => parseInt(colors)).map(
         (colors: string) => {
           return HelperService.colorsToString(<Colors> parseInt(colors));
             });
           }
-          
+
       ngOnInit(): void {
 
         this.route.paramMap.subscribe((params: ParamMap) => {
@@ -61,7 +61,7 @@ constructor(private formBuilder: FormBuilder,
         });
 
       this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
-      
+
       this.createdSneakersForm = this.formBuilder.group({
         pictures: [null, [Validators.required, Validators.pattern(this.urlRegex)]],
         brand: [null, [Validators.required]],
@@ -82,7 +82,7 @@ constructor(private formBuilder: FormBuilder,
      id: 0,
      updateDate: new Date(),
      follows: 0,
-     createdDate: new Date(),      
+     createdDate: new Date(),
   }))
    );
 
@@ -104,7 +104,7 @@ constructor(private formBuilder: FormBuilder,
   getStateOfWearValue(state: string): StateOfWear {
     return HelperService.stringToStateOfWear(state);
   }
-  
+
   getStateOfWearValuePreview(stateOfWear: string): string {
     return HelperService.stateOfWearToString(parseInt(stateOfWear));
   }
