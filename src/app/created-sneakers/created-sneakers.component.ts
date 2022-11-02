@@ -19,8 +19,8 @@ import { UserService } from '../services/user.service';
 
 export class CreatedSneakersComponent implements OnInit {
  
-  createdSneakersForm! : FormGroup;
-  stateOfWearType! : FormControl;
+  createdSneakersForm!: FormGroup;
+  stateOfWearType!: FormControl;
   createdPreview$!: Observable <Sneakers>;
   onValidation: boolean = true;
   urlRegex!: RegExp;

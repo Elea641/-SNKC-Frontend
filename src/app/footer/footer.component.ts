@@ -11,10 +11,6 @@ export class FooterComponent{
   public faqs: string = "FAQs";
   public legal: string = "Mentions légales";
   
-  public imgInstagramLogo: string ="";
-  public imgFacebookLogo: string ="";
-  public imgPinterestLogo: string ="";
-  
   constructor() { }
 
 }
