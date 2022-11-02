@@ -1,13 +1,15 @@
 <div id="containerButton">
-    <button [routerLink]="['/user/:id/auction/create']">Créer une salle aux enhères</button>
+    <button class="createButton"  [routerLink]="['/user/:id/auction/create']">Créer une salle aux enhères</button>
 </div>
 <h1>Mes salles aux enchères</h1>
 <hr>
 <div class="list">
-    <div *ngFor="let room of usersRooms">
+    <div *ngFor="let room of usersRooms | paginate: {itemsPerPage: roomsPerPage, currentPage: currentPage}">
         <a [routerLink]="['/auction/', room.id]">
             <app-auction-card [room]="room"></app-auction-card>
         </a>
     </div>
 </div>
-
+<div class="pagination">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>

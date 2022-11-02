@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Room } from '../models/room';
@@ -11,9 +10,11 @@ import { RoomService } from '../services/room.service';
 })
 export class AuctionsComponent implements OnInit {
 
-  usersRooms: Room[] | undefined;
+  usersRooms: Room[] = [];
+  currentPage: number = 1;
+  roomsPerPage: number = 4;
 
-  constructor(private roomService: RoomService, private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private roomService: RoomService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
