@@ -17,7 +17,7 @@ export class RoomService {
   }
 
   getAllRoomsByUserId(id: string): Observable<Room[]> {
-    return this.http.get<Room[]>(`${this.baseUrl}/?user.id=${id}`);
+    return this.http.get<Room[]>(`${this.baseUrl}/?owner.id=${id}`)
   }
 
   postRoom(room: Room): Observable<Room> {
