@@ -22,7 +22,6 @@ export class CollectionComponent implements OnInit {
         const userId = <string>params.get("id");
         this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
           this.sneakersByUserId = response;
-          console.log(this.sneakersByUserId)
         });
       });
     }

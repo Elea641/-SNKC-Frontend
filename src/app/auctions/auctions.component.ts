@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Room } from '../models/room';
+import { RoomService } from '../services/room.service';
 
 @Component({
   selector: 'app-auctions',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuctionsComponent implements OnInit {
 
-  constructor() { }
+  usersRooms: Room[] = [];
+  currentPage: number = 1;
+  roomsPerPage: number = 4;
+
+  constructor(private roomService: RoomService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const userId = <string>params.get("id");
+      this.roomService.getAllRoomsByUserId(userId).subscribe((response: Room[]) =>
+        this.usersRooms = response);
+    })
   }
-
 }
