@@ -31,7 +31,7 @@ static stateOfWearToString(stateofwear: number): string{
   }
 }
 
-static colorsToString(colors: Colors): string{
+static colorsToString(colors: number): string{
 
   switch(colors) {
 

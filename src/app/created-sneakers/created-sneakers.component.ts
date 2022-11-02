@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
@@ -25,7 +25,7 @@ export class CreatedSneakersComponent implements OnInit {
   onValidation: boolean = true;
   urlRegex!: RegExp;
   states: number[];
-  colors: string[];
+  colors: number[];
   sneakersByUserId: Sneakers[] | undefined;
   pictures: FormArray = new FormArray([
     new FormControl(
@@ -42,13 +42,12 @@ constructor(private formBuilder: FormBuilder,
   private sneakersService: SneakersService
   ) {
     this.states = Object.keys(StateOfWear).filter(
-      (stateOfWear: string) => parseInt(stateOfWear)).map((key: string) => parseInt(key));
+      (stateOfWear: string) => parseInt(stateOfWear)).map(
+        (key: string) => parseInt(key));
         
     this.colors = Object.keys(Colors).filter(
       (colors: string) => parseInt(colors)).map(
-        (colors: string) => {
-          return HelperService.colorsToString(<Colors> parseInt(colors));
-            });
+        (key: string) => parseInt(key));
           }
           
       ngOnInit(): void {
@@ -56,7 +55,7 @@ constructor(private formBuilder: FormBuilder,
       this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
       
       this.createdSneakersForm = this.formBuilder.group({
-        pictures: this.pictures,
+        
         brand: [null, [Validators.required]],
         model: [null, [Validators.required]],
         size: [null, [Validators.required]],
@@ -64,7 +63,13 @@ constructor(private formBuilder: FormBuilder,
         dateOfPurchase: [null],
         authentification: [null],
         mainColor: [null],
-      }, {
+        pictures: this.pictures,
+        createdDate: new Date(),
+        id: 0,
+        updateDate: new Date(),
+        follows: 0, 
+      },
+      {
         updateOn: 'blur'
       }
       );
@@ -92,20 +97,13 @@ constructor(private formBuilder: FormBuilder,
       });
     });
   });
- 
 }
-
-  
   stateOfWearToString(stateOfWear: number): string {
     return HelperService.stateOfWearToString(stateOfWear);
   }
 
-  getColorsValue(color: string): Colors {
-    return HelperService.stringToColors(color);
-  }
-
-  getColorsValuePreview(color: string): string {
-    return HelperService.colorsToString(parseInt(color));
+  colorsToString(color: number): string {
+    return HelperService.colorsToString(color);
   }
 }
 

@@ -37,7 +37,7 @@
           <div class="form-group">
             <label for="mainColor">Couleur</label>
             <select id="mainColor" formControlName="mainColor">
-            <option id="optionForm" *ngFor="let color of colors" [ngValue]="getColorsValue(color)">{{color}}</option>
+            <option id="optionForm" *ngFor="let color of colors" [ngValue]="color">{{colorsToString(color)}}</option>
             </select>
           </div>
           <div class="action-buttons">
@@ -50,15 +50,16 @@
   <div class="containerPreview">
     <div class="sneakers-card" *ngIf="createdPreview$ | async as sneakers">
       <h1>PREVIEW SNEAKERS</h1>
-      <p>Postée {{ sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
+      <img [src]="sneakers.pictures" [alt]="sneakers.brand">
+      <h2>Détails de la Sneakers</h2>
       <h2>Marque : {{createdSneakersForm.controls['brand'].value | uppercase }}</h2>
       <h3>Model : {{createdSneakersForm.controls['model'].value | lowercase}}</h3>
-      <img [src]="sneakers.pictures" [alt]="sneakers.brand">
+      <p>Postée {{ sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
       <p>Taille : {{createdSneakersForm.controls['size'].value}}</p>
       <p>L'état global de ma sneakers : {{stateOfWearToString(createdSneakersForm.controls['stateOfWear'].value)}}</p>
       <p *ngIf="sneakers.createdDate">Date d'achat : {{createdSneakersForm.controls['dateOfPurchase'].value | date: 'd MMMM yyyy'}}</p>
       <p *ngIf="sneakers.authentification">L'authentification est : {{ sneakers.authentification}}</p>
-      <p *ngIf="sneakers.mainColor">Ma couleur : {{getColorsValuePreview(createdSneakersForm.controls['mainColor'].value)}}</p>
+      <p *ngIf="sneakers.mainColor">Ma couleur : {{colorsToString(createdSneakersForm.controls['mainColor'].value)}}</p>
     </div>
   </div>
 </div>

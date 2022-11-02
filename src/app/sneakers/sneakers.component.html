@@ -1,14 +1,16 @@
-<h1>SNEAKERS</h1>
-<div id="containerButton">
-<div class="containerCollection">
+<div class="background">
+  <div class="containerSneakers">
+    <h1>SNEAKERS</h1>
+    <img [src]="sneakersById?.pictures" [alt]="sneakersById?.brand">
+    <h2>Détails de la Sneakers</h2>
+    <h3>Marque : {{sneakersById?.brand | titlecase}}</h3>
+    <h3>Model : {{sneakersById?.model | titlecase}}</h3>
     <p>Postée {{ sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
-    <h2>Marque : {{sneakersById?.brand | uppercase }}</h2>
-    <h3>Model : {{sneakersById?.model | lowercase}}</h3>
-    <img [src]="sneakersById?.pictures?.[0]?.url" [alt]="sneakersById?.brand">
     <p>Taille : {{sneakersById?.size}}</p>
-    <p>L'état global de ma sneakers : {{sneakersById?.stateOfWear}}</p>
-    <p *ngIf="sneakersById?.createdDate">Date d'achat : {{sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm'}}</p>
+    <p>L'état global de ma sneakers : {{stateOfWearToString(1)}}</p>
+    <p *ngIf="sneakersById?.dateOfPurchase">Date d'achat : {{sneakersById?.dateOfPurchase | date: 'le d MMMM yyyy'}}</p>
     <p *ngIf="sneakersById?.authentification">L'authentification est : {{ sneakersById?.authentification}}</p>
-    <p *ngIf="sneakersById?.mainColor">Ma couleur : </p>
+    <p *ngIf="sneakersById?.mainColor">Ma couleur :{{colorsToString(1)}}</p> 
   </div>
 </div>
+
