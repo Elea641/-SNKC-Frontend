@@ -14,16 +14,10 @@ export class FavoriteComponent implements OnInit {
 
   favoriteSneakers: Sneakers[] | undefined;
 
-  constructor(private sneakersService: SneakersService, private UserService: UserService,
-     private route: ActivatedRoute) { }
+  constructor(private sneakersService: SneakersService, private UserService: UserService)
+   { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      const favorite = <string>params.get("id");
-      this.sneakersService.get().subscribe((response: Sneakers []) => {
-        this.favoriteSneakers = response;
-        console.log(this.favoriteSneakers)
-      });
-    });
+
 }
 }
