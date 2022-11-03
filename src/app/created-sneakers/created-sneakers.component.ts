@@ -18,8 +18,7 @@ import { UserService } from '../services/user.service';
 	styleUrls: ['./created-sneakers.component.css'],
 })
 export class CreatedSneakersComponent implements OnInit {
-	
-	
+		
 	createdSneakersForm!: FormGroup;
 	stateOfWearType!: FormControl;
 	createdPreview$!: Observable <Sneakers>;
