@@ -10,8 +10,9 @@ import { SneakersService } from '../services/sneakers.service';
 })
 export class CollectionComponent implements OnInit {
 	
-	sneakersByUserId: Sneakers[] | undefined;
-	userById: Sneakers[] | undefined;
+	sneakersByUserId: Sneakers[] = [];
+	currentPage = 1;
+	sneakersPerPage = 10;
 	
 	constructor(private sneakersService: SneakersService,
 		private route: ActivatedRoute

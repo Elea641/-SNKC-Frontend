@@ -1,11 +1,14 @@
 <h1>MA COLLECTION</h1>
 <div id="containerButton">
-<button [routerLink]="['/user/:id/sneakers/create']">Add Sneakers</button>
+    <button [routerLink]="['/user/:id/sneakers/create']">Add Sneakers</button>
 </div>
 <div class="containerCollection">
-    <div *ngFor="let sneaker of sneakersByUserId">
+    <div *ngFor="let sneaker of sneakersByUserId | paginate: {itemsPerPage: sneakersPerPage, currentPage: currentPage}">
         <a [routerLink]="['/sneakers/', sneaker.id]">
             <app-sneakers-card [sneakers]="sneaker"></app-sneakers-card>
         </a>
     </div>
+</div>
+<div class="pagination">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
 </div>
