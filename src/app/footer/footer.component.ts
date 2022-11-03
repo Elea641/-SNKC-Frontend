@@ -10,8 +10,4 @@ export class FooterComponent {
 	public contact = 'Contact';
 	public faqs = 'FAQs';
 	public legal = 'Mentions légales';
-
-	public imgInstagramLogo = '';
-	public imgFacebookLogo = '';
-	public imgPinterestLogo = '';
 }
