@@ -24,7 +24,6 @@ export class CollectionComponent implements OnInit {
 				.getAllSneakersByUserId(userId)
 				.subscribe((response: Sneakers[]) => {
 					this.sneakersByUserId = response;
-					console.log(this.sneakersByUserId);
 				});
 		});
 	}
