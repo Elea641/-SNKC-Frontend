@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 export enum Colors {
     WHITE = 1,
     BLACK = 2,

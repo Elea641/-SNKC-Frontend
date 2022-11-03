@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { LoginComponent } from './login/login.component';
@@ -27,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
+import { AuctionCardComponent } from './auction-card/auction-card.component';
 
 @NgModule({
   declarations: [
@@ -49,14 +51,16 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
     SneakersCardComponent,
     LikeComponent,
     AuctionCreationComponent,
-    CreatedSneakersComponent
+    CreatedSneakersComponent,
+    AuctionCardComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule, 
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [ 
     { provide: LOCALE_ID, useValue: 'fr-FR'}
