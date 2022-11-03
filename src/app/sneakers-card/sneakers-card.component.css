@@ -8,7 +8,6 @@
   border-radius: 25% 10%;
 }
 
-
 .card__thumbnail {
   position: relative;
   overflow: hidden;
@@ -17,8 +16,6 @@
   align-items: center;
   min-width: 100%;
   height: 100%;
-
-
 }
 
 .card__thumbnail>img {
@@ -57,7 +54,6 @@
   .card {
     margin: 1rem;
   }
-
 
   .text {
     color: #fff;

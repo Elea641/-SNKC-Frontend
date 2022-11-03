@@ -5,7 +5,7 @@
 <div class="containerCollection">
     <div *ngFor="let sneaker of sneakersByUserId">
         <a [routerLink]="['/sneakers/', sneaker.id]">
-            <app-sneakers-card id="test" [sneakers]="sneaker"></app-sneakers-card>
+            <app-sneakers-card [sneakers]="sneaker"></app-sneakers-card>
         </a>
     </div>
 </div>

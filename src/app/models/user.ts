@@ -1,4 +1,4 @@
-import { Sneakers } from "./sneakers";
+import { Sneakers } from './sneakers';
 
 export class User {
     constructor(
@@ -24,4 +24,3 @@ export class User {
         public billingCountry?: string,
     ) {}
 }
-

@@ -644,6 +644,308 @@
       "startDate": "2022-10-19T08:25:34.413Z",
       "endDate": "2022-10-30T08:25:34.413Z",
       "attendees": []
+    },
+    {
+      "id": 1,
+      "owner": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z"
+      },
+      "sneakers": {
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Belart",
+        "size": 0,
+        "stateOfWear": 2,
+        "createdDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z",
+        "user": {
+          "id": 1,
+          "firstname": "",
+          "lastname": "",
+          "username": "",
+          "email": "",
+          "password": "",
+          "sneakers": [],
+          "sneakersFollowed": [],
+          "usersFollowed": [],
+          "shippingAddress": "",
+          "shippingCity": "",
+          "shippingZipCode": 0,
+          "shippingCountry": "",
+          "createDate": "2022-10-19T08:25:34.413Z",
+          "updateDate": "2022-10-19T08:25:34.413Z"
+        },
+        "pictures": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0562/9240/9498/products/airjordan4_offwhite_sailmuslim-LEFTSIDE_64437e91-b898-4393-9049-0cb9860ea3cc.jpg?v=1633386875&width=533",
+            "name": ""
+          }
+        ],
+        "follows": [
+          {
+            "id": 1,
+            "firstname": "",
+            "lastname": "",
+            "username": "",
+            "email": "",
+            "password": "",
+            "sneakers": [],
+            "sneakersFollowed": [],
+            "usersFollowed": [],
+            "shippingAddress": "",
+            "shippingCity": "",
+            "shippingZipCode": 0,
+            "shippingCountry": "",
+            "createDate": "2022-10-19T08:14:02.386Z",
+            "updateDate": "2022-10-19T08:14:02.386Z"
+          }
+        ]
+      },
+      "initialPrice": 0,
+      "startDate": "2022-10-19T08:25:34.413Z",
+      "endDate": "2022-10-30T08:25:34.413Z",
+      "attendees": []
+    },{
+      "id": 1,
+      "owner": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z"
+      },
+      "sneakers": {
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Belart",
+        "size": 0,
+        "stateOfWear": 2,
+        "createdDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z",
+        "user": {
+          "id": 1,
+          "firstname": "",
+          "lastname": "",
+          "username": "",
+          "email": "",
+          "password": "",
+          "sneakers": [],
+          "sneakersFollowed": [],
+          "usersFollowed": [],
+          "shippingAddress": "",
+          "shippingCity": "",
+          "shippingZipCode": 0,
+          "shippingCountry": "",
+          "createDate": "2022-10-19T08:25:34.413Z",
+          "updateDate": "2022-10-19T08:25:34.413Z"
+        },
+        "pictures": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0562/9240/9498/products/airjordan4_offwhite_sailmuslim-LEFTSIDE_64437e91-b898-4393-9049-0cb9860ea3cc.jpg?v=1633386875&width=533",
+            "name": ""
+          }
+        ],
+        "follows": []
+      },
+      "initialPrice": 0,
+      "startDate": "2022-10-19T08:25:34.413Z",
+      "endDate": "2022-10-30T08:25:34.413Z",
+      "attendees": []
+    },
+    {
+      "id": 1,
+      "owner": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z"
+      },
+      "sneakers": {
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Belart",
+        "size": 0,
+        "stateOfWear": 2,
+        "createdDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z",
+        "user": {
+          "id": 1,
+          "firstname": "",
+          "lastname": "",
+          "username": "",
+          "email": "",
+          "password": "",
+          "sneakers": [],
+          "sneakersFollowed": [],
+          "usersFollowed": [],
+          "shippingAddress": "",
+          "shippingCity": "",
+          "shippingZipCode": 0,
+          "shippingCountry": "",
+          "createDate": "2022-10-19T08:25:34.413Z",
+          "updateDate": "2022-10-19T08:25:34.413Z"
+        },
+        "pictures": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0562/9240/9498/products/airjordan4_offwhite_sailmuslim-LEFTSIDE_64437e91-b898-4393-9049-0cb9860ea3cc.jpg?v=1633386875&width=533",
+            "name": ""
+          }
+        ],
+        "follows": []
+      },
+      "initialPrice": 0,
+      "startDate": "2022-10-19T08:25:34.413Z",
+      "endDate": "2022-10-30T08:25:34.413Z",
+      "attendees": []
+    },
+    {
+      "id": 1,
+      "owner": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z"
+      },
+      "sneakers": {
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Belart",
+        "size": 0,
+        "stateOfWear": 2,
+        "createdDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z",
+        "user": {
+          "id": 1,
+          "firstname": "",
+          "lastname": "",
+          "username": "",
+          "email": "",
+          "password": "",
+          "sneakers": [],
+          "sneakersFollowed": [],
+          "usersFollowed": [],
+          "shippingAddress": "",
+          "shippingCity": "",
+          "shippingZipCode": 0,
+          "shippingCountry": "",
+          "createDate": "2022-10-19T08:25:34.413Z",
+          "updateDate": "2022-10-19T08:25:34.413Z"
+        },
+        "pictures": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0562/9240/9498/products/airjordan4_offwhite_sailmuslim-LEFTSIDE_64437e91-b898-4393-9049-0cb9860ea3cc.jpg?v=1633386875&width=533",
+            "name": ""
+          }
+        ],
+        "follows": []
+      },
+      "initialPrice": 0,
+      "startDate": "2022-10-19T08:25:34.413Z",
+      "endDate": "2022-10-30T08:25:34.413Z",
+      "attendees": []
+    },
+    {
+      "id": 1,
+      "owner": {
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "sneakers": [],
+        "sneakersFollowed": [],
+        "usersFollowed": [],
+        "shippingAddress": "",
+        "shippingCity": "",
+        "shippingZipCode": 0,
+        "shippingCountry": "",
+        "createDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z"
+      },
+      "sneakers": {
+        "id": 1,
+        "brand": "Nike",
+        "model": "Air Belart",
+        "size": 0,
+        "stateOfWear": 2,
+        "createdDate": "2022-10-19T08:25:34.413Z",
+        "updateDate": "2022-10-19T08:25:34.413Z",
+        "user": {
+          "id": 1,
+          "firstname": "",
+          "lastname": "",
+          "username": "",
+          "email": "",
+          "password": "",
+          "sneakers": [],
+          "sneakersFollowed": [],
+          "usersFollowed": [],
+          "shippingAddress": "",
+          "shippingCity": "",
+          "shippingZipCode": 0,
+          "shippingCountry": "",
+          "createDate": "2022-10-19T08:25:34.413Z",
+          "updateDate": "2022-10-19T08:25:34.413Z"
+        },
+        "pictures": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0562/9240/9498/products/airjordan4_offwhite_sailmuslim-LEFTSIDE_64437e91-b898-4393-9049-0cb9860ea3cc.jpg?v=1633386875&width=533",
+            "name": ""
+          }
+        ],
+        "follows": []
+      },
+      "initialPrice": 0,
+      "startDate": "2022-10-19T08:25:34.413Z",
+      "endDate": "2022-10-30T08:25:34.413Z",
+      "attendees": []
     }
   ],
   "picture": [
