@@ -1,20 +1,20 @@
-import { Component } from "@angular/core";
-import { Routes } from "@angular/router";
-import { AuctionCreationComponent } from "./auction-creation/auction-creation.component";
-import { AuctionComponent } from "./auction/auction.component";
-import { AuctionsComponent } from "./auctions/auctions.component";
-import { CollectionComponent } from "./collection/collection.component";
-import { ContactComponent } from "./contact/contact.component";
-import { CreatedSneakersComponent } from "./created-sneakers/created-sneakers.component";
-import { FaqsComponent } from "./faqs/faqs.component";
-import { FavoriteComponent } from "./favorite/favorite.component";
-import { HomeComponent } from "./home/home.component";
-import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
-import { LoginComponent } from "./login/login.component";
-import { ProfileComponent } from "./profile/profile.component";
-import { RegisterComponent } from "./register/register.component";
-import { SearchComponent } from "./search/search.component";
-import { SneakersComponent } from "./sneakers/sneakers.component";
+import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
+import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
+import { AuctionComponent } from './auction/auction.component';
+import { AuctionsComponent } from './auctions/auctions.component';
+import { CollectionComponent } from './collection/collection.component';
+import { ContactComponent } from './contact/contact.component';
+import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { HomeComponent } from './home/home.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
+import { SneakersComponent } from './sneakers/sneakers.component';
 
 
 const routes: Routes = [
