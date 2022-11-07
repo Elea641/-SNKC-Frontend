@@ -14,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { SneakersComponent } from './sneakers/sneakers.component';
+import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
 
 const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
@@ -33,7 +34,7 @@ const routes: Routes = [
 	{ path: 'favorite', component: FavoriteComponent },
 	{ path: 'sneakers/:id', component: SneakersComponent },
 	{ path: 'user/:id/sneakers/create', component: CreatedSneakersComponent },
-	{ path: 'sneakers/:id/update', component: SneakersComponent },
+	{ path: 'sneakers/:id/update', component: UpdateSneakersComponent },
 	{ path: 'sneakers/:id/delete', component: SneakersComponent },
 	{ path: 'search', component: SearchComponent },
 	{ path: '', pathMatch: 'full', component: HomeComponent },
