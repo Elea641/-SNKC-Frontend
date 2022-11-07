@@ -19,10 +19,6 @@ h4 {
 	margin-top: 1.5rem;
 }
 
-.description {
-	text-align: justify;
-}
-
 .image {
 	text-align: center;
 }
@@ -114,7 +110,7 @@ td {
 	}
 
 	.room-details {
-		margin-top: 1.5rem;
+		margin-top: 4rem;
 	}
 
 	.image {

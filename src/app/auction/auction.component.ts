@@ -22,7 +22,7 @@ export class AuctionComponent implements OnInit {
 		if(this.room?.initialPrice && this.maxOffer == 0 ) {
 			if(this.bit > this.room.initialPrice) {
 				this.maxOffer = this.bit;
-				//Créer auction
+				//Créer auction avec back
 			} else {
 				throw new Error('L\'offre doit être supérieure au prix de départ');
 
@@ -31,7 +31,7 @@ export class AuctionComponent implements OnInit {
 		if(this.maxOffer > 0) {
 			if(this.bit > this.maxOffer) {
 				this.maxOffer = this.bit;
-				//Créer auction
+				//Créer auction avec back
 			} else if(this.bit == this.maxOffer) {
 				throw new Error('L\' offre doit être supérieure à l\' offre en cours');
 			} else {
