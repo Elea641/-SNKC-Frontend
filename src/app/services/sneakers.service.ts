@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { Sneakers } from '../models/sneakers';
 
 @Injectable({
@@ -23,4 +23,9 @@ export class SneakersService {
   get(): Observable<Sneakers[]> {
     return this.http.get<Sneakers[]>(`${this.baseUrl}`)
   }
+
+public deleteSneakersById(id: string): void{
+   this.http.delete(`${this.baseUrl}/${id}`).subscribe();
+  }
 }
+

@@ -29,6 +29,7 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
 import { AuctionCardComponent } from './auction-card/auction-card.component';
+import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AuctionCardComponent } from './auction-card/auction-card.component';
     LikeComponent,
     AuctionCreationComponent,
     CreatedSneakersComponent,
-    AuctionCardComponent
+    AuctionCardComponent,
+    DeletSneakersComponent
   ],
   imports: [
     BrowserModule,

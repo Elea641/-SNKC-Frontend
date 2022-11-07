@@ -5,6 +5,7 @@ import { AuctionsComponent } from './auctions/auctions.component';
 import { CollectionComponent } from './collection/collection.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
+import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { HomeComponent } from './home/home.component';
@@ -34,7 +35,7 @@ const routes: Routes = [
 	{ path: 'sneakers/:id', component: SneakersComponent },
 	{ path: 'user/:id/sneakers/create', component: CreatedSneakersComponent },
 	{ path: 'sneakers/:id/update', component: SneakersComponent },
-	{ path: 'sneakers/:id/delete', component: SneakersComponent },
+	{ path: 'sneakers/:id/delete', component: DeletSneakersComponent },
 	{ path: 'search', component: SearchComponent },
 	{ path: '', pathMatch: 'full', component: HomeComponent },
 	{ path: '**', redirectTo: '' },
