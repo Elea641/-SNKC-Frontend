@@ -20,14 +20,15 @@ export class SneakersComponent implements OnInit {
   pictures: Picture[] | undefined;
   
   
-  constructor(private sneakersService: SneakersService,
+  constructor(
+    private sneakersService: SneakersService,
     private route: ActivatedRoute,
     private helperService: HelperService,) {}
     
     ngOnInit(): void {
       
       this.route.paramMap.subscribe((params: ParamMap)  => {
-        const sneakersId = <string>params.get("id");
+        const sneakersId = <string>params.get('id');
         this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
           this.sneakersById = reponse;
         })
