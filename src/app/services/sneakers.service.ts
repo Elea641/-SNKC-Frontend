@@ -23,4 +23,9 @@ export class SneakersService {
   get(): Observable<Sneakers[]> {
     return this.http.get<Sneakers[]>(`${this.baseUrl}`)
   }
+
+public deleteSneakersById(id: string): void{
+   this.http.delete(`${this.baseUrl}/${id}`).subscribe();
+  }
 }
+

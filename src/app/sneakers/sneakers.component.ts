@@ -31,7 +31,6 @@ export class SneakersComponent implements OnInit {
         const sneakersId = <string>params.get('id');
         this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
           this.sneakersById = reponse;
-          console.log(this.sneakersById);
         })
       })
     }
@@ -43,4 +42,11 @@ export class SneakersComponent implements OnInit {
     colorsToString(color: number): string {
       return HelperService.colorsToString(color);
     }
+    
+    deleteSneakers(id: string) {
+      if(confirm('Are you sure to delete')){
+        this.sneakersService.deleteSneakersById(id);
+      }
+    }
   }
+  
