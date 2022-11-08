@@ -7,6 +7,7 @@ import { CollectionComponent } from "./collection/collection.component";
 import { ContactComponent } from "./contact/contact.component";
 import { CreatedSneakersComponent } from "./created-sneakers/created-sneakers.component";
 import { DeletSneakersComponent } from "./delet-sneakers/delet-sneakers.component";
+
 import { FaqsComponent } from "./faqs/faqs.component";
 import { FavoriteComponent } from "./favorite/favorite.component";
 import { AuthGuard } from "./guards/auth.guard";
@@ -43,7 +44,7 @@ const routes: Routes = [
     {path: 'sneakers/:id/delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
     {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
     {path: '', pathMatch: 'full', component: HomeComponent},
-    {path: '**', redirectTo: ''} 
+    {path: '**', redirectTo: ''}
 ]
 
 export { routes };
