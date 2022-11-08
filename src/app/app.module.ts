@@ -30,8 +30,9 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
 import { AuctionCardComponent } from './auction-card/auction-card.component';
-import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
+import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
+
 
 @NgModule({
   declarations: [
@@ -56,8 +57,8 @@ import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.componen
     AuctionCreationComponent,
     CreatedSneakersComponent,
     AuctionCardComponent,
-    UpdateSneakersComponent,
-    DeletSneakersComponent
+    DeletSneakersComponent,
+    UpdateSneakersComponent
   ],
   imports: [
     BrowserModule,
