@@ -34,7 +34,8 @@ export class CreatedSneakersComponent implements OnInit {
 		]
 		);
 		
-		constructor(private formBuilder: FormBuilder,
+		constructor(
+			private formBuilder: FormBuilder,
 			private route: ActivatedRoute,
 			private userService: UserService,
 			private http: HttpClient,
@@ -73,7 +74,6 @@ export class CreatedSneakersComponent implements OnInit {
 									updateOn: 'blur'
 								}
 								);
-								
 								
 								this.createdPreview$ = this.createdSneakersForm.valueChanges.pipe(
 									map((formValue) => ({
