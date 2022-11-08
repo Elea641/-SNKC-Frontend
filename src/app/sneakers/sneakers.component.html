@@ -1,1 +1,19 @@
-<app-sneakers-card></app-sneakers-card>
+<div class="background">
+  <div class="containerSneakers">
+    <div id="containerButton">
+      <button [routerLink]="['/sneakers/:id/update']">Update Sneakers</button>
+  </div>
+    <h1>SNEAKERS</h1>
+    <img [src]="'https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/qkhgcptmdr5i0lljxhot/chaussures-air-max-air-max-day.jpg'" [alt]="sneakersById?.brand">
+    <h2>Détails de la Sneakers</h2>
+    <h3>Marque : {{sneakersById?.brand | titlecase}}</h3>
+    <h3>Model : {{sneakersById?.model | titlecase}}</h3>
+    <p>Postée {{ sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
+    <p>Taille : {{sneakersById?.size}}</p>
+    <p>L'état global de ma sneakers : {{stateOfWearToString(1)}}</p>
+    <p *ngIf="sneakersById?.dateOfPurchase">Date d'achat : {{sneakersById?.dateOfPurchase | date: 'le d MMMM yyyy'}}</p>
+    <p *ngIf="sneakersById?.authentification">L'authentification est : {{ sneakersById?.authentification}}</p>
+    <p *ngIf="sneakersById?.mainColor">Ma couleur :{{colorsToString(1)}}</p> 
+  </div>
+</div>
+

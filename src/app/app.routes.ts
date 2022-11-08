@@ -41,8 +41,8 @@ const routes: Routes = [
     {path: 'sneakers/:id/delete', component: SneakersComponent, canActivate: [AuthGuard]},
     {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
     {path: '', pathMatch: 'full', component: HomeComponent},
-    {path: '**', redirectTo: ''}
-    
+    {path: '**', redirectTo: ''} 
 ]
 
 export { routes };
+

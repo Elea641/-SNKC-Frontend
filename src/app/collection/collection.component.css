@@ -55,6 +55,13 @@ button {
     color: white;
   }
 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    width: 96%;
+  }
+
 @media screen and (min-width: 768px) and (max-width: 992px) {   
     div {
         width: 25%;

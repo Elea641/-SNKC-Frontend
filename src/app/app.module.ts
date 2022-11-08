@@ -30,6 +30,7 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
 import { AuctionCardComponent } from './auction-card/auction-card.component';
+import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AuctionCardComponent } from './auction-card/auction-card.component';
     AuctionCreationComponent,
     CreatedSneakersComponent,
     AuctionCardComponent,
+    UpdateSneakersComponent
   ],
   imports: [
     BrowserModule,

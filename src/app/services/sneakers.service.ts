@@ -7,7 +7,7 @@ import { Sneakers } from '../models/sneakers';
   providedIn: 'root'
 })
 export class SneakersService {
-  
+
   baseUrl: string = "http://localhost:3000/sneakers";
   
   constructor(private http: HttpClient) { }
