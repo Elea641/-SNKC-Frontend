@@ -1,12 +1,13 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
 
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { LoginComponent } from './login/login.component';
@@ -52,7 +53,7 @@ import { AuctionCardComponent } from './auction-card/auction-card.component';
     LikeComponent,
     AuctionCreationComponent,
     CreatedSneakersComponent,
-    AuctionCardComponent
+    AuctionCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,10 +61,11 @@ import { AuctionCardComponent } from './auction-card/auction-card.component';
     HttpClientModule, 
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [ 
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

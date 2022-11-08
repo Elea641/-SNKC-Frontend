@@ -1,6 +1,8 @@
+import { Role } from "../interfaces/role";
 import { Sneakers } from "./sneakers";
 
 export class User {
+    public isAdmin!: boolean;
     constructor(
         public id: number, 
         public firstname: string, 
@@ -17,12 +19,12 @@ export class User {
         public shippingCountry: string, 
         public createDate: Date,
         public updateDate: Date,
+        public roles: Role[],
         public avatar?: string,
         public billingAddress?: string,
         public billingCity?: string,
         public billingZipCode?: number,
         public billingCountry?: string,
-         
     ) {}
 }
 
