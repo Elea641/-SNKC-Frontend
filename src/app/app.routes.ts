@@ -6,10 +6,8 @@ import { AuctionsComponent } from "./auctions/auctions.component";
 import { CollectionComponent } from "./collection/collection.component";
 import { ContactComponent } from "./contact/contact.component";
 import { CreatedSneakersComponent } from "./created-sneakers/created-sneakers.component";
-<<<<<<< HEAD
 import { DeletSneakersComponent } from "./delet-sneakers/delet-sneakers.component";
-=======
->>>>>>> e3e34c769021d1806d31fa4ad71290ce455f3c0b
+
 import { FaqsComponent } from "./faqs/faqs.component";
 import { FavoriteComponent } from "./favorite/favorite.component";
 import { AuthGuard } from "./guards/auth.guard";
@@ -20,10 +18,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from "./register/register.component";
 import { SearchComponent } from "./search/search.component";
 import { SneakersComponent } from "./sneakers/sneakers.component";
-<<<<<<< HEAD
 import { UpdateSneakersComponent } from "./update-sneakers/update-sneakers.component";
-=======
->>>>>>> e3e34c769021d1806d31fa4ad71290ce455f3c0b
 
 
 const routes: Routes = [

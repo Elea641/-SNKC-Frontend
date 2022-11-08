@@ -23,7 +23,7 @@ export class SneakersComponent implements OnInit {
   constructor(
     private sneakersService: SneakersService,
     private route: ActivatedRoute,
-    private helperService: HelperService,) {}
+    private helperService: HelperService) {}
     
     ngOnInit(): void {
       
