@@ -31,6 +31,7 @@ import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.co
 import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
 import { AuctionCardComponent } from './auction-card/auction-card.component';
 import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
+import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
     AuctionCreationComponent,
     CreatedSneakersComponent,
     AuctionCardComponent,
-    UpdateSneakersComponent
+    UpdateSneakersComponent,
+    DeletSneakersComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { AuctionsComponent } from "./auctions/auctions.component";
 import { CollectionComponent } from "./collection/collection.component";
 import { ContactComponent } from "./contact/contact.component";
 import { CreatedSneakersComponent } from "./created-sneakers/created-sneakers.component";
+import { DeletSneakersComponent } from "./delet-sneakers/delet-sneakers.component";
+
 import { FaqsComponent } from "./faqs/faqs.component";
 import { FavoriteComponent } from "./favorite/favorite.component";
 import { AuthGuard } from "./guards/auth.guard";
@@ -16,6 +18,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from "./register/register.component";
 import { SearchComponent } from "./search/search.component";
 import { SneakersComponent } from "./sneakers/sneakers.component";
+import { UpdateSneakersComponent } from "./update-sneakers/update-sneakers.component";
 
 
 const routes: Routes = [
@@ -37,12 +40,11 @@ const routes: Routes = [
     {path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard]},
     {path: 'sneakers/:id', component: SneakersComponent, canActivate: [AuthGuard]},
     {path: 'user/:id/sneakers/create', component: CreatedSneakersComponent, canActivate: [AuthGuard]},
-    {path: 'sneakers/:id/update', component: SneakersComponent, canActivate: [AuthGuard]},
-    {path: 'sneakers/:id/delete', component: SneakersComponent, canActivate: [AuthGuard]},
+    {path: 'sneakers/:id/update', component: UpdateSneakersComponent, canActivate: [AuthGuard]},
+    {path: 'sneakers/:id/delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
     {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
     {path: '', pathMatch: 'full', component: HomeComponent},
-    {path: '**', redirectTo: ''} 
+    {path: '**', redirectTo: ''}
 ]
 
 export { routes };
-

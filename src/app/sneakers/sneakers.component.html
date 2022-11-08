@@ -4,6 +4,9 @@
       <button [routerLink]="['/sneakers/:id/update']">Update Sneakers</button>
   </div>
     <h1>SNEAKERS</h1>
+    <div id="containerButton">
+      <!-- <button (click)="deleteSneakers(sneakersById?)" [routerLink]="['/sneakers/:id/delete']">Delete Sneakers</button> -->
+    </div>
     <img [src]="'https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/qkhgcptmdr5i0lljxhot/chaussures-air-max-air-max-day.jpg'" [alt]="sneakersById?.brand">
     <h2>Détails de la Sneakers</h2>
     <h3>Marque : {{sneakersById?.brand | titlecase}}</h3>
