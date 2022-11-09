@@ -1,5 +1,5 @@
-import { Role } from "../interfaces/role";
-import { Sneakers } from "./sneakers";
+import { Role } from '../interfaces/role';
+import { Sneakers } from './sneakers';
 
 export class User {
     public isAdmin!: boolean;
