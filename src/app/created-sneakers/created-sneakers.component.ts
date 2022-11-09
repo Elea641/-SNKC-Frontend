@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Colors } from '../models/enum/colors';
 import { StateOfWear } from '../models/enum/stateofwear';
 import { Sneakers } from '../models/sneakers';
@@ -89,12 +90,11 @@ export class CreatedSneakersComponent implements OnInit {
 
 	onSubmitForm(): void {
 		const sneakers = <Sneakers> this.createdSneakersForm.getRawValue();
-		console.log(sneakers);
 		this.route.paramMap.subscribe((params: ParamMap) => {
 			const userId = <string>params.get('id');
 			this.userService.getUserById(userId).subscribe((reponse: User) => {
 				sneakers.user = reponse;
-				this.http.post('http://localhost:3000/sneakers', sneakers).subscribe(res => {
+				this.http.post(environment.urlApi, sneakers).subscribe(res => {
 					this.router.navigate(['/sneakers/:id']);
 				});
 			});
