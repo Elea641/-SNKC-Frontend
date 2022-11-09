@@ -33,7 +33,6 @@ import { AuctionCardComponent } from './auction-card/auction-card.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +57,7 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
     CreatedSneakersComponent,
     AuctionCardComponent,
     DeletSneakersComponent,
-    UpdateSneakersComponent
+    UpdateSneakersComponent,
   ],
   imports: [
     BrowserModule,
