@@ -22,7 +22,7 @@ export class CreatedSneakersComponent implements OnInit {
 	createdSneakersForm!: FormGroup;
 	stateOfWearType!: FormControl;
 	createdPreview$!: Observable <Sneakers>;
-	onValidation: boolean = true;
+	onValidation = true;
 	urlRegex!: RegExp;
 	states: number[];
 	colors: number[];
