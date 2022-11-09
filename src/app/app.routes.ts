@@ -15,32 +15,32 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { SneakersComponent } from './sneakers/sneakers.component';
+import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
 
 
 const routes: Routes = [
-	{path: 'login', component: LoginComponent},
-	{path: 'register', component: RegisterComponent},
-	{path: 'contact', component: ContactComponent},
-	{path: 'legal-notice', component: LegalNoticeComponent},
-	{path: 'faqs', component: FaqsComponent},
-	{path: 'profile/:id', component: ProfileComponent},
-	{path: 'profile/:id/update', component: ProfileComponent},
-	{path: 'profile/:id/delete', component: ProfileComponent},
-	{path: 'user/:id/collection', component: CollectionComponent},
-	{path: 'user/:id/auction/create', component: AuctionCreationComponent},
-	{path: 'user/:id/auctions', component: AuctionsComponent},
-	{path: 'auction/:id/delete', component: AuctionComponent},
-	{path: 'auction/:id', component: AuctionComponent},
-	{path: 'auction/:id/payment', component: AuctionComponent},
-	{path: 'user/:id/favorite', component: FavoriteComponent},
-	{path: 'sneakers/:id', component: SneakersComponent},
-	{path: 'user/:id/sneakers/create', component: CreatedSneakersComponent},
-	{path: 'sneakers/:id/update', component: SneakersComponent},
-	{path: 'sneakers/:id/delete', component: SneakersComponent},
-	{path: 'search', component: SearchComponent},
-	{path: '', pathMatch: 'full', component: HomeComponent},
-	{path: '**', redirectTo: ''}
-
-]
+	{ path: 'login', component: LoginComponent },
+	{ path: 'register', component: RegisterComponent },
+	{ path: 'contact', component: ContactComponent },
+	{ path: 'legal-notice', component: LegalNoticeComponent },
+	{ path: 'faqs', component: FaqsComponent },
+	{ path: 'profile/:id', component: ProfileComponent },
+	{ path: 'profile/:id/update', component: ProfileComponent },
+	{ path: 'profile/:id/delete', component: ProfileComponent },
+	{ path: 'user/:id/collection', component: CollectionComponent },
+	{ path: 'user/:id/auction/create', component: AuctionCreationComponent },
+	{ path: 'user/:id/auctions', component: AuctionsComponent },
+	{ path: 'auction/:id/delete', component: AuctionComponent },
+	{ path: 'auction/:id', component: AuctionComponent },
+	{ path: 'auction/:id/payment', component: AuctionComponent },
+	{ path: 'favorite', component: FavoriteComponent },
+	{ path: 'sneakers/:id', component: SneakersComponent },
+	{ path: 'user/:id/sneakers/create', component: CreatedSneakersComponent },
+	{ path: 'sneakers/:id/update', component: UpdateSneakersComponent },
+	{ path: 'sneakers/:id/delete', component: SneakersComponent },
+	{ path: 'search', component: SearchComponent },
+	{ path: '', pathMatch: 'full', component: HomeComponent },
+	{ path: '**', redirectTo: '' },
+];
 
 export { routes };

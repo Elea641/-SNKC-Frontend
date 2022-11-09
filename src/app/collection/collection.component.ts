@@ -14,7 +14,8 @@ export class CollectionComponent implements OnInit {
 	currentPage = 1;
 	sneakersPerPage = 10;
 	
-	constructor(private sneakersService: SneakersService,
+	constructor(
+		private sneakersService: SneakersService,
 		private route: ActivatedRoute
 		) { }
 		

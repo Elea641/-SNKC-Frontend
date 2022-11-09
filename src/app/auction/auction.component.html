@@ -1,1 +1,47 @@
-<p>auction works!</p>
+<div class="container">
+	<div *ngIf="maxOffer == 0">
+		<h2>Prix de départ :</h2>
+		<h1>{{ room?.initialPrice }}</h1>
+	</div>
+	<div *ngIf="maxOffer > 0">
+		<h2>Dernière enchère proposée :</h2>
+		<h1>{{ maxOffer }}</h1>
+	</div>
+
+	<div class="room">
+		<div class="image">
+			<img
+				[src]="room?.sneakers?.pictures?.[0]?.url"
+				[alt]="room?.sneakers?.model"
+			/>
+		</div>
+		<div class="room-details">
+			<input
+				placeholder="Montant de votre enchère"
+				type="number"
+				[(ngModel)]="bit"
+			/>
+			<button (click)="onSubmitAuction()" class="bid">Enchérir</button>
+			<p>Prix de départ : {{ room?.initialPrice }}</p>
+			<p>Temps restant pour enchère : {{ room?.endDate }}</p>
+			<div class="block-description">
+			</div>
+		</div>
+	</div>
+	<div class="auctions">
+		<h3>Historique des enchères</h3>
+		<table>
+			<tr>
+				<th>Pseudo</th>
+				<th>Date et heure</th>
+				<th>Montant enchère</th>
+			</tr>
+
+			<tr *ngFor="let auction of auctions">
+				<td>{{ auction?.user?.username }}</td>
+				<td>{{ auction?.date | date: "medium":"GMT" }}</td>
+				<td>{{ auction?.offer }}</td>
+			</tr>
+		</table>
+	</div>
+</div>
