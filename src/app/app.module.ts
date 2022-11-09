@@ -1,12 +1,13 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
 
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { LoginComponent } from './login/login.component';
@@ -29,7 +30,9 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { AuctionCreationComponent } from './auction-creation/auction-creation.component';
 import { AuctionCardComponent } from './auction-card/auction-card.component';
+import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
+
 
 @NgModule({
   declarations: [
@@ -54,6 +57,7 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
     AuctionCreationComponent,
     CreatedSneakersComponent,
     AuctionCardComponent,
+    DeletSneakersComponent,
     UpdateSneakersComponent
   ],
   imports: [
@@ -62,10 +66,11 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
     HttpClientModule, 
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [ 
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

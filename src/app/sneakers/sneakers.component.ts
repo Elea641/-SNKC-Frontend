@@ -14,6 +14,7 @@ import { Picture } from '../models/picture';
 
 export class SneakersComponent implements OnInit {
 
+
 	sneakersById: Sneakers | undefined;
 	stateOfWear: number | undefined;
 	mainColor: number | undefined;
@@ -28,18 +29,24 @@ export class SneakersComponent implements OnInit {
 	ngOnInit(): void {
 
 		this.route.paramMap.subscribe((params: ParamMap)  => {
-			const sneakersId = <string>params.get('id');
-			this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
+			const sneakersId = <string>params.get('id');				this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
 				this.sneakersById = reponse;
-				console.log(this.sneakersById);
 			});
 		});
 	}
 
 	stateOfWearToString(stateOfWear: number): string {
-		return HelperService.stateOfWearToString(stateOfWear);		}
+		return HelperService.stateOfWearToString(stateOfWear);
+	}
 
 	colorsToString(color: number): string {
 		return HelperService.colorsToString(color);
 	}
+
+	deleteSneakers(id: string) {
+		if(confirm('Are you sure to delete')){
+			this.sneakersService.deleteSneakersById(id);
+		}
+	}
 }
+
