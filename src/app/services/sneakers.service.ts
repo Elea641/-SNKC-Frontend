@@ -19,7 +19,7 @@ export class SneakersService {
 	}
 
 	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + { 'id': sessionStorage.getItem('id')});
+		return this.http.get<Sneakers[]>(environment.urlApi + id);
 	}
 
 	get(): Observable<Sneakers[]> {
