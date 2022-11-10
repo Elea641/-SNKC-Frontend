@@ -18,7 +18,6 @@ import { UserService } from '../services/user.service';
 	styleUrls: ['./created-sneakers.component.css'],
 })
 export class CreatedSneakersComponent implements OnInit {
-		
 	createdSneakersForm!: FormGroup;
 	stateOfWearType!: FormControl;
 	createdPreview$!: Observable <Sneakers>;
@@ -33,7 +32,6 @@ export class CreatedSneakersComponent implements OnInit {
 			)
 		]
 		);
-		
 		constructor(
 			private formBuilder: FormBuilder,
 			private route: ActivatedRoute,
@@ -45,18 +43,13 @@ export class CreatedSneakersComponent implements OnInit {
 				this.states = Object.keys(StateOfWear).filter(
 					(stateOfWear: string) => parseInt(stateOfWear)).map(
 						(key: string) => parseInt(key));
-						
 						this.colors = Object.keys(Colors).filter(
 							(colors: string) => parseInt(colors)).map(
 								(key: string) => parseInt(key));
 							}
-							
 							ngOnInit(): void {
-								
 								this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
-								
 								this.createdSneakersForm = this.formBuilder.group({
-									
 									brand: [null, [Validators.required]],
 									model: [null, [Validators.required]],
 									size: [null, [Validators.required]],
@@ -68,13 +61,19 @@ export class CreatedSneakersComponent implements OnInit {
 									createdDate: new Date(),
 									id: 0,
 									updateDate: new Date(),
-									follows: 0, 
+				follows: 0,
+									follows: 0,
+				follows: 0,
+									follows: 0,
+				follows: 0,
+									follows: 0,
+				follows: 0,
 								},
 								{
 									updateOn: 'blur'
 								}
 								);
-								
+
 								this.createdPreview$ = this.createdSneakersForm.valueChanges.pipe(
 									map((formValue) => ({
 										...formValue,
@@ -85,7 +84,7 @@ export class CreatedSneakersComponent implements OnInit {
 									}))
 									);
 								}
-								
+
 								onSubmitForm(): void {
 									const sneakers = <Sneakers> this.createdSneakersForm.getRawValue();
 									console.log(sneakers)
@@ -102,8 +101,19 @@ export class CreatedSneakersComponent implements OnInit {
 							stateOfWearToString(stateOfWear: number): string {
 								return HelperService.stateOfWearToString(stateOfWear);
 							}
-							
+
 							colorsToString(color: number): string {
 								return HelperService.colorsToString(color);
 							}
 						}
+
+
+
+
+
+
+
+
+
+
+
