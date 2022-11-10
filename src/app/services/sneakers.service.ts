@@ -9,25 +9,24 @@ import { environment } from 'src/environments/environment';
 })
 export class SneakersService {
 
-
 	baseUrl = 'http://localhost:3000/sneakers';
 
 	constructor(private http: HttpClient) { }
 
 	getSneakersById(id: string): Observable<Sneakers> {
-		return this.http.get<Sneakers>(environment.urlApi + id);
+		return this.http.get<Sneakers>(`${this.baseUrl}/${id}`);
 	}
 
 	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + id);
+		return this.http.get<Sneakers[]>(`${this.baseUrl}?user.id=${id}`);
 	}
 
 	get(): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi);
+		return this.http.get<Sneakers[]>(`${this.baseUrl}`);
 	}
 
 	public deleteSneakersById(id: string): void{
-		this.http.delete(environment.urlApi + id).subscribe();
+		this.http.delete(`${this.baseUrl}/${id}`).subscribe();
 	}
 
 // 	postSneakersCreated(id: string): Observable<Sneakers> {

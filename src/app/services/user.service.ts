@@ -10,16 +10,16 @@ import { Role } from '../interfaces/role';
 })
 export class UserService {
 
-  baseUrl: string = "http://localhost:3000/users";
-
   constructor(private http: HttpClient) { }
+
+  baseUrl = 'http://localhost:3000/sneakers';
 
   getUserById(id: string): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`)
   }
 
   getConnectedUser(): Observable<User> {
-    return this.http.get<User>(environment.urlApi + 'users/me').pipe(
+    return this.http.get<User>(`${this.baseUrl}` + 'users/me').pipe(
       map((user: User) => {
         user.isAdmin = user.roles.some((role: Role) => role.id === 1);
         return user;
