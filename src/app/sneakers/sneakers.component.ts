@@ -4,6 +4,8 @@ import { Sneakers } from '../models/sneakers';
 import { SneakersService } from '../services/sneakers.service';
 import { HelperService } from '../services/helper.service';
 import { Picture } from '../models/picture';
+import { AuthService } from '../services/auth.service';
+import { User } from '../models/user';
 
 
 @Component({
@@ -14,17 +16,23 @@ import { Picture } from '../models/picture';
 
 export class SneakersComponent implements OnInit {
 
-
-	sneakersById: Sneakers | undefined;
-	stateOfWear: number | undefined;
-	mainColor: number | undefined;
-	pictures: Picture[] | undefined;
+	public sneakersById: Sneakers | undefined;
+	public stateOfWear: number | undefined;
+	public mainColor: number | undefined;
+	public pictures: Picture[] | undefined;
+	public id: string | undefined;
 
 
 	constructor(
 		private sneakersService: SneakersService,
 		private route: ActivatedRoute,
-		private helperService: HelperService) {}
+		private helperService: HelperService,
+		private authService: AuthService
+		) {
+			this.authService.currentUser.subscribe((user: User | undefined) => {
+				this.id = user?.id.toString();
+			});
+		}
 
 	ngOnInit(): void {
 

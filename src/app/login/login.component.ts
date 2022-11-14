@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         this.authService.signIn(this.form.getRawValue()).subscribe(
           (response: LoginResponse) => {
             this.authService.setTokenToSession(response.accessToken, response.refreshToken);
-            this.router.navigate(['dashboard']);
+            this.router.navigate(['home']);
           }
           )
         }
