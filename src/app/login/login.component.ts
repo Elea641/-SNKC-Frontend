@@ -39,7 +39,7 @@ export class LoginComponent {
 						response.accessToken,
 						response.refreshToken
 					);
-					this.router.navigate(['dashboard']);
+					this.router.navigate(['home']);
 				});
 		}
 	}
