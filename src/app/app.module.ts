@@ -1,7 +1,7 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as fr from '@angular/common/locales/fr';
@@ -33,49 +33,49 @@ import { AuctionCardComponent } from './auction-card/auction-card.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderNavComponent,
-    FooterComponent,
-    LoginComponent,
-    RegisterComponent,
-    ContactComponent,
-    LegalNoticeComponent,
-    ProfileComponent,
-    CollectionComponent,
-    AuctionsComponent,
-    AuctionComponent,
-    FavoriteComponent,
-    SneakersComponent,
-    SearchComponent,
-    HomeComponent,
-    FaqsComponent,
-    SneakersCardComponent,
-    LikeComponent,
-    AuctionCreationComponent,
-    CreatedSneakersComponent,
-    AuctionCardComponent,
-    DeletSneakersComponent,
-    UpdateSneakersComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule, 
-    ReactiveFormsModule,
-    FormsModule,
-    NgxPaginationModule,
-  ],
-  providers: [ 
-    { provide: LOCALE_ID, useValue: 'fr-FR'},
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderNavComponent,
+		FooterComponent,
+		LoginComponent,
+		RegisterComponent,
+		ContactComponent,
+		LegalNoticeComponent,
+		ProfileComponent,
+		CollectionComponent,
+		AuctionsComponent,
+		AuctionComponent,
+		FavoriteComponent,
+		SneakersComponent,
+		SearchComponent,
+		HomeComponent,
+		FaqsComponent,
+		SneakersCardComponent,
+		LikeComponent,
+		AuctionCreationComponent,
+		CreatedSneakersComponent,
+		AuctionCardComponent,
+		DeletSneakersComponent,
+		UpdateSneakersComponent,
+	],
+	imports: [
+		BrowserModule,
+		RouterModule.forRoot(routes),
+		HttpClientModule,
+		ReactiveFormsModule,
+		FormsModule,
+		NgxPaginationModule,
+	
+	],
+	providers: [
+		{ provide: LOCALE_ID, useValue: 'fr-FR' },
+		{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+	],
+	bootstrap: [AppComponent],
 })
-export class AppModule { 
-  constructor(){
-    registerLocaleData(fr.default);
-  }
+export class AppModule {
+	constructor() {
+		registerLocaleData(fr.default);
+	}
 }

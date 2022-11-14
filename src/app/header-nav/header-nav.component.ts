@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component } from '@angular/core';
+import { User } from '../models/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
 	selector: 'app-header-nav',
@@ -16,6 +18,13 @@ export class HeaderNavComponent {
 	public disconnect: string = 'Déconnection';
 	public search: string = 'Rechercher';
 	public isDisplayingSearchBar: boolean = false;
+	public id: string | undefined;
+
+	constructor(private authService: AuthService) {
+		this.authService.currentUser.subscribe((user: User | undefined) => {
+			this.id = user?.id.toString();
+		});
+	}
 
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;

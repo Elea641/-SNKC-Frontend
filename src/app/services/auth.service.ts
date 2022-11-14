@@ -1,14 +1,12 @@
 import { Router } from '@angular/router';
 import { RegisterRequest } from './../interfaces/register-request';
-import { ParsedToken } from '../interfaces/parsed-token';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../interfaces/login-response';
 import { User } from '../models/user';
 import { UserService } from './user.service';
-import jwt_decode from 'jwt-decode';
 
 @Injectable({
 	providedIn: 'root',

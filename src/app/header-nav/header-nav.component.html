@@ -15,19 +15,19 @@
         <input class="bug" type="checkbox" id="btn">
         <ul class="nav-menu">
           <li class="nav-item">
-            <a [routerLink]="['/user/:id/sneakers/create']">{{createdSneakers}}</a>
+            <a [routerLink]="['user', id, 'sneakers', 'create']">{{createdSneakers}}</a>
           </li>
           <div class="trait_dessus"><hr></div>
           <li class="nav-item">
-            <a [routerLink]="['/user/:id/collection']">{{collection}}</a>
+            <a [routerLink]="['user', id, 'collection']">{{collection}}</a>
           </li>
           <div class="trait_dessus"><hr></div>
           <li class="nav-item">
-            <a [routerLink]="['/user/:id/auctions']">{{auctions}}</a>
+            <a [routerLink]="['user', id, 'auctions']">{{auctions}}</a>
           </li>
           <div class="trait_dessus"><hr></div>
           <li class="nav-item">
-            <a [routerLink]="['favorite']">{{favorite}}</a>
+            <a [routerLink]="['user', id, 'favorite']">{{favorite}}</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
         <input class="bug" type="checkbox" id="btn2">
         <ul class="nav-menu1">
           <li class="nav-item1">
-            <a [routerLink]="['profile/:id']">{{profile}}</a>
+            <a [routerLink]="['/profile/:id']">{{profile}}</a>
           </li>
           <div class="trait_dessus"><hr></div>
           <li class="nav-item1">
