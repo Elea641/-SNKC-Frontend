@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 	styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
+
+	public name: string = 'SABATIER';
+	public firstname: string = 'Camille';
+	public pseudo: string = 'Pépito 👐';
+
 }

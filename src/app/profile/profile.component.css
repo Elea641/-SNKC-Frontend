@@ -1,3 +1,7 @@
+.principal{
+	justify-content: center;
+}
+
 .profile-card{
 	width:320px;
 	display: flex;
@@ -31,7 +35,8 @@
 	align-self: center;
 	border-radius: 50%;
 	transition: all 150ms ease-in-out;
-	z-index: 100;
+	z-index: 0;
+
 }
 .image:hover{
 	border-radius: 10%;
@@ -41,16 +46,4 @@
 }
 .bottom h2{
 	text-align:center;
-}
-.card-footer{
-	width: 310px;
-	border-top: 1px solid gray;
-	align-self: center;
-}
-.card-footer ul{
-	display:flex;
-	justify-content: flex-start;;
-}
-.card-footer ul li:last-child{
-	margin-left: 85px;
 }
