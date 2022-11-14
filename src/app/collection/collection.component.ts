@@ -27,13 +27,7 @@ export class CollectionComponent implements OnInit {
 
 		
 		
-		ngOnInit(): void {
-			// this.route.paramMap.subscribe((params: ParamMap) => {
-			// 	const userId = <string>params.get("id");
-			// 	this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
-			// 		this.sneakersByUserId = response;
-			// 	});
-			// });
+		ngOnInit(): void {		
 			this.route.paramMap.subscribe((params: ParamMap) => {
 				const userId = <string>params.get("id");
 				this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
