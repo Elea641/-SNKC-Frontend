@@ -9,6 +9,7 @@ import { Colors } from '../models/enum/colors';
 import { StateOfWear } from '../models/enum/stateofwear';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
+import { AuthService } from '../services/auth.service';
 import { HelperService } from '../services/helper.service';
 import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
@@ -34,14 +35,18 @@ export class CreatedSneakersComponent implements OnInit {
 			)
 		]
 	);
+	public id: string | undefined;
 
 	constructor(
-		private formBuilder: FormBuilder,
-		private route: ActivatedRoute,
-		private userService: UserService,
-		private http: HttpClient,
-		private router: Router,
-		private sneakersService: SneakersService
+
+			private formBuilder: FormBuilder,
+			private route: ActivatedRoute,
+			private userService: UserService,
+			private http: HttpClient,
+			private router: Router,
+			private sneakersService: SneakersService,
+			private authService: AuthService
+
 	) {
 		this.states = Object.keys(StateOfWear).filter(
 			(stateOfWear: string) => parseInt(stateOfWear)).map(
@@ -50,6 +55,10 @@ export class CreatedSneakersComponent implements OnInit {
 		this.colors = Object.keys(Colors).filter(
 			(colors: string) => parseInt(colors)).map(
 			(key: string) => parseInt(key));
+
+		this.authService.currentUser.subscribe((user: User | undefined) => {
+		this.id = user?.id.toString();
+	});
 	}
 
 	ngOnInit(): void {
@@ -91,15 +100,15 @@ export class CreatedSneakersComponent implements OnInit {
 	onSubmitForm(): void {
 		const sneakers = <Sneakers> this.createdSneakersForm.getRawValue();
 		this.route.paramMap.subscribe((params: ParamMap) => {
-			const userId = <string>params.get('id');
-			this.userService.getUserById(userId).subscribe((reponse: User) => {
+			this.userService.getConnectedUser().subscribe((reponse: User) => {
 				sneakers.user = reponse;
 				this.http.post(environment.urlApi, sneakers).subscribe(res => {
-					this.router.navigate(['/sneakers/:id']);
+					this.router.navigate(['sneakers', 'id']);
 				});
 			});
 		});
 	}
+
 	stateOfWearToString(stateOfWear: number): string {
 		return HelperService.stateOfWearToString(stateOfWear);
 	}

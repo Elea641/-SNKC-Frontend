@@ -10,12 +10,10 @@ import { Role } from '../interfaces/role';
 })
 export class UserService {
 
-  baseUrl: string = "http://localhost:3000/users";
-
   constructor(private http: HttpClient) { }
 
   getUserById(id: string): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/${id}`)
+    return this.http.get<User>(environment.urlApi + id)
   }
 
   getConnectedUser(): Observable<User> {

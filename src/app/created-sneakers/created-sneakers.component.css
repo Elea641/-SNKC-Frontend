@@ -1,5 +1,6 @@
     *{
-      background-color: #00adb5;
+      background-color: white;
+      margin: 2%;
     }
     
     .background{
@@ -83,8 +84,8 @@
       background-color: white;
       margin-top: 10%;
       margin-bottom: 5%;
-      width: 50%;
-      height: 80px;
+      width: 70%;
+      height: 60px;
       border-radius: 2rem;
       text-align: center;
       padding: 15px;
@@ -115,8 +116,10 @@
       width: 100%;
       margin: 20px auto;
       padding: 40PX;
-      border-radius: 10%;
       background-color: white;
+      position: relative;
+      background-color: white;
+      box-shadow: 5px 5px 10px #999;
     }
     
     .sneakers-card{
@@ -124,8 +127,10 @@
       width: 100%;
       margin: 20px auto;
       padding: 40PX;
-      border-radius: 10%;
       background-color: white;
+      position: relative;
+      background-color: white;
+      box-shadow: 5px 5px 10px #999;
     }
     
     @media screen and (min-width: 768px) and (max-width: 992px) {

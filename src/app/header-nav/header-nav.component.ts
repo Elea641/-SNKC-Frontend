@@ -20,7 +20,6 @@ export class HeaderNavComponent {
 	public isDisplayingSearchBar: boolean = false;
 	public id: string | undefined;
 
-
 constructor(private authService: AuthService){
 	this.authService.currentUser.subscribe((user: User | undefined) => {
 		this.id = user?.id.toString();
