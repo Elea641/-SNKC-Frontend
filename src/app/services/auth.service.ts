@@ -9,6 +9,8 @@ import { LoginResponse } from '../interfaces/login-response';
 import { User } from '../models/user';
 import { UserService } from './user.service';
 import jwt_decode from "jwt-decode";
+import jwtDecode from 'jwt-decode';
+import { TokenContent } from '../models/tokenContent';
 
 @Injectable({
   providedIn: 'root'
@@ -54,5 +56,10 @@ export class AuthService {
     this.currentUser.next(undefined);
     this.router.navigate(['']);
   }
+
+getCurrentUserId(): number {
+  const tokenContent: TokenContent = jwtDecode(<string> sessionStorage.getItem('token'));
+  return tokenContent.id
+}
 
 }
