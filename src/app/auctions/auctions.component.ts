@@ -16,11 +16,11 @@ export class AuctionsComponent implements OnInit {
 	constructor(private roomService: RoomService, private route: ActivatedRoute) {}
 
 	ngOnInit(): void {
-		this.route.paramMap.subscribe((params: ParamMap) => {
-			const userId = <string>params.get('id');
-			this.roomService
-				.getAllRoomsByUserId(userId)
-				.subscribe((response: Room[]) => (this.usersRooms = response));
-		});
+		// this.route.paramMap.subscribe((params: ParamMap) => {
+		// 	const userId = <string>params.get('id');
+		// 	this.roomService
+		// 		.getAllRoomsByUserId(userId)
+		// 		.subscribe((response: Room[]) => (this.usersRooms = response));
+		// });
 	}
 }
