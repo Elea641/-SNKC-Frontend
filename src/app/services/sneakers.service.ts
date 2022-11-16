@@ -16,7 +16,15 @@ export class SneakersService {
 	}
 	
 	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + id);
+		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers?userId=' + id);
+	}
+
+	getSneakersForCurrentUser(): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers');
+	}
+
+	postSneakersForCurrentUser(sneakers: Sneakers): Observable<Sneakers> {
+		return this.http.post<Sneakers>(environment.urlApi, sneakers);
 	}
 	
 	get(): Observable<Sneakers[]> {
