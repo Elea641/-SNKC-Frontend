@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component } from '@angular/core';
 import { Sneakers } from '../models/sneakers';
 import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
@@ -9,14 +8,12 @@ import { UserService } from '../services/user.service';
 	templateUrl: './favorite.component.html',
 	styleUrls: ['./favorite.component.css'],
 })
-export class FavoriteComponent implements OnInit {
+export class FavoriteComponent {
+	favoriteSneakers: Sneakers[] | undefined;
 
-  favoriteSneakers: Sneakers[] | undefined;
+	constructor(
+		private sneakersService: SneakersService,
+		private UserService: UserService
+	) {}
 
-  constructor(private sneakersService: SneakersService, private UserService: UserService)
-   { }
-
-  ngOnInit(): void {
-
-}
 }

@@ -23,7 +23,7 @@
 			/>
 			<button (click)="onSubmitAuction()" class="bid">Enchérir</button>
 			<p>Prix de départ : {{ room?.initialPrice }}</p>
-			<p>Temps restant pour enchère : {{ room?.endDate }}</p>
+			<p>Fermeture de la vente : {{ room?.endDate | date: "medium":"GMT" }}</p>
 			<div class="block-description">
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 			</tr>
 
 			<tr *ngFor="let auction of auctions">
-				<td>{{ auction?.user?.username }}</td>
+				<td>{{ auction?.userUsername }}</td>
 				<td>{{ auction?.date | date: "medium":"GMT" }}</td>
 				<td>{{ auction?.offer }}</td>
 			</tr>

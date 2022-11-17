@@ -6,23 +6,21 @@ import { User } from '../models/user';
 import { Role } from '../interfaces/role';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class UserService {
+	constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+	getUserById(id: string): Observable<User> {
+		return this.http.get<User>(environment.urlApi + id);
+	}
 
-  getUserById(id: string): Observable<User> {
-    return this.http.get<User>(environment.urlApi + id)
-  }
-
-  getConnectedUser(): Observable<User> {
-    return this.http.get<User>(environment.urlApi + 'users/me').pipe(
-      map((user: User) => {
-        user.isAdmin = user.roles?.some((role: Role) => role.id === 1);
-        return user;
-      })
-    );
-  }
-
+	getConnectedUser(): Observable<User> {
+		return this.http.get<User>(environment.urlApi + 'users/me').pipe(
+			map((user: User) => {
+				user.isAdmin = user.roles?.some((role: Role) => role.id === 1);
+				return user;
+			})
+		);
+	}
 }
