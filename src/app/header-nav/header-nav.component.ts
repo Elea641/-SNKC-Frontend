@@ -26,7 +26,4 @@ constructor(private authService: AuthService){
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
 	}
-
-
-
 }

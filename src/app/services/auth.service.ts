@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../interfaces/login-response';
 import { User } from '../models/user';
 import { UserService } from './user.service';
-import jwt_decode from "jwt-decode";
 import jwtDecode from 'jwt-decode';
 import { TokenContent } from '../models/tokenContent';
 

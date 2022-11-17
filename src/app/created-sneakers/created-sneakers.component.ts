@@ -54,8 +54,6 @@ export class CreatedSneakersComponent implements OnInit {
 		this.colors = Object.keys(Colors).filter(
 			(colors: string) => parseInt(colors)).map(
 			(key: string) => parseInt(key));
-
-	;
 	}
 
 	ngOnInit(): void {
