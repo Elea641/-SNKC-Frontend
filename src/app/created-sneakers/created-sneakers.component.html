@@ -4,10 +4,10 @@
       <h1>AJOUTER SNEAKERS</h1>
       <form [formGroup]="createdSneakersForm">   
         <div class="colorForm">
-          <div class="form-group" formArrayName="pictures" *ngFor="let picture of pictures.controls; let i = index">
+          <!-- <div class="form-group" formArrayName="pictures" *ngFor="let picture of pictures.controls; let i = index">
             <label for="pictures">URL de l'image</label>
             <input id="pictures" type="text" formControlName="{{i}}">
-          </div>
+          </div> -->
           <div class="form-group">
             <label for="brand">Marque</label>
             <input id="brand" type="text" formControlName="brand">
@@ -31,10 +31,6 @@
             <input id="dateOfPurchase" type="date" formControlName="dateOfPurchase">
           </div>
           <div class="form-group">
-            <label for="authentification">Preuve d'authentification</label>
-            <input id="authentification" type="text" formControlName="authentification">
-          </div>
-          <div class="form-group">
             <label for="mainColor">Couleur</label>
             <select id="mainColor" formControlName="mainColor">
             <option id="optionForm" *ngFor="let color of colors" [ngValue]="color">{{colorsToString(color)}}</option>
@@ -50,7 +46,7 @@
   <div class="containerPreview">
     <div class="sneakers-card" *ngIf="createdPreview$ | async as sneakers">
       <h1>PREVIEW SNEAKERS</h1>
-      <img [src]="sneakers.pictures" [alt]="sneakers.brand">
+      <!-- <img [src]="sneakers.pictures" [alt]="sneakers.brand"> -->
       <h2>Détails de la Sneakers</h2>
       <h2>Marque : {{createdSneakersForm.controls['brand'].value | uppercase }}</h2>
       <h3>Model : {{createdSneakersForm.controls['model'].value | lowercase}}</h3>
@@ -58,7 +54,6 @@
       <p>Taille : {{createdSneakersForm.controls['size'].value}}</p>
       <p>L'état global de ma sneakers : {{stateOfWearToString(createdSneakersForm.controls['stateOfWear'].value)}}</p>
       <p *ngIf="sneakers.createdDate">Date d'achat : {{createdSneakersForm.controls['dateOfPurchase'].value | date: 'd MMMM yyyy'}}</p>
-      <p *ngIf="sneakers.authentification">L'authentification est : {{ sneakers.authentification}}</p>
       <p *ngIf="sneakers.mainColor">Ma couleur : {{colorsToString(createdSneakersForm.controls['mainColor'].value)}}</p>
     </div>
   </div>

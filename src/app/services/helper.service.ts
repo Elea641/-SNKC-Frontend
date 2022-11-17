@@ -32,7 +32,6 @@ static stateOfWearToString(stateofwear: number): string{
 }
 
 static colorsToString(colors: number): string{
-
   switch(colors) {
 
     case Colors.WHITE:
