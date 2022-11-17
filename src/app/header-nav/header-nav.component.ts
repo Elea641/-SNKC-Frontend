@@ -20,7 +20,7 @@ export class HeaderNavComponent {
 	public isDisplayingSearchBar: boolean = false;
 	public id: string | undefined;
 
-constructor(private authService: AuthService){	
+	constructor(private authService: AuthService){
 }
 
 	onClick(): void {
