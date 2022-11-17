@@ -1,16 +1,72 @@
-<form [formGroup]="form" (ngSubmit)="onRegisterSubmit()">
-    <div class="form-card">
-        <div>
-            <label for="email">Email</label>
-            <input type="email" formControlName="email" name="email">
-        </div>
-        <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" formControlName="password" name="password">
-        </div>
-        <div id="containerButton">
-            <button type="submit">S'incrire</button>
-        </div>
-    </div>
-</form>
+<!--<form [formGroup]="form" (ngSubmit)="onRegisterSubmit()">-->
+<!--    <div class="form-card">-->
+<!--        <div>-->
+<!--            <label for="email">Email</label>-->
+<!--            <input type="email" formControlName="email" name="email">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="password">Mot de passe</label>-->
+<!--            <input type="password" formControlName="password" name="password">-->
+<!--        </div>-->
+<!--					<div>-->
+<!--						<label for="text">Nom</label>-->
+<!--						<input type="text" formControlName="lastName" name="lastName">-->
+<!--					</div>-->
+<!--					<div>-->
+<!--						<label for="text">Prénom</label>-->
+<!--						<input type="text" formControlName="firstName" name="firstName">-->
+<!--					</div>-->
+<!--					<div>-->
+<!--						<label for="text">Pseudo</label>-->
+<!--						<input type="text" formControlName="pseudo" name="pseudo">-->
+<!--					</div>-->
+<!--        <div id="containerButton">-->
+<!--            <button type="submit">S'incrire</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</form>-->
+<div class="principal">
+<div class="profile-card2">
+	<div class="card-header2">
+		<h2>Inscription</h2>
+	</div>
+	<form [formGroup]="form" (ngSubmit)="onRegisterSubmit()">
+		<div class="updateCard">
+			<div class="form-group">
+				<label for="text">Nom </label>
+				<input type="text" formControlName="lastName"/>
+			</div>
+			<div class="form-group">
+				<label for="text">Prénom </label>
+				<input type="text" formControlName="firstName"/>
+			</div>
+			<div class="form-group">
+				<label for="text">Pseudo </label>
+				<input type="text" formControlName="pseudo"/>
+			</div>
+			<div class="form-group">
+				<label for="text">Descriptif </label>
+				<input type="text" formControlName="descriptif"/>
+			</div>
+			<!--			voir upload photo-->
+			<div class="form-group">
+				<label for="text">Photo de profil</label>
+				<input type="text" formControlName="descriptif"/>
+			</div>
+			<div class="form-group">
+				<label for="email">Email </label>
+				<input type="email" formControlName="email"/>
+			</div>
+			<div class="form-group">
+				<label for="password">Mot de passe </label>
+				<input type="password" formControlName="password"/>
+			</div>
 
+
+			<div id="containerButton">
+				<button type="submit">S'inscrire</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>

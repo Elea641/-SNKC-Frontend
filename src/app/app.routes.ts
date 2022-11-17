@@ -28,7 +28,7 @@ const routes: Routes = [
 	{path: 'contact', component: ContactComponent},
 	{path: 'legal-notice', component: LegalNoticeComponent},
 	{path: 'faqs', component: FaqsComponent},
-	{path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard]},
+	{path: 'profile/me', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'profile/:id/update', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'profile/:id/delete', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'user/:id/collection', component: CollectionComponent, canActivate: [AuthGuard]},

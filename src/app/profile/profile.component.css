@@ -1,5 +1,7 @@
 .principal{
-	justify-content: center;
+	display: flex;
+	justify-content: space-evenly;
+margin: auto;
 }
 
 .profile-card{
@@ -8,6 +10,7 @@
 	flex-direction: column;
 	border: 1px solid gray;
 	transition: all 150ms ease-in-out;
+	border-radius: 2rem;
 }
 .profile-card:hover{
 	border: 1px solid blue;
@@ -16,12 +19,13 @@
 .card-header{
 	align-self: center;
 	text-align: center;
-	background: #2196F3;
+	background:  #00adb5;
 	color: #FAFAFA;
-	border-left: 66px solid #2196F3;
-	border-right: 65px solid #2196F3;
+	border-left: 66px solid  #00adb5;
+	border-right: 65px solid  #00adb5;
 	padding-bottom: 115px;
 	transition: all 150ms ease-in-out;
+	border-radius: 2rem;
 }
 .card-header:hover{
 	background: #0960a5;
@@ -44,6 +48,119 @@
 .card-info{
 	padding: 1em;
 }
-.bottom h2{
+/*.bottom h2{*/
+/*	text-align:center;*/
+/*}*/
+
+.profile-card2{
+	width:320px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid gray;
+	transition: all 150ms ease-in-out;
+	border-radius: 2rem;
+}
+.profile-card2:hover{
+	border: 1px solid blue;
+	box-shadow: 0 0 10px 1px;
+}
+.card-header2{
+	align-self: center;
+	text-align: center;
+	background: #00adb5;
+	color: #FAFAFA;
+	border-left: 66px solid #00adb5;
+	border-right: 65px solid #00adb5;
+	transition: all 150ms ease-in-out;
+	border-radius: 2rem;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.card-header2:hover{
+	background: #0960a5;
+	border-left: 66px solid #0960a5;
+	border-right: 65px solid #0960a5;
+}
+.image2{
+	margin-top: -90px;
+	height: 150px;
+	width: 150px;
+	align-self: center;
+	border-radius: 50%;
+	transition: all 150ms ease-in-out;
+	z-index: 100;
+}
+.image2:hover{
+	border-radius: 10%;
+}
+.card-info2{
+	padding: 1em;
+}
+.bottom2 h2{
 	text-align:center;
+}
+.card-footer2{
+	width: 310px;
+	border-top: 1px solid gray;
+	align-self: center;
+}
+.card-footer2 ul{
+	display:flex;
+	justify-content: flex-start;;
+}
+.card-footer2 ul li:last-child{
+	margin-left: 85px;
+}
+.form-group{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10px;
+
+}
+
+#containerButton {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+button {
+	background-color: white;
+	width: 50%;
+	height: 70px;
+	border-radius: 2rem;
+	padding: 15px;
+	font-size: 20px;
+	text-align: center;
+	margin: 10px;
+}
+
+select{
+	background-color: white;
+	width: 50%;
+	border-radius: 2rem;
+	font-size: 16px;
+	text-align: center;
+}
+
+button:hover {
+	border-radius: 2rem;
+	background: #74c2cc;
+}
+
+button:active {
+	border-radius: 2rem;
+	background: #41a1ae;
+	color: white;
+}
+
+input {
+	border-radius: 2rem;
+	text-align: center;
+}
+
+.updateCard {
+	margin-top: 10px;
 }

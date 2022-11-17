@@ -1,31 +1,41 @@
 <div class="principal">
-<div class="profile-card">
-	<div class="card-header">
-		<h1>{{pseudo}}</h1>
-		<p> {{name}} {{firstname}}</p>
-		<p>Collectionneuse hors-"paires"</p>
+	<div class="profile-card">
+		<div class="card-header">
+			<h1>{{name}} {{firstname}}</h1>
+		</div>
+		<img class="image" src="assets/Gramille.jpeg" alt="profile Image">
+		<div class="card-info">
+			<u><strong>Pseudo :</strong></u>
+			<p>{{pseudo}}</p>
+			<br>
+			<u><strong>Descriptif :</strong></u>
+			<br>
+			<br>
+			<p>Je suis une passionnée, les Air Max et Tn font parties de mes best !</p>
+		</div>
 
+		<div class="bottom">
+			<div class="form-card">
+			</div>
+		</div>
 	</div>
-	<img class="image" src="assets/Gramille.jpeg" alt="profile Image">
-	<div class="card-info">
-		<u><strong>Descriptif :</strong></u>
-		<br>
-		<br>
-		<p>Je suis une passionnée, les Air Max et Tn font parties de mes best !</p>
+
+	<div class="profile-card2" *ngIf="updateProfileForm">
+		<div class="card-header2">
+			<h2>Modification du profil</h2>
+		</div>
+		<form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
+			<div class="updateCard">
+
+			<div class="form-group">
+				<label for="email">Email </label>
+				<input type="email" formControlName="email"/>
+			</div>
+
+			<div id="containerButton">
+				<button type="submit">Valider</button>
+			</div>
+			</div>
+		</form>
 	</div>
-	<div class="bottom">
-		<h2>Retrouvez mes posts</h2>
-		<ul>
-			<li><a href="https://fr-fr.facebook.com/julOfficial/"><i class="fab fa-twitter"></i>Facebook</a></li>
-			<li><a href="https://www.instagram.com/juldetp/?hl=fr"><i class="fa fa-fw fa-github"></i>Instagram</a></li>
-			<li><a href="https://www.pinterest.fr/alexandrehenryp/lissage-de-cheveux/"><i class="fa fa-fw fa-codepen"></i>Pinterest</a></li>
-		</ul>
-	</div>
-<!--	<div class="card-footer2">-->
-<!--		<ul>-->
-<!--			<li><a href="#"><i class="fa fa-fw fa-share"></i>share</a></li>-->
-<!--			<li><a href="#">Report<i class="fa fa-fw fa-exclamation"></i></a></li>-->
-<!--		</ul>-->
-<!--	</div>-->
-</div>
 </div>

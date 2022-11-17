@@ -17,12 +17,11 @@ export class UserService {
   }
 
   getConnectedUser(): Observable<User> {
-    return this.http.get<User>(environment.urlApi + 'users/me').pipe(
-      map((user: User) => {
-        user.isAdmin = user.roles.some((role: Role) => role.id === 1);
-        return user;
-      })
-    );
+    return this.http.get<User>(environment.urlApi + 'users/me');
   }
+
+		updateMe(user: object): Observable<User> {
+			return this.http.patch<User>(environment.urlApi + 'users/me', user);
+		}
 
 }
