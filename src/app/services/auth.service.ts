@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../interfaces/login-response';
 import { User } from '../models/user';
 import { UserService } from './user.service';
+import jwtDecode from 'jwt-decode';
+import { TokenContent } from '../models/tokenContent';
 
 @Injectable({
 	providedIn: 'root',
@@ -59,5 +61,12 @@ export class AuthService {
 		sessionStorage.removeItem('refreshToken');
 		this.currentUser.next(undefined);
 		this.router.navigate(['']);
+	}
+
+	getCurrentUserId(): number {
+		const tokenContent: TokenContent = jwtDecode(
+			<string>sessionStorage.getItem('token')
+		);
+		return tokenContent.id;
 	}
 }

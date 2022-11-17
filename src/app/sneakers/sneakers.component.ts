@@ -28,16 +28,12 @@ export class SneakersComponent implements OnInit {
 		private route: ActivatedRoute,
 		private helperService: HelperService,
 		private authService: AuthService
-		) {
-			this.authService.currentUser.subscribe((user: User | undefined) => {
-				this.id = user?.id.toString();
-			});
-		}
+		) {}
 
 	ngOnInit(): void {
-
 		this.route.paramMap.subscribe((params: ParamMap)  => {
-			const sneakersId = <string>params.get('id');				this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
+			this.id = <string>params.get('id');				
+			this.sneakersService.getSneakersById(this.id).subscribe((reponse: Sneakers) => {
 				this.sneakersById = reponse;
 			});
 		});

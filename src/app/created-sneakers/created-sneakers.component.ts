@@ -26,20 +26,21 @@ import { UserService } from '../services/user.service';
 	styleUrls: ['./created-sneakers.component.css'],
 })
 export class CreatedSneakersComponent implements OnInit {
-	createdSneakersForm!: FormGroup;
-	stateOfWearType!: FormControl;
-	createdPreview$!: Observable<Sneakers>;
-	onValidation = true;
-	urlRegex!: RegExp;
-	states: number[];
-	colors: number[];
-	sneakersByUserId: Sneakers[] | undefined;
-	pictures: FormArray = new FormArray([
-		new FormControl(null, [
-			Validators.required,
-			Validators.pattern(this.urlRegex),
-		]),
-	]);
+	public sneakers: Sneakers[] = [];
+	public createdSneakersForm!: FormGroup;
+	public stateOfWearType!: FormControl;
+	public createdPreview$!: Observable <Sneakers>;
+	public onValidation = true;
+	public urlRegex!: RegExp;
+	public states: number[];
+	public colors: number[];
+	public sneakersByUserId: Sneakers[] | undefined;
+	public pictures: FormArray = new FormArray([
+		new FormControl(
+			null, [Validators.required, Validators.pattern(this.urlRegex)]
+		)
+	]
+	);
 	public id: string | undefined;
 
 	constructor(
@@ -59,9 +60,6 @@ export class CreatedSneakersComponent implements OnInit {
 			.filter((colors: string) => parseInt(colors))
 			.map((key: string) => parseInt(key));
 
-		this.authService.currentUser.subscribe((user: User | undefined) => {
-			this.id = user?.id.toString();
-		});
 	}
 
 	ngOnInit(): void {
