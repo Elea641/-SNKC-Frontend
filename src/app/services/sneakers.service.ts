@@ -5,37 +5,47 @@ import { Sneakers } from '../models/sneakers';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SneakersService {
-		
-	constructor(private http: HttpClient) { }
-	
+	constructor(private http: HttpClient) {}
+
 	getSneakersById(id: string): Observable<Sneakers> {
 		return this.http.get<Sneakers>(environment.urlApi + id);
 	}
-	
+
 	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + id);
+		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers?userId=' + id);
 	}
-	
+
+	getSneakersForCurrentUser(): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers');
+	}
+
+	postSneakersForCurrentUser(sneakers: Sneakers): Observable<Sneakers> {
+		return this.http.post<Sneakers>(environment.urlApi, sneakers);
+	}
+
 	get(): Observable<Sneakers[]> {
 		return this.http.get<Sneakers[]>(environment.urlApi);
 	}
-	
-	deleteSneakersById(id: string): void{
+
+	deleteSneakersById(id: string): void {
 		this.http.delete(environment.urlApi + id).subscribe();
 	}
-	
-	sneakersByIdLike(id: string, followType: 'Like' | 'DisLike'): Observable<Sneakers> {
+
+	sneakersByIdLike(
+		id: string,
+		followType: 'Like' | 'DisLike'
+	): Observable<Sneakers> {
 		return this.http.get<Sneakers>(environment.urlApi + id).pipe(
-			map(sneakers =>({
+			map((sneakers) => ({
 				...sneakers,
-				follows: sneakers.follows + (followType === 'Like' ? 1 : -1)
+				follows: sneakers.follows + (followType === 'Like' ? 1 : -1),
 			})),
-			switchMap(updateSneakers => this.http.put<Sneakers>(
-				environment.urlApi + id, updateSneakers)
-				));
-			}
+			switchMap((updateSneakers) =>
+				this.http.put<Sneakers>(environment.urlApi + id, updateSneakers)
+			)
+		);
+	}
 }
-		

@@ -11,29 +11,35 @@ import { RoomService } from '../services/room.service';
 })
 export class AuctionComponent implements OnInit {
 	room: Room | undefined;
-	auctions: Auction[] | undefined;
+	auctions: Auction[] = [];
 	bit = 0;
 	maxOffer = 0;
+	offers: number[] = [];
 
-	constructor(private roomService: RoomService, private route: ActivatedRoute) {}
+	constructor(private roomService: RoomService, private route: ActivatedRoute) {
+
+	}
 
 	public onSubmitAuction(): void {
-
-		if(this.room?.initialPrice && this.maxOffer == 0 ) {
-			if(this.bit > this.room.initialPrice) {
+		if (this.room?.initialPrice && this.offers.length === 0) {
+			if (this.bit > this.room.initialPrice) {
+				this.offers.push(this.bit);
 				this.maxOffer = this.bit;
-				//Créer auction avec back
-			} else {
+				const auction: Auction = new Auction(this.room.id, this.bit);
+				this.roomService
+					.postAuction(auction)
+					.subscribe((response: Auction) => this.auctions?.push(response));
+			} else  {
 				throw new Error('L\'offre doit être supérieure au prix de départ');
-
 			}
 		}
-		if(this.maxOffer > 0) {
-			if(this.bit > this.maxOffer) {
-				this.maxOffer = this.bit;
-				//Créer auction avec back
-			} else if(this.bit == this.maxOffer) {
-				throw new Error('L\' offre doit être supérieure à l\' offre en cours');
+		else if (this.maxOffer > 0) {
+			if (this.bit > Math.max(...this.offers)) {
+				this.offers.push(this.bit);
+				const auction: Auction = new Auction(this.room?.id, this.bit);
+				this.roomService
+					.postAuction(auction)
+					.subscribe((response: Auction) => this.auctions?.push(response));
 			} else {
 				throw new Error('L\' offre doit être supérieure à l\' offre en cours');
 			}
@@ -48,7 +54,12 @@ export class AuctionComponent implements OnInit {
 				.subscribe((response: Room) => (this.room = response));
 			this.roomService
 				.getAuctionsbyRoomId(roomId)
-				.subscribe((res: Auction[]) => (this.auctions = res));
+				.subscribe((res: Auction[]) => {
+					this.auctions = res;
+					this.offers = this.auctions.map((auction: Auction) => auction.offer);
+					this.maxOffer = Math.max(...this.offers);
+				});
+
 		});
 	}
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
 
@@ -20,16 +20,10 @@ export class HeaderNavComponent {
 	public isDisplayingSearchBar: boolean = false;
 	public id: string | undefined;
 
-constructor(private authService: AuthService){
-	this.authService.currentUser.subscribe((user: User | undefined) => {
-		this.id = user?.id.toString();
-	});
+	constructor(private authService: AuthService){
 }
 
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
 	}
-
-
-
 }
