@@ -35,12 +35,12 @@ export class CreatedSneakersComponent implements OnInit {
 	public states: number[];
 	public colors: number[];
 	public sneakersByUserId: Sneakers[] | undefined;
-	public pictures: FormArray = new FormArray([
-		new FormControl(
-			null, [Validators.required, Validators.pattern(this.urlRegex)]
-		)
-	]
-	);
+	// public pictures: FormArray = new FormArray([
+	// 	new FormControl(
+	// 		null, [Validators.required, Validators.pattern(this.urlRegex)]
+	// 	)
+	// ]
+	// );
 	public id: string | undefined;
 
 	constructor(
@@ -59,7 +59,6 @@ export class CreatedSneakersComponent implements OnInit {
 		this.colors = Object.keys(Colors)
 			.filter((colors: string) => parseInt(colors))
 			.map((key: string) => parseInt(key));
-
 	}
 
 	ngOnInit(): void {
@@ -73,9 +72,8 @@ export class CreatedSneakersComponent implements OnInit {
 				size: [null, [Validators.required]],
 				stateOfWear: [null, [Validators.required, Validators.pattern(/[0-9]+/)]],
 				dateOfPurchase: [null],
-				authentification: [null],
 				mainColor: [null],
-				pictures: this.pictures,
+				// pictures: this.pictures,
 				createdDate: new Date(),
 				id: 0,
 				updateDate: new Date(),
@@ -102,8 +100,8 @@ export class CreatedSneakersComponent implements OnInit {
 		this.route.paramMap.subscribe((params: ParamMap) => {
 			this.userService.getConnectedUser().subscribe((reponse: User) => {
 				sneakers.user = reponse;
-				this.http.post(environment.urlApi, sneakers).subscribe((res) => {
-					this.router.navigate(['sneakers', 'id']);
+				this.http.post<Sneakers>(environment.urlApi + "sneakers", sneakers).subscribe((res: Sneakers) => {
+					this.router.navigate(['sneakers', res.id]);
 				});
 			});
 		});
