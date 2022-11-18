@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Room } from '../models/room';
 import { RoomService } from '../services/room.service';
 
@@ -16,11 +16,8 @@ export class AuctionsComponent implements OnInit {
 	constructor(private roomService: RoomService, private route: ActivatedRoute) {}
 
 	ngOnInit(): void {
-		// this.route.paramMap.subscribe((params: ParamMap) => {
-		// 	const userId = <string>params.get('id');
-		// 	this.roomService
-		// 		.getAllRoomsByUserId(userId)
-		// 		.subscribe((response: Room[]) => (this.usersRooms = response));
-		// });
+		this.roomService
+			.getAllRoomsByUserId()
+			.subscribe((response: Room[]) => (this.usersRooms = response));
 	}
 }
