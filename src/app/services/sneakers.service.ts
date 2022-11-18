@@ -11,7 +11,7 @@ export class SneakersService {
 	constructor(private http: HttpClient) {}
 
 	getSneakersById(id: string): Observable<Sneakers> {
-		return this.http.get<Sneakers>(environment.urlApi + id);
+		return this.http.get<Sneakers>(`${environment.urlApi}sneakers/${id}`);
 	}
 
 	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
@@ -34,18 +34,18 @@ export class SneakersService {
 		this.http.delete(environment.urlApi + id).subscribe();
 	}
 
-	sneakersByIdLike(
-		id: string,
-		followType: 'Like' | 'DisLike'
-	): Observable<Sneakers> {
-		return this.http.get<Sneakers>(environment.urlApi + id).pipe(
-			map((sneakers) => ({
-				...sneakers,
-				follows: sneakers.follows + (followType === 'Like' ? 1 : -1),
-			})),
-			switchMap((updateSneakers) =>
-				this.http.put<Sneakers>(environment.urlApi + id, updateSneakers)
-			)
-		);
-	}
+	// sneakersByIdLike(
+	// 	id: string,
+	// 	followType: 'Like' | 'DisLike'
+	// ): Observable<Sneakers> {
+	// 	return this.http.get<Sneakers>(environment.urlApi + id).pipe(
+	// 		map((sneakers) => ({
+	// 			...sneakers,
+	// 			follows: sneakers.follows + (followType === 'Like' ? 1 : -1),
+	// 		})),
+	// 		switchMap((updateSneakers) =>
+	// 			this.http.put<Sneakers>(environment.urlApi + id, updateSneakers)
+	// 		)
+	// 	);
+	// }
 }

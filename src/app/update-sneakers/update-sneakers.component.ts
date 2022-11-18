@@ -78,7 +78,6 @@ export class UpdateSneakersComponent implements OnInit {
         size: [null, [Validators.required]],
         stateOfWear: [null , [Validators.required, Validators.pattern(/[0-9]+/)]],
         dateOfPurchase: [null],
-        authentification: [null],
         mainColor: [null],
         pictures: this.pictures,
         createdDate: new Date(),

@@ -14,9 +14,8 @@ export class Sneakers {
 		public updateDate: Date,
 		public user: User,
 		public pictures: Picture[],
-		public follows: number,
+		// public follows: number,
 		public dateOfPurchase?: Date,
 		public mainColor?: Colors,
-		public authentification?: boolean
 	) {}
 }

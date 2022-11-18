@@ -26,21 +26,21 @@ export class LikeComponent implements OnInit {
 			this.sneaker = this.sneakersService.getSneakersById(this.sneakerId);
 		}
 		
-		onLike(): void {
-			if (this.likeButtonLabel === 'Like') {
-				this.sneakersService.sneakersByIdLike(this.sneakerId, 'Like').pipe(
-					tap(() => {
-						this.sneaker = this.sneakersService.getSneakersById(this.sneakerId);
-						this.likeButtonLabel = 'Dislike';
-					})
-					);
-				} else {
-					this.sneakersService.sneakersByIdLike(this.sneakerId, 'DisLike').pipe(
-						tap(() => {
-							this.sneaker = this.sneakersService.getSneakersById(this.sneakerId);
-							this.likeButtonLabel = 'Like';
-						})
-						);
-					}
-				}
+		// onLike(): void {
+		// 	if (this.likeButtonLabel === 'Like') {
+		// 		this.sneakersService.sneakersByIdLike(this.sneakerId, 'Like').pipe(
+		// 			tap(() => {
+		// 				this.sneaker = this.sneakersService.getSneakersById(this.sneakerId);
+		// 				this.likeButtonLabel = 'Dislike';
+		// 			})
+		// 			);
+		// 		} else {
+		// 			this.sneakersService.sneakersByIdLike(this.sneakerId, 'DisLike').pipe(
+		// 				tap(() => {
+		// 					this.sneaker = this.sneakersService.getSneakersById(this.sneakerId);
+		// 					this.likeButtonLabel = 'Like';
+		// 				})
+		// 				);
+		// 			}
+		// 		}
 			}
