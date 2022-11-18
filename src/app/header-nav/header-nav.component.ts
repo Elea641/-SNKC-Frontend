@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-inferrable-types */
-import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
+import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -9,19 +7,18 @@ import { AuthService } from '../services/auth.service';
 	styleUrls: ['./header-nav.component.css'],
 })
 export class HeaderNavComponent {
-	public createdSneakers: string = 'Ajouter une paire';
-	public collection: string = 'Ma collection';
-	public auctions: string = 'Salle d\'enchères';
-	public favorite: string = 'Mes favoris';
-	public imgLogo: string = 'imgLogo';
-	public profile: string = 'Gérer mon profil';
-	public disconnect: string = 'Déconnection';
-	public search: string = 'Rechercher';
-	public isDisplayingSearchBar: boolean = false;
+	public createdSneakers = 'Ajouter une paire';
+	public collection = 'Ma collection';
+	public auctions = 'Salle d\'enchères';
+	public favorite = 'Mes favoris';
+	public imgLogo = 'imgLogo';
+	public profile = 'Gérer mon profil';
+	public disconnect = 'Déconnection';
+	public search = 'Rechercher';
+	public isDisplayingSearchBar = false;
 	public id: string | undefined;
 
-	constructor(private authService: AuthService){
-}
+	constructor(private authService: AuthService) {}
 
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
