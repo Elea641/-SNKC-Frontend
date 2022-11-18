@@ -11,12 +11,12 @@ h1 {
 	text-align: center;
 }
 
-h4 {
-	margin-top: 1rem;
+h3 {
+	text-align: center;
 }
 
-.room-details {
-	margin-top: 1.5rem;
+h4 {
+	margin-top: 1rem;
 }
 
 .image {
@@ -47,7 +47,7 @@ input {
 }
 
 .auctions {
-	margin-top: 2rem;
+	margin: 1rem;
 }
 
 table {
@@ -81,23 +81,23 @@ td {
 		margin-top: 1.5rem;
 	}
 
-	.room-details {
-		margin-top: 1.5rem;
-	}
-
 	.image {
 		max-width: 50%;
 		margin: 1.5rem;
 	}
 
+	.auctions {
+		margin: 4rem;
+	}
+
 	table {
-		margin: 1.5rem;
+		margin: 2rem;
 	}
 }
 
 @media screen and (min-width: 993px) {
 	.container {
-		margin: 5rem;
+		margin: 3rem;
 	}
 
 	.room {
@@ -109,19 +109,16 @@ td {
 		margin-top: 1.5rem;
 	}
 
-	.room-details {
-		margin-top: 4rem;
-	}
 
 	.image {
 		margin: 3rem;
 	}
 
-	.auctions > h3 {
-		margin: 1.5rem;
+	.auctions {
+		margin: 8rem;
 	}
 
-	table {
+	.auctions > h3 {
 		margin: 1.5rem;
 	}
 }

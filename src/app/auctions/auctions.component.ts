@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Room } from '../models/room';
 import { RoomService } from '../services/room.service';
 
@@ -13,7 +12,7 @@ export class AuctionsComponent implements OnInit {
 	currentPage = 1;
 	roomsPerPage = 4;
 
-	constructor(private roomService: RoomService, private route: ActivatedRoute) {}
+	constructor(private roomService: RoomService) {}
 
 	ngOnInit(): void {
 		this.roomService
