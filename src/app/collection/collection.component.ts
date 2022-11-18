@@ -21,7 +21,7 @@ export class CollectionComponent implements OnInit {
 		private authService: AuthService){
 		}
 
-		ngOnInit(): void {		
+		ngOnInit(): void {
 				this.sneakersService.getSneakersForCurrentUser().subscribe((response: Sneakers[]) => {
 					this.sneakers = response;
 				});

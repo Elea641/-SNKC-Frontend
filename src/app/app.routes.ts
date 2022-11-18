@@ -41,7 +41,7 @@ const routes: Routes = [
 	{path: 'sneakers/create', component: CreatedSneakersComponent, canActivate: [AuthGuard]},
 	{path: 'sneakers/:id', component: SneakersComponent, canActivate: [AuthGuard]},
 	{path: 'sneakers/:id/update', component: UpdateSneakersComponent, canActivate: [AuthGuard]},
-	{path: 'sneakers/:id/delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
+	{path: 'delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
 	{path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
 	{path: '', pathMatch: 'full', component: HomeComponent},
 	{path: '**', redirectTo: ''}

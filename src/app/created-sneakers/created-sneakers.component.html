@@ -23,17 +23,13 @@
           <div class="form-group">
             <label for="stateOfWear">Etat sneakers</label>
             <select id="stateOfWear" formControlName="stateOfWear">
-            <option id="optionForm" *ngFor="let state of states" [ngValue]="state">{{stateOfWearToString(state)}}</option>
+            <option id="optionForm" *ngFor="let state of states | keyvalue" [ngValue]="state.value">{{state.key}}</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label for="dateOfPurchase">Année d'achat</label>
-            <input id="dateOfPurchase" type="date" formControlName="dateOfPurchase">
           </div>
           <div class="form-group">
             <label for="mainColor">Couleur</label>
             <select id="mainColor" formControlName="mainColor">
-            <option id="optionForm" *ngFor="let color of colors" [ngValue]="color">{{colorsToString(color)}}</option>
+            <option id="optionForm" *ngFor="let color of colors | keyvalue" [ngValue]="color.value">{{color.key}}</option>
             </select>
           </div>
           <div class="action-buttons">
@@ -52,9 +48,8 @@
       <h3>Model : {{createdSneakersForm.controls['model'].value | lowercase}}</h3>
       <p>Postée {{ sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
       <p>Taille : {{createdSneakersForm.controls['size'].value}}</p>
-      <p>L'état global de ma sneakers : {{stateOfWearToString(createdSneakersForm.controls['stateOfWear'].value)}}</p>
-      <p *ngIf="sneakers.createdDate">Date d'achat : {{createdSneakersForm.controls['dateOfPurchase'].value | date: 'd MMMM yyyy'}}</p>
-      <p *ngIf="sneakers.mainColor">Ma couleur : {{colorsToString(createdSneakersForm.controls['mainColor'].value)}}</p>
+      <p>L'état global de ma sneakers : {{createdSneakersForm.controls['stateOfWear'].value}}</p>
+      <p *ngIf="sneakers.mainColor">Ma couleur : {{createdSneakersForm.controls['mainColor'].value}}</p>
     </div>
   </div>
 </div>

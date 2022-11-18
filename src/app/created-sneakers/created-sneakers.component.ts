@@ -32,8 +32,8 @@ export class CreatedSneakersComponent implements OnInit {
 	public createdPreview$!: Observable <Sneakers>;
 	public onValidation = true;
 	public urlRegex!: RegExp;
-	public states: number[];
-	public colors: number[];
+	public states: Map<string, string>[];
+	public colors: Map<string, string>[];
 	public sneakersByUserId: Sneakers[] | undefined;
 	// public pictures: FormArray = new FormArray([
 	// 	new FormControl(
@@ -52,13 +52,8 @@ export class CreatedSneakersComponent implements OnInit {
 		private sneakersService: SneakersService,
 		private authService: AuthService
 	) {
-		this.states = Object.keys(StateOfWear)
-			.filter((stateOfWear: string) => parseInt(stateOfWear))
-			.map((key: string) => parseInt(key));
-
-		this.colors = Object.keys(Colors)
-			.filter((colors: string) => parseInt(colors))
-			.map((key: string) => parseInt(key));
+		this.states = StateOfWear as unknown as Map<string, string>[]; 
+		this.colors = Colors as unknown as Map<string, string>[];
 	}
 
 	ngOnInit(): void {
@@ -70,14 +65,13 @@ export class CreatedSneakersComponent implements OnInit {
 				brand: [null, [Validators.required]],
 				model: [null, [Validators.required]],
 				size: [null, [Validators.required]],
-				stateOfWear: [null, [Validators.required, Validators.pattern(/[0-9]+/)]],
-				dateOfPurchase: [null],
+				stateOfWear: [null, [Validators.required]],
 				mainColor: [null],
 				// pictures: this.pictures,
 				createdDate: new Date(),
 				id: 0,
 				updateDate: new Date(),
-				follows: 0,
+				// follows: 0,
 			},
 			{
 				updateOn: 'blur',
@@ -89,7 +83,7 @@ export class CreatedSneakersComponent implements OnInit {
 				...formValue,
 				id: 0,
 				updateDate: new Date(),
-				follows: 0,
+				// follows: 0,
 				createdDate: new Date(),
 			}))
 		);
@@ -107,11 +101,11 @@ export class CreatedSneakersComponent implements OnInit {
 		});
 	}
 
-	stateOfWearToString(stateOfWear: number): string {
-		return HelperService.stateOfWearToString(stateOfWear);
-	}
+	// stateOfWearToString(stateOfWear: number): string {
+	// 	return HelperService.stateOfWearToString(stateOfWear);
+	// }
 
-	colorsToString(color: number): string {
-		return HelperService.colorsToString(color);
-	}
+	// colorsToString(color: number): string {
+	// 	return HelperService.colorsToString(color);
+	// }
 }
