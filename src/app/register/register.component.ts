@@ -14,6 +14,7 @@ export class RegisterComponent {
 
 	constructor(private router: Router, private fb: FormBuilder, private authService: AuthService) {
 		this.form = this.fb.group({
+			username: new FormControl('',[Validators.required]),
 			email: new FormControl('', [Validators.required]),
 			password: new FormControl('', [Validators.required]),
 			roles: new FormControl(['user']),

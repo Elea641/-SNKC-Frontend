@@ -27,6 +27,11 @@
 		<form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
 			<div class="updateCard">
 
+				<div class="form-group">
+					<label for="text">Nom d'utilisateur </label>
+					<input type="text" formControlName="username"/>
+				</div>
+
 			<div class="form-group">
 				<label for="email">Email </label>
 				<input type="email" formControlName="email"/>
