@@ -20,6 +20,7 @@ export class AuctionComponent implements OnInit {
 	bit = 0;
 	maxOffer = 0;
 	offers: number[] = [];
+	showMsg = false;
 
 	constructor(
 		private roomService: RoomService,
@@ -30,23 +31,25 @@ export class AuctionComponent implements OnInit {
 	public onSubmitAuction(): void {
 		if (this.room?.initialPrice && this.offers.length === 0) {
 			if (this.bit > this.room.initialPrice) {
-				this.offers.push(this.bit);
+				this.offers.unshift(this.bit);
 				this.maxOffer = this.bit;
+				this.showMsg= true;
 				const auction: Auction = new Auction(this.room.id, this.bit);
 				this.roomService
 					.postAuction(auction)
-					.subscribe((response: Auction) => this.auctions?.push(response));
+					.subscribe((response: Auction) => this.auctions?.unshift(response));
 			} else {
 				throw new Error('L\'offre doit être supérieure au prix de départ');
 			}
 		} else if (this.maxOffer > 0) {
 			if (this.bit > Math.max(...this.offers)) {
-				this.offers.push(this.bit);
+				this.offers.unshift(this.bit);
 				this.maxOffer = this.bit;
+				this.showMsg= true;
 				const auction: Auction = new Auction(this.room?.id, this.bit);
 				this.roomService
 					.postAuction(auction)
-					.subscribe((response: Auction) => this.auctions?.push(response));
+					.subscribe((response: Auction) => this.auctions?.unshift(response));
 			} else {
 				throw new Error('L\' offre doit être supérieure à l\' offre en cours');
 			}

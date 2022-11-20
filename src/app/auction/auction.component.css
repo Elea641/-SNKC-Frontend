@@ -2,6 +2,13 @@
 	margin: 1rem;
 }
 
+.alert-success {
+	color: rgb(3, 101, 3);
+	background-color: rgb(172, 217, 172);
+	padding: 2rem;
+
+}
+
 h2 {
 	text-align: center;
 	margin: 1rem;
@@ -105,6 +112,10 @@ td {
 		justify-content: center;
 	}
 
+	.room-details {
+		margin: 2rem;
+	}
+
 	.room-details > * {
 		margin-top: 1.5rem;
 	}
@@ -112,6 +123,7 @@ td {
 
 	.image {
 		margin: 3rem;
+		max-height: 80vh;
 	}
 
 	.auctions {
