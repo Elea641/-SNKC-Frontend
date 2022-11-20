@@ -1,46 +1,62 @@
 <div class="container">
-	<div *ngIf="maxOffer == 0">
-		<h2>Prix de départ :</h2>
-		<h1>{{ room?.initialPrice }}</h1>
-	</div>
-	<div *ngIf="maxOffer > 0">
-		<h2>Dernière enchère proposée :</h2>
-		<h1>{{ maxOffer }}</h1>
-	</div>
-
+	<div class="row"  *ngIf="showMsg">
+		<div class="col-xs-12">
+				<p class="alert-success">
+								<strong>Enchère bien prise en compte !</strong>
+				</p>
+		</div>
+</div>
 	<div class="room">
 		<div class="image">
-			<img
-				[src]="room?.sneakers?.pictures?.[0]?.url"
-				[alt]="room?.sneakers?.model"
+			<img src="https://assets.hermes.com/is/image/hermesproduct/sneakers-flex--222910ZH02-worn-1-0-0-800-800_b.jpg"
 			/>
 		</div>
 		<div class="room-details">
+			<div *ngIf="offers.length == 0">
+				<h2>Prix de départ :</h2>
+				<h1>{{ room?.initialPrice | currency:'EUR' }} </h1>
+			</div>
+			<div *ngIf="maxOffer > 0">
+				<h2>Dernière enchère proposée :</h2>
+				<h1>{{ maxOffer | currency:'EUR' }}</h1>
+			</div>
 			<input
 				placeholder="Montant de votre enchère"
 				type="number"
 				[(ngModel)]="bit"
 			/>
 			<button (click)="onSubmitAuction()" class="bid">Enchérir</button>
-			<p>Prix de départ : {{ room?.initialPrice }}</p>
-			<p>Fermeture de la vente : {{ room?.endDate | date: "medium":"GMT" }}</p>
+			<p>Prix de départ : {{ room?.initialPrice | currency:'EUR' }}</p>
+			<p>Temps restant pour enchère : {{ room?.endDate | date: "medium":"GMT" }}</p>
+
+			<hr>
+
+			<h3>Description</h3>
+			<p>Marque : {{sneakers?.brand}}</p>
+			<p>Modèle : {{sneakers?.model}}</p>
+			<p>Taille : {{sneakers?.size}}</p>
+			<p>Etat : {{sneakers?.stateOfWear}}</p>
+			<p>Couleur principale : {{sneakers?.mainColor}}</p>
+
 			<div class="block-description">
 			</div>
 		</div>
 	</div>
+
+	<hr>
+
 	<div class="auctions">
 		<h3>Historique des enchères</h3>
 		<table>
 			<tr>
-				<th>Pseudo</th>
-				<th>Date et heure</th>
 				<th>Montant enchère</th>
+				<th>Date et heure</th>
 			</tr>
 
 			<tr *ngFor="let auction of auctions">
-				<td>{{ auction?.userUsername }}</td>
+				<td>{{ auction?.offer | currency:'EUR' }}</td>
 				<td>{{ auction?.date | date: "medium":"GMT" }}</td>
-				<td>{{ auction?.offer }}</td>
+
 			</tr>
 		</table>
 	</div>

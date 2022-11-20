@@ -1,9 +1,9 @@
 <div class="card">
     <div class="card-image">
-        <img [src]="room?.sneakers?.pictures?.[0]?.url" [alt]="room?.sneakers?.model" />
+        <img src="https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/h_500,c_limit/c113abc6-f28e-4607-ab1b-979d70e15ee7/les-meilleures-sneakers-sans-lacets-pour-homme-et-femme.jpg" [alt]="sneakers?.brand+'-'+ sneakers?.model" />
     </div>
     <div class="card-body">
-        <h3>{{room?.sneakers?.brand}} - {{room?.sneakers?.model}}</h3>
+        <h3>{{sneakers?.brand}} - {{sneakers?.model}}</h3>
         <div class="time">
             <p>Prend fin le</p>
             <h2>{{room?.endDate | date}} à {{room?.endDate | date:'shortTime'}}</h2>

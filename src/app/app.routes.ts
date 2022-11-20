@@ -32,7 +32,7 @@ const routes: Routes = [
 	{path: 'profile/:id/update', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'profile/:id/delete', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'collection', component: CollectionComponent, canActivate: [AuthGuard]},
-	{path: 'user/:id/auction/create', component: AuctionCreationComponent, canActivate: [AuthGuard]},
+	{path: 'auction/create', component: AuctionCreationComponent, canActivate: [AuthGuard]},
 	{path: 'auctions', component: AuctionsComponent, canActivate: [AuthGuard]},
 	{path: 'auction/:id/delete', component: AuctionComponent, canActivate: [AuthGuard]},
 	{path: 'auction/:id', component: AuctionComponent, canActivate: [AuthGuard]},
@@ -41,7 +41,7 @@ const routes: Routes = [
 	{path: 'sneakers/create', component: CreatedSneakersComponent, canActivate: [AuthGuard]},
 	{path: 'sneakers/:id', component: SneakersComponent, canActivate: [AuthGuard]},
 	{path: 'sneakers/:id/update', component: UpdateSneakersComponent, canActivate: [AuthGuard]},
-	{path: 'sneakers/:id/delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
+	{path: 'delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
 	{path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
 	{path: '', pathMatch: 'full', component: HomeComponent},
 	{path: '**', redirectTo: ''}

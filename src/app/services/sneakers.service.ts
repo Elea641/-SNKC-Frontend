@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Sneakers } from '../models/sneakers';
 import { environment } from 'src/environments/environment';
 
@@ -19,19 +19,19 @@ export class SneakersService {
 	}
 
 	getSneakersForCurrentUser(): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers');
+		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers/all`);
 	}
 
 	postSneakersForCurrentUser(sneakers: Sneakers): Observable<Sneakers> {
 		return this.http.post<Sneakers>(environment.urlApi, sneakers);
 	}
 
-	get(): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi);
+	updateSneakers(sneakers: Sneakers, id: string): Observable<Sneakers> {
+		return this.http.put<Sneakers>(`${environment.urlApi}sneakers/${id}`, sneakers);
 	}
 
-	deleteSneakersById(id: string): void {
-		this.http.delete(environment.urlApi + id).subscribe();
+	deleteSneakersById(id: string): Observable<Sneakers> {
+		return this.http.delete<Sneakers>(`${environment.urlApi}sneakers/${id}`);
 	}
 
 	// sneakersByIdLike(

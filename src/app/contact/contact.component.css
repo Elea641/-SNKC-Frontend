@@ -18,7 +18,7 @@ p {
 	position: absolute;
 	font-size: 20vw;
 	font-style: italic;
-	margin: 20px;
+	margin: 30px;
 }
 
 .parallax-text::after{
