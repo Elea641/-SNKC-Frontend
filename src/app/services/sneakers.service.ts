@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Sneakers } from '../models/sneakers';
 import { environment } from 'src/environments/environment';
 

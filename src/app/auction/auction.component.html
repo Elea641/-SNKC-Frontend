@@ -1,11 +1,18 @@
 <div class="container">
+	<div class="row"  *ngIf="showMsg">
+		<div class="col-xs-12">
+				<p class="alert-success">
+								<strong>Enchère bien prise en compte !</strong>
+				</p>
+		</div>
+</div>
 	<div class="room">
 		<div class="image">
 			<img src="https://assets.hermes.com/is/image/hermesproduct/sneakers-flex--222910ZH02-worn-1-0-0-800-800_b.jpg"
 			/>
 		</div>
 		<div class="room-details">
-			<div *ngIf="maxOffer == 0">
+			<div *ngIf="offers.length == 0">
 				<h2>Prix de départ :</h2>
 				<h1>{{ room?.initialPrice | currency:'EUR' }} </h1>
 			</div>
@@ -37,7 +44,7 @@
 	</div>
 
 	<hr>
-	
+
 	<div class="auctions">
 		<h3>Historique des enchères</h3>
 		<table>

@@ -32,7 +32,7 @@ const routes: Routes = [
 	{path: 'profile/:id/update', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'profile/:id/delete', component: ProfileComponent, canActivate: [AuthGuard]},
 	{path: 'collection', component: CollectionComponent, canActivate: [AuthGuard]},
-	{path: 'user/:id/auction/create', component: AuctionCreationComponent, canActivate: [AuthGuard]},
+	{path: 'auction/create', component: AuctionCreationComponent, canActivate: [AuthGuard]},
 	{path: 'auctions', component: AuctionsComponent, canActivate: [AuthGuard]},
 	{path: 'auction/:id/delete', component: AuctionComponent, canActivate: [AuthGuard]},
 	{path: 'auction/:id', component: AuctionComponent, canActivate: [AuthGuard]},
