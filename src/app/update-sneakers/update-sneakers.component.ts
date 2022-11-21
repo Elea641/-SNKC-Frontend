@@ -11,6 +11,7 @@ import { StateOfWear } from '../models/enum/stateofwear';
 import { Colors } from '../models/enum/colors';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -21,24 +22,24 @@ import { Observable } from 'rxjs';
 
 export class UpdateSneakersComponent implements OnInit {
   
-  createdPreview$!: Observable <Sneakers>;
-  sneakersById: Sneakers | undefined;
-  stateOfWear: number | undefined;
-  mainColor: number | undefined;
-  pictures: Picture[] | undefined;
-  updateSneakersForm!: FormGroup;
-	stateOfWearType!: FormControl;
-	onValidation: boolean = true;
-	urlRegex!: RegExp;
-	sneakersByUserId: Sneakers[] | undefined;
-  states: number[];
-	colors: number[];
-	picturesForm: FormArray = new FormArray([
-		new FormControl(
-			null, [Validators.required, Validators.pattern(this.urlRegex)]
-			)
-		]
-		);
+  public createdPreview$!: Observable <Sneakers>;
+  public sneakersById: Sneakers | undefined;
+  public stateOfWear: number | undefined;
+  public mainColor: number | undefined;
+  // pictures: Picture[] | undefined;
+  public updateSneakersForm!: FormGroup;
+  public stateOfWearType!: FormControl;
+  public onValidation: boolean = true;
+  public urlRegex!: RegExp;
+  public sneakersByUserId: Sneakers[] | undefined;
+  public states: Map<string, string>[];
+  public colors: Map<string, string>[];
+  // picturesForm: FormArray = new FormArray([
+  // 	new FormControl(
+  // 		null, [Validators.required, Validators.pattern(this.urlRegex)]
+  // 		)
+  // 	]
+  // 	);
   
   
   constructor(
@@ -46,73 +47,65 @@ export class UpdateSneakersComponent implements OnInit {
     private route: ActivatedRoute,
     private helperService: HelperService,
     private formBuilder: FormBuilder,
-		private userService: UserService,
-		private http: HttpClient,
-		private router: Router
+    private userService: UserService,
+    private http: HttpClient,
+    private router: Router
     ) {
-      this.states = Object.keys(StateOfWear).filter(
-        (stateOfWear: string) => parseInt(stateOfWear)).map(
-          (key: string) => parseInt(key));
-          
-          this.colors = Object.keys(Colors).filter(
-            (colors: string) => parseInt(colors)).map(
-              (key: string) => parseInt(key));
-    }
-    
-    ngOnInit(): void {
-      
-      this.route.paramMap.subscribe((params: ParamMap)  => {
-        const sneakersId = <string>params.get("id");
-        this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
-          this.sneakersById = reponse;
-          console.log(this.sneakersById)
-        })
-      })
+      this.states = StateOfWear as unknown as Map<string, string>[];
+      this.colors = Colors as unknown as Map<string, string>[];
+            
+            }
+            
+            ngOnInit(): void {
+              
+              this.route.paramMap.subscribe((params: ParamMap)  => {
+                const sneakersId = <string>params.get("id");
+                this.sneakersService.getSneakersById(sneakersId).subscribe((reponse: Sneakers) => {
+                  this.sneakersById = reponse;
+                  
+                  this.updateSneakersForm = this.formBuilder.group({
+                    
+                    brand: [this.sneakersById?.brand, [Validators.required]],
+                    model: [this.sneakersById?.model, [Validators.required]],
+                    size: [this.sneakersById?.size, [Validators.required]],
+                    stateOfWear: [this.sneakersById?.stateOfWear, [Validators.required]],
+                    mainColor: [this.sneakersById?.mainColor],
+                    // pictures: this.pictures,
+                    createdDate: new Date(),
+                    id: this.sneakersByUserId,
+                    updateDate: new Date(),
+                    // follows: 0, 
+                  },
+                  {
+                    updateOn: 'blur'
+                  }
+                  );
+                  this.createdPreview$ = this.updateSneakersForm.valueChanges;
+                })
+              })
+              
+              this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
+              
+            }
+            
+            stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+              return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+            }
+            
+            colorsToString(color: Colors): string {
+              return HelperService.colorsToString(<Colors> color);
+            }
+            
+            onSubmitUpdateForm(): void {
+              const sneakers = <Sneakers>this.updateSneakersForm.getRawValue();
 
-      this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
-								
-      this.updateSneakersForm = this.formBuilder.group({
-        
-        brand: [null, [Validators.required]],
-        model: [null, [Validators.required]],
-        size: [null, [Validators.required]],
-        stateOfWear: [null , [Validators.required, Validators.pattern(/[0-9]+/)]],
-        dateOfPurchase: [null],
-        authentification: [null],
-        mainColor: [null],
-        pictures: this.pictures,
-        createdDate: new Date(),
-        id: this.sneakersByUserId,
-        updateDate: new Date(),
-        follows: 0, 
-      },
-      {
-        updateOn: 'blur'
-      }
-      );
-
-      this.createdPreview$ = this.updateSneakersForm.valueChanges;
-    }
-    
-    stateOfWearToString(stateOfWear: number): string {
-      return HelperService.stateOfWearToString(stateOfWear);
-    }
-    
-    colorsToString(color: number): string {
-      return HelperService.colorsToString(color);
-    }
-
-    onSubmitUpdateForm(): void {
-      const sneakers = <Sneakers> this.updateSneakersForm.getRawValue();
-      console.log(sneakers)
-      this.route.paramMap.subscribe((params: ParamMap) => {
-        const userId = <string>params.get("id");
-        this.userService.getUserById(userId).subscribe((reponse: User) => {
-          sneakers.user = reponse;
-          this.http.post('http://localhost:3000/sneakers', sneakers).subscribe(res => {
-          this.router.navigate(['/sneakers/:id']);
-        });
-      });
-    });
-  }
-  }
+              this.route.paramMap.subscribe((params: ParamMap) => {
+                this.userService.getConnectedUser().subscribe((reponse: User) => {
+                  sneakers.user = reponse;
+                  this.http.put<Sneakers>(`${environment.urlApi}sneakers/${this.sneakersById?.id}`, sneakers).subscribe((res: Sneakers) => {
+                    this.router.navigate(['sneakers', res.id]);
+                  });
+                });
+              });
+            }
+          }

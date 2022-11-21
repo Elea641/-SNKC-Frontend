@@ -9,21 +9,21 @@ export class HelperService {
 
 constructor() { }
 
-static stateOfWearToString(stateofwear: number): string{
+static stateOfWearToString(stateofwear: StateOfWear): string{
   switch(stateofwear) {
-    case StateOfWear.NEUF:
+    case StateOfWear.Neuf:
     return "Neuf";
     
-    case StateOfWear.TRES_BON_ETAT:
-    return "Très bon état";
+    case StateOfWear['Très bon état']:
+    return " Très Bon état";
     
-    case StateOfWear.BON_ETAT:
+    case StateOfWear['Bon état']:
     return "Bon état";
     
-    case StateOfWear.ETAT_MOYEN:
+    case StateOfWear['Etat moyen']:
     return "Etat moyen";
     
-    case StateOfWear.USE:
+    case StateOfWear.Usé:
     return "Usé";
     
     default:
@@ -31,99 +31,50 @@ static stateOfWearToString(stateofwear: number): string{
   }
 }
 
-static colorsToString(colors: number): string{
-
+static colorsToString(colors: Colors): string{
   switch(colors) {
 
-    case Colors.WHITE:
-    return "White";
+    case Colors.Blanc:
+    return "Blanc";
     
-    case  Colors.BLACK:
-    return "Black";
+    case  Colors.Noir:
+    return "Noir";
     
-    case Colors.RED:
-    return "Red";
+    case Colors.Rouge:
+    return "Rouge";
     
-    case Colors.BLUE:
-    return "Blue";
+    case Colors.Bleu:
+    return "Bleu";
     
-    case Colors.GREEN:
-    return "Green";
+    case Colors.Vert:
+    return "Vert";
     
-    case Colors.PURPLE:
-    return "Purple";
+    case Colors.Violet:
+    return "Violet";
     
-    case Colors.YELLOW:
-    return "Yellow";
+    case Colors.Jaune:
+    return "Jaune";
     
-    case Colors.ORANGE:
+    case Colors.Orange:
     return "Orange";
     
-    case Colors.PINK:
-    return "Pink";
+    case Colors.Rose:
+    return "Rose";
     
-    case Colors.BROWN:
-    return "Brown";
+    case Colors.Marron:
+    return "Marron";
     
-    case Colors.GREY:
-    return "Grey";
+    case Colors.Gris:
+    return "Gris";
     
-    case Colors.MULTI:
+    case Colors.Multi:
     return "Multi";
     
-    case Colors.OTHER:
-    return "Other";
+    case Colors.Autre:
+    return "Autre";
 
     default:
     throw new Error("Colors not recognized");
-  }
-}
-
-static stringToColors(colors: string): Colors{
-  switch(colors) {
-      case "White":
-      return Colors.WHITE
-    
-      case "Black":
-      return Colors.BLACK;
-      
-      case "Red":
-      return Colors.RED;
-      
-      case "Blue":
-      return Colors.BLUE;
-      
-      case "Green":
-      return Colors.GREEN;
-      
-      case "Purple":
-      return Colors.PURPLE;
-      
-      case "Yellow":
-      return Colors.YELLOW;
-      
-      case "Orange":
-      return Colors.ORANGE;
-      
-      case "Pink":
-      return Colors.PINK;
-      
-      case "Brown":
-      return Colors.BROWN;
-      
-      case "Grey":
-      return Colors.GREY;
-      
-      case "Multi":
-      return Colors.MULTI;
-      
-      case "Other":
-      return Colors.OTHER;
-
-      default:
-      throw new Error("Colors not recognized");
-    
-  
   }
 }
 
