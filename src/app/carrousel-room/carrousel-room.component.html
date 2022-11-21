@@ -1,0 +1,11 @@
+<div *ngIf="rooms && rooms.length > 0" class="carouselContainer">
+    <section class="carousel"> 
+      <ul class="carousel-items">
+        <li class="carousel-item" *ngFor="let room of rooms">
+          <a [routerLink]="['/auction/', room.id]">
+            <app-auction-card [room]="room"></app-auction-card>
+          </a>
+        </li>
+      </ul>
+    </section> 
+  </div>

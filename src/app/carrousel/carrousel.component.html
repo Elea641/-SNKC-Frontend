@@ -3,7 +3,6 @@
     <ul class="carousel-items">
       <li class="carousel-item" *ngFor="let sneaker of sneakers">
         <a [routerLink]="['/sneakers/', sneaker.id]">
-          <img src="https://cdn.shopify.com/s/files/1/2358/2817/products/dunk-low-black-white-822113_1200x.png?v=1638813882"/>
             <app-sneakers-card [sneakers]="sneaker"></app-sneakers-card>
         </a>
       </li>

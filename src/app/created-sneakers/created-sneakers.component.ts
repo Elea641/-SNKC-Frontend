@@ -34,6 +34,7 @@ export class CreatedSneakersComponent implements OnInit {
 	public urlRegex!: RegExp;
 	public states: Map<string, string>[];
 	public colors: Map<string, string>[];
+
 	public sneakersByUserId: Sneakers[] | undefined;
 	// public pictures: FormArray = new FormArray([
 	// 	new FormControl(
