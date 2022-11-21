@@ -63,7 +63,7 @@ export class AuthService {
 		this.router.navigate(['']);
 	}
 
-	getCurrentUserId(): number {
+	public getCurrentUserId(): number {
 		const tokenContent: TokenContent = jwtDecode(
 			<string>sessionStorage.getItem('token')
 		);

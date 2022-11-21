@@ -7,6 +7,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
+import { DeleteAuctionComponent } from './delete-auction/delete-auction.component';
 
 import { FaqsComponent } from './faqs/faqs.component';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -34,7 +35,7 @@ const routes: Routes = [
 	{path: 'collection', component: CollectionComponent, canActivate: [AuthGuard]},
 	{path: 'auction/create', component: AuctionCreationComponent, canActivate: [AuthGuard]},
 	{path: 'auctions', component: AuctionsComponent, canActivate: [AuthGuard]},
-	{path: 'auction/:id/delete', component: AuctionComponent, canActivate: [AuthGuard]},
+	{path: 'auction/:id/delete', component: DeleteAuctionComponent, canActivate: [AuthGuard]},
 	{path: 'auction/:id', component: AuctionComponent, canActivate: [AuthGuard]},
 	{path: 'auction/:id/payment', component: AuctionComponent, canActivate: [AuthGuard]},
 	{path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard]},

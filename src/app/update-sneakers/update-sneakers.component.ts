@@ -68,7 +68,7 @@ export class UpdateSneakersComponent implements OnInit {
                     brand: [this.sneakersById?.brand, [Validators.required]],
                     model: [this.sneakersById?.model, [Validators.required]],
                     size: [this.sneakersById?.size, [Validators.required]],
-                    stateOfWear: [this.sneakersById?.stateOfWear, [Validators.required, Validators.pattern(/[0-9]+/)]],
+                    stateOfWear: [this.sneakersById?.stateOfWear, [Validators.required]],
                     mainColor: [this.sneakersById?.mainColor],
                     // pictures: this.pictures,
                     createdDate: new Date(),
@@ -88,17 +88,16 @@ export class UpdateSneakersComponent implements OnInit {
               
             }
             
-            // stateOfWearToString(stateOfWear: number): string {
-            //   return HelperService.stateOfWearToString(stateOfWear);
-            // }
+            stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+              return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+            }
             
-            // colorsToString(color: number): string {
-            //   return HelperService.colorsToString(color);
-            // }
+            colorsToString(color: Colors): string {
+              return HelperService.colorsToString(<Colors> color);
+            }
             
             onSubmitUpdateForm(): void {
               const sneakers = <Sneakers>this.updateSneakersForm.getRawValue();
-              console.log(sneakers)
 
               this.route.paramMap.subscribe((params: ParamMap) => {
                 this.userService.getConnectedUser().subscribe((reponse: User) => {

@@ -4,58 +4,58 @@ import { Sneakers } from '../models/sneakers';
 import { SneakersService } from '../services/sneakers.service';
 import { HelperService } from '../services/helper.service';
 import { Picture } from '../models/picture';
-import { AuthService } from '../services/auth.service';
+import { Colors } from '../models/enum/colors';
+import { StateOfWear } from '../models/enum/stateofwear';
 
 @Component({
 	selector: 'app-sneakers',
 	templateUrl: './sneakers.component.html',
 	styleUrls: ['./sneakers.component.css'],
 })
-
 export class SneakersComponent implements OnInit {
-	
 	public sneakersById: Sneakers | undefined;
-	public stateOfWear: number | undefined;
-	public mainColor: number | undefined;
 	public pictures: Picture[] | undefined;
 	public id: string | undefined;
-	
-	
+
 	constructor(
 		private sneakersService: SneakersService,
 		private route: ActivatedRoute,
-		private helperService: HelperService,
-		private authService: AuthService,
 		private router: Router
 		) {}
 		
 		ngOnInit(): void {
-			this.route.paramMap.subscribe((params: ParamMap)  => {
-				this.id = <string>params.get('id');				
-				this.sneakersService.getSneakersById(this.id).subscribe((reponse: Sneakers) => {
+			this.route.paramMap.subscribe((params: ParamMap) => {
+				this.id = <string>params.get('id');
+				this.sneakersService
+				.getSneakersById(this.id)
+				.subscribe((reponse: Sneakers) => {
 					this.sneakersById = reponse;
-					console.log(this.sneakersById);
 				});
 			});
 		}
 		
-		// stateOfWearToString(stateOfWear: number): string {
-		// 	return HelperService.stateOfWearToString(stateOfWear);
-		// }
+		public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+			if (stateOfWear){
+				return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+			}
+			return "";
+		}
 		
-		// colorsToString(color: number): string {
-		// 	return HelperService.colorsToString(color);
-		// }
+		public colorsToString(color: Colors | undefined): string {
+			if (color){
+				return HelperService.colorsToString(<Colors> color);
+			}
+			return "";
+		}
 		
-		deleteSneakers() {
+		public deleteSneakers() {
 			if(confirm('Are you sure to delete your sneakers?')){
-					this.sneakersService.deleteSneakersById(<string> this.id).subscribe(
-						_ => {
-							this.router.navigate(['/delete']);
-						}
+				this.sneakersService.deleteSneakersById(<string> this.id).subscribe(
+					_ => {
+						this.router.navigate(['/delete']);
+					}
 					);
 				}
-				}
 			}
-		
+		}
 		

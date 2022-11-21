@@ -89,7 +89,7 @@ export class CreatedSneakersComponent implements OnInit {
 		);
 	}
 
-	onSubmitForm(): void {
+	public onSubmitForm(): void {
 		const sneakers = <Sneakers>this.createdSneakersForm.getRawValue();
 		this.route.paramMap.subscribe((params: ParamMap) => {
 			this.userService.getConnectedUser().subscribe((reponse: User) => {
@@ -101,11 +101,18 @@ export class CreatedSneakersComponent implements OnInit {
 		});
 	}
 
-	// stateOfWearToString(stateOfWear: number): string {
-	// 	return HelperService.stateOfWearToString(stateOfWear);
-	// }
+	public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+		if (stateOfWear){
+			return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+		}
+			return "";
+	}
+	
+	public colorsToString(color: Colors | undefined): string {
+		if (color){
+			return HelperService.colorsToString(<Colors> color);
+		}
+			return "";
+	}
 
-	// colorsToString(color: number): string {
-	// 	return HelperService.colorsToString(color);
-	// }
 }

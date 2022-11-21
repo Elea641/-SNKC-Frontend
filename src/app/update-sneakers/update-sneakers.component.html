@@ -49,8 +49,8 @@
       <h3>Model : {{updateSneakersForm.controls['model'].value | lowercase}}</h3>
       <p>Postée {{ sneakers.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
       <p>Taille : {{updateSneakersForm.controls['size'].value}}</p>
-      <p>L'état global de ma sneakers : {{updateSneakersForm.controls['stateOfWear'].value}}</p>
-      <p *ngIf="sneakers.mainColor">Ma couleur : {{(updateSneakersForm.controls['mainColor'].value)}}</p>
+      <p>L'état global de ma sneakers : {{stateOfWearToString(updateSneakersForm.controls['stateOfWear'].value)}}</p>
+      <p *ngIf="sneakers.mainColor">Ma couleur : {{colorsToString(updateSneakersForm.controls['mainColor'].value)}}</p>
     </div>
   </div>
 </div>
