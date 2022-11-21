@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -18,9 +19,14 @@ export class HeaderNavComponent {
 	public isDisplayingSearchBar = false;
 	public id: string | undefined;
 
-	constructor(private authService: AuthService) {}
+	constructor(private authService: AuthService,
+				private router: Router) {}
 
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
 	}
+	public logout() {
+		this.authService.logout();
+		this.router.navigate(['']);
+}
 }
