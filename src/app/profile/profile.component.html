@@ -1,1 +1,46 @@
-<p>profile works!</p>
+<div class="principal">
+	<div class="profile-card">
+		<div class="card-header">
+			<h1>{{name}} {{firstname}}</h1>
+		</div>
+		<img class="image" src="assets/Gramille.jpeg" alt="profile Image">
+		<div class="card-info">
+			<u><strong>Pseudo :</strong></u>
+			<p>{{pseudo}}</p>
+			<br>
+			<u><strong>Descriptif :</strong></u>
+			<br>
+			<br>
+			<p>Je suis une passionnée, les Air Max et Tn font parties de mes best !</p>
+		</div>
+
+		<div class="bottom">
+			<div class="form-card">
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-card2" *ngIf="updateProfileForm">
+		<div class="card-header2">
+			<h2>Modification du profil</h2>
+		</div>
+		<form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
+			<div class="updateCard">
+
+				<div class="form-group">
+					<label for="text">Nom d'utilisateur </label>
+					<input type="text" formControlName="username"/>
+				</div>
+
+			<div class="form-group">
+				<label for="email">Email </label>
+				<input type="email" formControlName="email"/>
+			</div>
+
+			<div id="containerButton">
+				<button type="submit">Valider</button>
+			</div>
+			</div>
+		</form>
+	</div>
+</div>

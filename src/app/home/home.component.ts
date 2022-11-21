@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild, OnInit} from '@angular/core';
+
+// import simpleParallax from 'simple-parallax-js';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+
 
 @Component({
 	selector: 'app-home',
@@ -16,4 +19,5 @@ export class HomeComponent {
 		this.authService.logout();
 		this.router.navigate(['']);
 	}
+
 }
