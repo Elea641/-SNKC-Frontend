@@ -1,4 +1,4 @@
-<div class="background">
+ <div class="background">
   <div class="containerSneakers">
     <div id="containerButton">
       <button class="btn1" [routerLink]="['/sneakers', id, 'update']">Update Sneakers</button>
@@ -18,7 +18,7 @@
         <p>Postée {{ sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
         <p>Taille : {{sneakersById?.size}}</p>
         <p>L'état global de ma sneakers : {{sneakersById?.stateOfWear}}</p>
-        <p *ngIf="sneakersById?.mainColor">Ma couleur : {{sneakersById?.mainColor}}</p> 
+        <p *ngIf="sneakersById?.mainColor">Ma couleur : {{sneakersById?.mainColor}}</p>
       </div>
     </div>
   </div>

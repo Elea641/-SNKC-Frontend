@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Auction } from '../models/auction';
 import { Room } from '../models/room';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
 import { RoomService } from '../services/room.service';
 import { SneakersService } from '../services/sneakers.service';
+import { UserService } from '../services/user.service';
 
 @Component({
 	selector: 'app-auction',
@@ -14,8 +15,9 @@ import { SneakersService } from '../services/sneakers.service';
 })
 export class AuctionComponent implements OnInit {
 	room: Room | undefined;
+	roomId: string | undefined;
 	auctions: Auction[] = [];
-	user: User | undefined;
+	currentUser: User | undefined;
 	sneakers: Sneakers | undefined;
 	bit = 0;
 	maxOffer = 0;
@@ -26,6 +28,8 @@ export class AuctionComponent implements OnInit {
 		private roomService: RoomService,
 		private route: ActivatedRoute,
 		private sneakerService: SneakersService,
+		private userService: UserService,
+		private router: Router
 	) {}
 
 	public onSubmitAuction(): void {
@@ -33,7 +37,7 @@ export class AuctionComponent implements OnInit {
 			if (this.bit > this.room.initialPrice) {
 				this.offers.unshift(this.bit);
 				this.maxOffer = this.bit;
-				this.showMsg= true;
+				this.showMsg = true;
 				const auction: Auction = new Auction(this.room.id, this.bit);
 				this.roomService
 					.postAuction(auction)
@@ -45,7 +49,7 @@ export class AuctionComponent implements OnInit {
 			if (this.bit > Math.max(...this.offers)) {
 				this.offers.unshift(this.bit);
 				this.maxOffer = this.bit;
-				this.showMsg= true;
+				this.showMsg = true;
 				const auction: Auction = new Auction(this.room?.id, this.bit);
 				this.roomService
 					.postAuction(auction)
@@ -56,17 +60,27 @@ export class AuctionComponent implements OnInit {
 		}
 	}
 
+	deleteRoom() {
+		if (confirm('Are you sure to delete this room ?')) {
+			this.roomService.deleteRoom(<string>this.roomId).subscribe((_) => {
+				this.router.navigate(['/auction', this.room?.id, 'delete']);
+			});
+		}
+	}
+
 	ngOnInit(): void {
+		this.userService
+			.getConnectedUser()
+			.subscribe((response: User) => (this.currentUser = response));
 		this.route.paramMap.subscribe((params: ParamMap) => {
-			const roomId = <string>params.get('id');
-			this.roomService
-				.getRoomById(roomId)
-				.subscribe((response: Room) => {
-					this.room = response;
-					this.sneakerService.getSneakersById(this.room.sneakersId.toString())
-						.subscribe((res: Sneakers) => (this.sneakers = res));
-				});
-			this.roomService.getAuctionsbyRoomId(roomId).subscribe((res: Auction[]) => {
+			this.roomId = <string>params.get('id');
+			this.roomService.getRoomById(this.roomId).subscribe((response: Room) => {
+				this.room = response;
+				this.sneakerService
+					.getSneakersById(this.room.sneakersId.toString())
+					.subscribe((res: Sneakers) => (this.sneakers = res));
+			});
+			this.roomService.getAuctionsbyRoomId(this.roomId).subscribe((res: Auction[]) => {
 				this.auctions = res;
 				this.offers = this.auctions.map((auction: Auction) => auction.offer);
 				this.maxOffer = Math.max(...this.offers);
