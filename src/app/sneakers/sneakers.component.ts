@@ -4,7 +4,7 @@ import { Sneakers } from '../models/sneakers';
 import { SneakersService } from '../services/sneakers.service';
 import { HelperService } from '../services/helper.service';
 import { Picture } from '../models/picture';
-import { AuthService } from '../services/auth.service';
+
 import { Colors } from '../models/enum/colors';
 import { StateOfWear } from '../models/enum/stateofwear';
 
@@ -15,12 +15,9 @@ import { StateOfWear } from '../models/enum/stateofwear';
 })
 export class SneakersComponent implements OnInit {
 	public sneakersById: Sneakers | undefined;
-	public stateOfWear: number | undefined;
-	public mainColor: number | undefined;
 	public pictures: Picture[] | undefined;
 	public id: string | undefined;
-	
-	
+
 	constructor(
 		private sneakersService: SneakersService,
 		private route: ActivatedRoute,

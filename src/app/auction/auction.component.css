@@ -2,6 +2,13 @@
 	margin: 1rem;
 }
 
+.alert-success {
+	color: rgb(3, 101, 3);
+	background-color: rgb(172, 217, 172);
+	padding: 2rem;
+
+}
+
 h2 {
 	text-align: center;
 	margin: 1rem;
@@ -11,12 +18,12 @@ h1 {
 	text-align: center;
 }
 
-h4 {
-	margin-top: 1rem;
+h3 {
+	text-align: center;
 }
 
-.room-details {
-	margin-top: 1.5rem;
+h4 {
+	margin-top: 1rem;
 }
 
 .image {
@@ -47,7 +54,7 @@ input {
 }
 
 .auctions {
-	margin-top: 2rem;
+	margin: 1rem;
 }
 
 table {
@@ -68,6 +75,26 @@ td {
 	text-align: center;
 }
 
+button {
+	background-color: white;
+	width: 40%;
+	height: 30pxPX;
+	border-radius: 2rem;
+	padding: 15px;
+	font-size: 16px;
+}
+
+button:hover {
+	border-radius: 2rem;
+	background: #74c2cc;
+}
+
+button:active {
+	border-radius: 2rem;
+	background: #41a1ae;
+	color: white;
+}
+
 @media screen and (min-width: 768px) and (max-width: 992px) {
 	.container {
 		margin: 3rem;
@@ -81,23 +108,23 @@ td {
 		margin-top: 1.5rem;
 	}
 
-	.room-details {
-		margin-top: 1.5rem;
-	}
-
 	.image {
 		max-width: 50%;
 		margin: 1.5rem;
 	}
 
+	.auctions {
+		margin: 4rem;
+	}
+
 	table {
-		margin: 1.5rem;
+		margin: 2rem;
 	}
 }
 
 @media screen and (min-width: 993px) {
 	.container {
-		margin: 5rem;
+		margin: 3rem;
 	}
 
 	.room {
@@ -105,23 +132,25 @@ td {
 		justify-content: center;
 	}
 
+	.room-details {
+		margin: 2rem;
+	}
+
 	.room-details > * {
 		margin-top: 1.5rem;
 	}
 
-	.room-details {
-		margin-top: 4rem;
-	}
 
 	.image {
 		margin: 3rem;
+		max-height: 80vh;
+	}
+
+	.auctions {
+		margin: 8rem;
 	}
 
 	.auctions > h3 {
-		margin: 1.5rem;
-	}
-
-	table {
 		margin: 1.5rem;
 	}
 }

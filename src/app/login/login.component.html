@@ -1,17 +1,10 @@
-
-<form [formGroup]="form" (ngSubmit)="onRegisterSubmit()">
-    <div class="form-card">
-        <div>
-            <label for="email">Email </label>
-            <input type="email" FormControlName="email" name="email">
-        </div>
-        <div>
-            <label for="password">Mot de passe </label>
-            <input type="password" FormControlName="password" name="password">
-        </div>
-        
-        <div id="containerButton">
-            <button type="submit">Se connecter </button>
-        </div>
-    </div>
-</form>
+<div class="login-page">
+	<div class="form">
+		<form [formGroup]="form" (ngSubmit)="onLoginFormSubmit()">
+			<input type="text" formControlName="email" placeholder="E-mail"/>
+			<input type="password"  formControlName="password" placeholder="Mot de passe"/>
+			<button>Connection</button>
+			<p class="message">Pas inscrit? <a [routerLink]="['/register']">Créer un compte</a></p>
+		</form>
+	</div>
+</div>

@@ -155,7 +155,6 @@ display: none;
   text-decoration: none;
   line-height: 70px;
   font-size: 1.2rem;
-
   cursor: pointer;
 }
 
@@ -226,7 +225,6 @@ display: none;
   border-radius: 20px;
   border: 1px solid white;
   text-align: center;
-
 }
 
 .nav-menu1 a:hover, .show:hover{
@@ -490,4 +488,3 @@ display: none;
   background: #74c2cc;
 }
 }
-

@@ -32,6 +32,9 @@ export class CreatedSneakersComponent implements OnInit {
 	public createdPreview$!: Observable <Sneakers>;
 	public onValidation = true;
 	public urlRegex!: RegExp;
+	public states: Map<string, string>[];
+	public colors: Map<string, string>[];
+
 	public sneakersByUserId: Sneakers[] | undefined;
 	// public pictures: FormArray = new FormArray([
 	// 	new FormControl(
@@ -49,7 +52,10 @@ export class CreatedSneakersComponent implements OnInit {
 		private router: Router,
 		private sneakersService: SneakersService,
 		private authService: AuthService
-	) {}
+	) {
+		this.states = StateOfWear as unknown as Map<string, string>[]; 
+		this.colors = Colors as unknown as Map<string, string>[];
+	}
 
 	ngOnInit(): void {
 		this.urlRegex =

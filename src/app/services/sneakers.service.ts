@@ -1,31 +1,51 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Sneakers } from '../models/sneakers';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class SneakersService {
+	constructor(private http: HttpClient) {}
 
-  baseUrl: string = "http://localhost:3000/sneakers";
-  
-  constructor(private http: HttpClient) { }
-  
-  getSneakersById(id: string): Observable<Sneakers> {
-    return this.http.get<Sneakers>(`${this.baseUrl}/${id}`)
-  }
-  
-  getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-    return this.http.get<Sneakers[]>(`${this.baseUrl}?user.id=${id}`)
-  }
-  
-  get(): Observable<Sneakers[]> {
-    return this.http.get<Sneakers[]>(`${this.baseUrl}`)
-  }
+	getSneakersById(id: string): Observable<Sneakers> {
+		return this.http.get<Sneakers>(`${environment.urlApi}sneakers/${id}`);
+	}
 
-public deleteSneakersById(id: string): void{
-   this.http.delete(`${this.baseUrl}/${id}`).subscribe();
-  }
+	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers?userId=' + id);
+	}
+
+	getSneakersForCurrentUser(): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers/all`);
+	}
+
+	postSneakersForCurrentUser(sneakers: Sneakers): Observable<Sneakers> {
+		return this.http.post<Sneakers>(environment.urlApi, sneakers);
+	}
+
+	updateSneakers(sneakers: Sneakers, id: string): Observable<Sneakers> {
+		return this.http.put<Sneakers>(`${environment.urlApi}sneakers/${id}`, sneakers);
+	}
+
+	deleteSneakersById(id: string): Observable<Sneakers> {
+		return this.http.delete<Sneakers>(`${environment.urlApi}sneakers/${id}`);
+	}
+
+	// sneakersByIdLike(
+	// 	id: string,
+	// 	followType: 'Like' | 'DisLike'
+	// ): Observable<Sneakers> {
+	// 	return this.http.get<Sneakers>(environment.urlApi + id).pipe(
+	// 		map((sneakers) => ({
+	// 			...sneakers,
+	// 			follows: sneakers.follows + (followType === 'Like' ? 1 : -1),
+	// 		})),
+	// 		switchMap((updateSneakers) =>
+	// 			this.http.put<Sneakers>(environment.urlApi + id, updateSneakers)
+	// 		)
+	// 	);
+	// }
 }
-

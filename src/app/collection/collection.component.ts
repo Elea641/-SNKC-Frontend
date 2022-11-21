@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Sneakers } from '../models/sneakers';
+import { AuthService } from '../services/auth.service';
 import { SneakersService } from '../services/sneakers.service';
 
 @Component({
@@ -10,23 +11,20 @@ import { SneakersService } from '../services/sneakers.service';
 })
 export class CollectionComponent implements OnInit {
 	
-	sneakersByUserId: Sneakers[] = [];
-	currentPage = 1;
-	sneakersPerPage = 10;
+	public sneakers: Sneakers[] = [];
+	public currentPage = 1;
+	public sneakersPerPage = 10;
 	
 	constructor(
 		private sneakersService: SneakersService,
-		private route: ActivatedRoute
-		) { }
-		
-		ngOnInit(): void {
-			
-			this.route.paramMap.subscribe((params: ParamMap) => {
-				const userId = <string>params.get("id");
-				this.sneakersService.getAllSneakersByUserId(userId).subscribe((response: Sneakers[]) => {
-					this.sneakersByUserId = response;
-				});
-			});
+		private route: ActivatedRoute,
+		private authService: AuthService){
 		}
-		
-	}
+
+		ngOnInit(): void {
+				this.sneakersService.getSneakersForCurrentUser().subscribe((response: Sneakers[]) => {
+					this.sneakers = response;
+				});
+			}
+		}
+	

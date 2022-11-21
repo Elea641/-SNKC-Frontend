@@ -1,6 +1,6 @@
 export interface ParsedToken {
-    iap: Date;
-    exp: Date;
-    roles: string[];
-    sub: string;
-  }
+  iap: Date;
+  exp: Date;
+  roles: string[];
+  sub: string;
+}

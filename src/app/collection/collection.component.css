@@ -28,13 +28,23 @@ h1 {
 }
 
 button {
-    background-color: white;
-    width: 40%;
-    height: 30pxPX;
-    border-radius: 2rem;
-    padding: 15px;
-    font-size: 16px;
-  }
+
+	text-transform: uppercase;
+	outline: 0;
+	background: #00adb5;
+	width: 20%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+button:hover,.form button:active,.form button:focus {
+	background: #00adb5;
+}
   
   select{
     background-color: white;
@@ -42,17 +52,6 @@ button {
     border-radius: 2rem;
     font-size: 16px;
     text-align: center;
-  }
-
-  button:hover {
-    border-radius: 2rem;
-    background: #74c2cc;
-  }
-  
-  button:active {
-    border-radius: 2rem;
-    background: #41a1ae;
-    color: white;
   }
 
   .pagination {

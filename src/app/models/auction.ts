@@ -1,12 +1,12 @@
-import { Room } from './room';
-import { User } from './user';
-
 export class Auction {
-	constructor(
-		public id: number,
-		public user: User,
-		public room: Room,
-		public offer: number,
-		public date: Date
-	) {}
+	public id: number| undefined;
+	public userId: number | undefined;
+	public roomId: number | undefined;
+	public offer: number;
+	public date: Date | undefined;
+
+	constructor(roomId: number | undefined, offer: number) {
+		this.roomId = roomId;
+		this.offer = offer;
+	}
 }
