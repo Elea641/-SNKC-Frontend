@@ -22,9 +22,9 @@ export class CollectionComponent implements OnInit {
 		}
 
 		ngOnInit(): void {
-				this.sneakersService.getSneakersForCurrentUser().subscribe((response: Sneakers[]) => {
+				this.sneakersService.getAllSneakersByUserId().subscribe((response: Sneakers[]) => {
 					this.sneakers = response;
+					console.log(this.sneakers)
 				});
 			}
 		}
-	

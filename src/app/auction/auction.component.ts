@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Auction } from '../models/auction';
+import { Colors } from '../models/enum/colors';
+import { StateOfWear } from '../models/enum/stateofwear';
 import { Room } from '../models/room';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
+import { HelperService } from '../services/helper.service';
 import { RoomService } from '../services/room.service';
 import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
@@ -86,5 +89,19 @@ export class AuctionComponent implements OnInit {
 				this.maxOffer = Math.max(...this.offers);
 			});
 		});
+	}
+
+	public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+		if (stateOfWear){
+			return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+		}
+		return "";
+	}
+	
+	public colorsToString(color: Colors | undefined): string {
+		if (color){
+			return HelperService.colorsToString(<Colors> color);
+		}
+		return "";
 	}
 }

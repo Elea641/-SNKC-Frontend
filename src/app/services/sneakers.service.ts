@@ -14,11 +14,11 @@ export class SneakersService {
 		return this.http.get<Sneakers>(`${environment.urlApi}sneakers/${id}`);
 	}
 
-	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers?userId=' + id);
+	getAllSneakersByUserId(): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers`);
 	}
 
-	getSneakersForCurrentUser(): Observable<Sneakers[]> {
+	getSneakersAll(): Observable<Sneakers[]> {
 		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers/all`);
 	}
 

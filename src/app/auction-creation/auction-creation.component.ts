@@ -36,7 +36,7 @@ export class AuctionCreationComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.sneakersService
-			.getSneakersForCurrentUser()
+			.getAllSneakersByUserId()
 			.subscribe((response: Sneakers[]) => {
 				this.sneakersByUserId = response;
 			});
