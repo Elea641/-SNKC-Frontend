@@ -32,6 +32,7 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
 import { AuctionCardComponent } from './auction-card/auction-card.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
+import { DeleteAuctionComponent } from './delete-auction/delete-auction.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 
 @NgModule({
@@ -59,7 +60,8 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
 		AuctionCardComponent,
 		DeletSneakersComponent,
 		UpdateSneakersComponent,
-  		CarrouselComponent,
+		DeleteAuctionComponent,
+		CarrouselComponent,
 	],
 	imports: [
 		BrowserModule,
