@@ -9,73 +9,73 @@ export class HelperService {
 
 constructor() { }
 
-static stateOfWearToString(stateofwear: string): string{
+static stateOfWearToString(stateofwear: StateOfWear): string{
   switch(stateofwear) {
-    case "Neuf":
-    return "NEUF";
+    case StateOfWear.Neuf:
+    return "Neuf";
     
-    case "Très bon état":
-    return "TRES_BON_ETAT";
+    case StateOfWear['Très bon état']:
+    return " Très Bon état";
     
-    case "Bon état":
-    return "BON_ETAT";
+    case StateOfWear['Bon état']:
+    return "Bon état";
     
-    case "Etat moyen":
-    return "ETAT_MOYEN";
+    case StateOfWear['Etat moyen']:
+    return "Etat moyen";
     
-    case "Usé":
-    return "USE";
+    case StateOfWear.Usé:
+    return "Usé";
     
     default:
     throw new Error("StateOfWear not recognized");
   }
 }
 
-// static colorsToString(colors: number): string{
-//   switch(colors) {
+static colorsToString(colors: Colors): string{
+  switch(colors) {
 
-//     case Colors.WHITE:
-//     return "White";
+    case Colors.Blanc:
+    return "Blanc";
     
-//     case  Colors.BLACK:
-//     return "Black";
+    case  Colors.Noir:
+    return "Noir";
     
-//     case Colors.RED:
-//     return "Red";
+    case Colors.Rouge:
+    return "Rouge";
     
-//     case Colors.BLUE:
-//     return "Blue";
+    case Colors.Bleu:
+    return "Bleu";
     
-//     case Colors.GREEN:
-//     return "Green";
+    case Colors.Vert:
+    return "Vert";
     
-//     case Colors.PURPLE:
-//     return "Purple";
+    case Colors.Violet:
+    return "Violet";
     
-//     case Colors.YELLOW:
-//     return "Yellow";
+    case Colors.Jaune:
+    return "Jaune";
     
-//     case Colors.ORANGE:
-//     return "Orange";
+    case Colors.Orange:
+    return "Orange";
     
-//     case Colors.PINK:
-//     return "Pink";
+    case Colors.Rose:
+    return "Rose";
     
-//     case Colors.BROWN:
-//     return "Brown";
+    case Colors.Marron:
+    return "Marron";
     
-//     case Colors.GREY:
-//     return "Grey";
+    case Colors.Gris:
+    return "Gris";
     
-//     case Colors.MULTI:
-//     return "Multi";
+    case Colors.Multi:
+    return "Multi";
     
-//     case Colors.OTHER:
-//     return "Other";
+    case Colors.Autre:
+    return "Autre";
 
-//     default:
-//     throw new Error("Colors not recognized");
-//   }
-// }
+    default:
+    throw new Error("Colors not recognized");
+  }
+}
 
 }

@@ -20,8 +20,7 @@ export class SneakersComponent implements OnInit {
 	// public colors: Map<string, string>[];
 	// public pictures: Picture[] | undefined;
 	public id: string | undefined;
-	public states: Map<string, string>[];
-	public colors: Map<string, string>[];
+	
 	
 	
 	constructor(
@@ -31,8 +30,6 @@ export class SneakersComponent implements OnInit {
 		private authService: AuthService,
 		private router: Router
 		) {
-			this.states = StateOfWear as unknown as Map<string, string>[]; 
-			this.colors = Colors as unknown as Map<string, string>[];
 		}
 		
 		ngOnInit(): void {
@@ -45,13 +42,19 @@ export class SneakersComponent implements OnInit {
 			});
 		}
 		
-		public stateOfWearToString(stateOfWear: string): string {
-			return HelperService.stateOfWearToString(stateOfWear);
+		public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+			if (stateOfWear){
+				return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+			}
+				return "";
 		}
 		
-		// colorsToString(color: number): string {
-		// 	return HelperService.colorsToString(color);
-		// }
+		public colorsToString(color: Colors | undefined): string {
+			if (color){
+				return HelperService.colorsToString(<Colors> color);
+			}
+				return "";
+		}
 		
 		public deleteSneakers() {
 			if(confirm('Are you sure to delete your sneakers?')){
