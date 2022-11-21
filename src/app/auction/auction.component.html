@@ -60,4 +60,9 @@
 			</tr>
 		</table>
 	</div>
+
+	<div *ngIf="currentUser?.id == room?.ownerId">
+		<button class="deleteRoom" (click)="deleteRoom()">Supprimer la salle</button>
+
+	</div>
 </div>
