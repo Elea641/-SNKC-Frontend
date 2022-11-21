@@ -20,7 +20,7 @@ export class CarrouselComponent implements OnInit {
 		}
 
 		ngOnInit(): void {
-				this.sneakersService.getSneakersForCurrentUser().subscribe((response: Sneakers[]) => {
+				this.sneakersService.getSneakersAll().subscribe((response: Sneakers[]) => {
 					this.sneakers = response;
 				});
 			}

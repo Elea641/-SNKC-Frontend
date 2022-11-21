@@ -19,6 +19,10 @@ export class RoomService {
 		return this.http.get<Room[]>(`${environment.urlApi}rooms`);
 	}
 
+	getRoomsAll(): Observable<Room[]> {
+		return this.http.get<Room[]>(`${environment.urlApi}rooms/all`);
+	}
+
 	postRoom(room: Room): Observable<Room> {
 		return this.http.post<Room>(`${environment.urlApi}rooms`, room);
 	}
