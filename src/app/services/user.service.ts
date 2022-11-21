@@ -23,4 +23,8 @@ export class UserService {
 			})
 		);
 	}
+	updateMe(user: object): Observable<User> {
+			return this.http.patch<User>(environment.urlApi + 'users/me', user);
+		}
 }
+
