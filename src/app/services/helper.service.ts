@@ -9,27 +9,27 @@ export class HelperService {
 
 constructor() { }
 
-// static stateOfWearToString(stateofwear: number): string{
-//   switch(stateofwear) {
-//     case StateOfWear.NEUF:
-//     return "Neuf";
+static stateOfWearToString(stateofwear: string): string{
+  switch(stateofwear) {
+    case "Neuf":
+    return "NEUF";
     
-//     case StateOfWear.TRES_BON_ETAT:
-//     return "Très bon état";
+    case "Très bon état":
+    return "TRES_BON_ETAT";
     
-//     case StateOfWear.BON_ETAT:
-//     return "Bon état";
+    case "Bon état":
+    return "BON_ETAT";
     
-//     case StateOfWear.ETAT_MOYEN:
-//     return "Etat moyen";
+    case "Etat moyen":
+    return "ETAT_MOYEN";
     
-//     case StateOfWear.USE:
-//     return "Usé";
+    case "Usé":
+    return "USE";
     
-//     default:
-//     throw new Error("StateOfWear not recognized");
-//   }
-// }
+    default:
+    throw new Error("StateOfWear not recognized");
+  }
+}
 
 // static colorsToString(colors: number): string{
 //   switch(colors) {
@@ -75,54 +75,6 @@ constructor() { }
 
 //     default:
 //     throw new Error("Colors not recognized");
-//   }
-// }
-
-// static stringToColors(colors: string): Colors{
-//   switch(colors) {
-//       case "White":
-//       return Colors.WHITE
-    
-//       case "Black":
-//       return Colors.BLACK;
-      
-//       case "Red":
-//       return Colors.RED;
-      
-//       case "Blue":
-//       return Colors.BLUE;
-      
-//       case "Green":
-//       return Colors.GREEN;
-      
-//       case "Purple":
-//       return Colors.PURPLE;
-      
-//       case "Yellow":
-//       return Colors.YELLOW;
-      
-//       case "Orange":
-//       return Colors.ORANGE;
-      
-//       case "Pink":
-//       return Colors.PINK;
-      
-//       case "Brown":
-//       return Colors.BROWN;
-      
-//       case "Grey":
-//       return Colors.GREY;
-      
-//       case "Multi":
-//       return Colors.MULTI;
-      
-//       case "Other":
-//       return Colors.OTHER;
-
-//       default:
-//       throw new Error("Colors not recognized");
-    
-  
 //   }
 // }
 

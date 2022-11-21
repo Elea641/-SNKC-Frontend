@@ -74,22 +74,43 @@
     
     #containerButton {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
-        justify-content: right;
         padding: 0;
         width: 100%;
         background-color: white;
         margin-bottom: 30px;
         text-align: right;
     }
-    
+
     button {
-        background-color: white;
-        width: 40%;
-        height: 30pxPX;
-        border-radius: 2rem;
+        text-transform: uppercase;
+        outline: 0;
+        background: #00adb5;
+        width: 50%;
+        border: 0;
         padding: 15px;
-        font-size: 16px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        margin: 0;
+        justify-content: space-between;
+    }
+    
+    button:hover,.form button:active,.form button:focus {
+        background: #00adb5;
+    }
+
+    .btn1 {
+        width: 40%;
+        margin: 2%;
+    }
+
+    .btn2 {
+        width: 40%;
+        margin: 2%;
     }
     
     select{
@@ -98,18 +119,7 @@
         border-radius: 2rem;
         font-size: 16px;
         text-align: center;
-    }
-    
-    button:hover {
-        border-radius: 2rem;
-        background: #74c2cc;
-    }
-    
-    button:active {
-        border-radius: 2rem;
-        background: #41a1ae;
-        color: white;
-    }  
+    } 
     
     @media screen and (min-width: 768px) and (max-width: 992px) {
         

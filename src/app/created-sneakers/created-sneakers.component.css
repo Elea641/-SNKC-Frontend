@@ -74,24 +74,30 @@ textarea {
 	text-align: center;
 }
 
-.action-buttons {
-	width: 100%;
-	background-color: white;
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: #00adb5;
+	width: 60%;
+	border: 0;
+	margin: 5px;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin: 0;
 }
 
-button {
-	display: block;
-	margin: 20px auto;
-	background-color: white;
-	margin-top: 10%;
-	margin-bottom: 5%;
-	width: 70%;
-	height: 60px;
-	border-radius: 2rem;
-	text-align: center;
-	padding: 15px;
-	font-size: 16px;
+button:hover,.form button:active,.form button:focus {
+	background: #00adb5;
 }
+
+.action-buttons {
+	display: flex;
+	justify-content: center;
+  }
 
 select {
 	background-color: white;
@@ -99,17 +105,6 @@ select {
 	border-radius: 2rem;
 	font-size: 16px;
 	text-align: center;
-}
-
-button:hover {
-	border-radius: 2rem;
-	background: #74c2cc;
-}
-
-button:active {
-	border-radius: 2rem;
-	background: #41a1ae;
-	color: white;
 }
 
 .form-card {
