@@ -88,17 +88,16 @@ export class UpdateSneakersComponent implements OnInit {
               
             }
             
-            // stateOfWearToString(stateOfWear: number): string {
-            //   return HelperService.stateOfWearToString(stateOfWear);
-            // }
+            stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+              return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+            }
             
-            // colorsToString(color: number): string {
-            //   return HelperService.colorsToString(color);
-            // }
+            colorsToString(color: Colors): string {
+              return HelperService.colorsToString(<Colors> color);
+            }
             
             onSubmitUpdateForm(): void {
               const sneakers = <Sneakers>this.updateSneakersForm.getRawValue();
-              console.log(sneakers)
 
               this.route.paramMap.subscribe((params: ParamMap) => {
                 this.userService.getConnectedUser().subscribe((reponse: User) => {
