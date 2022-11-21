@@ -32,6 +32,8 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
 import { AuctionCardComponent } from './auction-card/auction-card.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
 import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.component';
+import { ConnectionComponent } from './connection/connection.component';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 
 @NgModule({
 	declarations: [
@@ -58,6 +60,8 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
 		AuctionCardComponent,
 		DeletSneakersComponent,
 		UpdateSneakersComponent,
+  ConnectionComponent,
+  CarrouselComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -66,7 +70,6 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
 		ReactiveFormsModule,
 		FormsModule,
 		NgxPaginationModule,
-	
 	],
 	providers: [
 		{ provide: LOCALE_ID, useValue: 'fr-FR' },

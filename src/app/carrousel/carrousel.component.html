@@ -1,0 +1,11 @@
+<div *ngIf="sneakers && sneakers.length > 0" class="carouselContainer">
+  <section class="carousel"> 
+    <ul class="carousel-items">
+      <li class="carousel-item" *ngFor="let sneaker of sneakers">
+        <a [routerLink]="['/sneakers/', sneaker.id]">
+            <app-sneakers-card [sneakers]="sneaker"></app-sneakers-card>
+        </a>
+      </li>
+    </ul>
+  </section> 
+</div>

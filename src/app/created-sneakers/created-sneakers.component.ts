@@ -101,11 +101,4 @@ export class CreatedSneakersComponent implements OnInit {
 		});
 	}
 
-	// stateOfWearToString(stateOfWear: number): string {
-	// 	return HelperService.stateOfWearToString(stateOfWear);
-	// }
-
-	// colorsToString(color: number): string {
-	// 	return HelperService.colorsToString(color);
-	// }
 }

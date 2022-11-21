@@ -4,6 +4,7 @@ import { AuctionCreationComponent } from './auction-creation/auction-creation.co
 import { AuctionComponent } from './auction/auction.component';
 import { AuctionsComponent } from './auctions/auctions.component';
 import { CollectionComponent } from './collection/collection.component';
+import { ConnectionComponent } from './connection/connection.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreatedSneakersComponent } from './created-sneakers/created-sneakers.component';
 import { DeletSneakersComponent } from './delet-sneakers/delet-sneakers.component';
@@ -43,7 +44,7 @@ const routes: Routes = [
 	{path: 'sneakers/:id/update', component: UpdateSneakersComponent, canActivate: [AuthGuard]},
 	{path: 'delete', component: DeletSneakersComponent, canActivate: [AuthGuard]},
 	{path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
-	{path: '', pathMatch: 'full', component: HomeComponent},
+	{path: '', pathMatch: 'full', component: ConnectionComponent},
 	{path: '**', redirectTo: ''}
 ];
 
