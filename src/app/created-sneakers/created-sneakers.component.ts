@@ -94,7 +94,7 @@ export class CreatedSneakersComponent implements OnInit {
 		this.route.paramMap.subscribe((params: ParamMap) => {
 			this.userService.getConnectedUser().subscribe((reponse: User) => {
 				sneakers.user = reponse;
-				this.http.post<Sneakers>(environment.urlApi + "sneakers", sneakers).subscribe((res: Sneakers) => {
+				this.http.post<Sneakers>(environment.urlApi + 'sneakers', sneakers).subscribe((res: Sneakers) => {
 					this.router.navigate(['sneakers', res.id]);
 				});
 			});
