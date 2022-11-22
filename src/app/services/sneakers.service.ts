@@ -22,8 +22,8 @@ export class SneakersService {
 		);
 	}
 
-	getAllSneakersByUserId(id: string): Observable<Sneakers[]> {
-		return this.http.get<Sneakers[]>(environment.urlApi + 'sneakers?userId=' + id).pipe(
+	getAllSneakersByUserId(): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers`).pipe(
 			map((sneakersArray: Sneakers[]) => {
 				sneakersArray = sneakersArray.map((sneakers: Sneakers) => {
 					sneakers.pictureSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
@@ -37,6 +37,21 @@ export class SneakersService {
 	}
 
 	getSneakersForCurrentUser(): Observable<Sneakers[]> {
+		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers/all`).pipe(
+			map((sneakersArray: Sneakers[]) => {
+				sneakersArray = sneakersArray.map((sneakers: Sneakers) => {
+					sneakers.pictureSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+						'data:image/jpg;base64,' + sneakers.picture
+					);
+					return sneakers;
+				});
+				return sneakersArray;
+			})
+		);
+	}
+
+
+	getSneakersAll(): Observable<Sneakers[]> {
 		return this.http.get<Sneakers[]>(`${environment.urlApi}sneakers/all`).pipe(
 			map((sneakersArray: Sneakers[]) => {
 				sneakersArray = sneakersArray.map((sneakers: Sneakers) => {

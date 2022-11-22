@@ -19,10 +19,25 @@
   }
   
   .action-buttons {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5%;
   }
   
   button {
-    display: block;
-    margin: 20px auto;
+    text-transform: uppercase;
+    outline: 0;
+    background: #00adb5;
+    width: 60%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  
+  button:hover,.form button:active,.form button:focus {
+    background: #00adb5;
   }
