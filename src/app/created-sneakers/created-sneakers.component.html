@@ -4,10 +4,11 @@
       <h1>AJOUTER SNEAKERS</h1>
       <form [formGroup]="createdSneakersForm">
         <div class="colorForm">
-          <!-- <div class="form-group" formArrayName="pictures" *ngFor="let picture of pictures.controls; let i = index">
-            <label for="pictures">URL de l'image</label>
-            <input id="pictures" type="text" formControlName="{{i}}">
-          </div> -->
+          <div class="form-group">
+            <label for="picture">Photo</label>
+            <input id="picture" type="file" placeholder="Sélectionnez une photo" formControlName="picture" accept="image/*"
+												(change)="onSubmitNewPicture($event)">
+          </div>
           <div class="form-group">
             <label for="brand">Marque</label>
             <input id="brand" type="text" formControlName="brand">

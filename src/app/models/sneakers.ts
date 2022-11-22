@@ -1,9 +1,11 @@
 import { StateOfWear } from './enum/stateofwear';
 import { Colors } from './enum/colors';
 import { User } from './user';
-import { Picture } from './picture';
+import { SafeUrl } from '@angular/platform-browser';
 
 export class Sneakers {
+	public pictureSafeUrl!: SafeUrl;
+
 	constructor(
 		public id: number,
 		public brand: string,
@@ -12,9 +14,8 @@ export class Sneakers {
 		public stateOfWear: StateOfWear,
 		public createdDate: Date,
 		public updateDate: Date,
-		public user: User,
-		public pictures: Picture[],
-		// public follows: number,
-		public mainColor?: Colors,
+		public user: number,
+		public picture: Blob | string,
+		public mainColor?: Colors
 	) {}
 }
