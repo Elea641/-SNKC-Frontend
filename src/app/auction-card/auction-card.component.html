@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-image">
-        <img src="https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/h_500,c_limit/c113abc6-f28e-4607-ab1b-979d70e15ee7/les-meilleures-sneakers-sans-lacets-pour-homme-et-femme.jpg" [alt]="sneakers?.brand+'-'+ sneakers?.model" />
+        <img [src]="sneakers?.picture" />
     </div>
     <div class="card-body">
         <h3>{{sneakers?.brand}} - {{sneakers?.model}}</h3>
