@@ -3,7 +3,7 @@
 		<form [formGroup]="form" (ngSubmit)="onLoginFormSubmit()">
 			<input type="text" formControlName="email" placeholder="E-mail"/>
 			<input type="password"  formControlName="password" placeholder="Mot de passe"/>
-			<button>Connection</button>
+			<button>Connexion</button>
 			<p class="message">Pas inscrit? <a [routerLink]="['/register']">Créer un compte</a></p>
 		</form>
 	</div>
