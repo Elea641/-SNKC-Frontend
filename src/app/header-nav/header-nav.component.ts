@@ -14,13 +14,12 @@ export class HeaderNavComponent {
 	public favorite = 'Mes favoris';
 	public imgLogo = 'imgLogo';
 	public profile = 'Gérer mon profil';
-	public disconnect = 'Déconnection';
+	public disconnect = 'Déconnexion';
 	public search = 'Rechercher';
 	public isDisplayingSearchBar = false;
 	public id: string | undefined;
 
-	constructor(private authService: AuthService,
-				private router: Router) {}
+	constructor(private authService: AuthService, private router: Router) {}
 
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
@@ -28,5 +27,5 @@ export class HeaderNavComponent {
 	public logout() {
 		this.authService.logout();
 		this.router.navigate(['']);
-}
+	}
 }

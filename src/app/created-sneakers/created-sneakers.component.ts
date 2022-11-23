@@ -7,16 +7,14 @@ import {
 	FormGroup,
 	Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Colors } from '../models/enum/colors';
 import { StateOfWear } from '../models/enum/stateofwear';
 import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
-import { AuthService } from '../services/auth.service';
 import { HelperService } from '../services/helper.service';
-import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -39,12 +37,9 @@ export class CreatedSneakersComponent implements OnInit {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private route: ActivatedRoute,
 		private userService: UserService,
 		private http: HttpClient,
 		private router: Router,
-		private sneakersService: SneakersService,
-		private authService: AuthService
 	) {
 		this.states = StateOfWear as unknown as Map<string, string>[];
 		this.colors = Colors as unknown as Map<string, string>[];
