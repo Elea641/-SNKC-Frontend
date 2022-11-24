@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 import {
 	FormBuilder,
 	FormControl,
@@ -31,7 +30,6 @@ export class CreatedSneakersComponent implements OnInit {
 	public urlRegex!: RegExp;
 	public states: Map<string, string>[];
 	public colors: Map<string, string>[];
-
 	public sneakersByUserId: Sneakers[] | undefined;
 	public picture: File | null | undefined;
 
