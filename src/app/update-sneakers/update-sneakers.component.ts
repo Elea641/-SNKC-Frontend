@@ -35,7 +35,7 @@ export class UpdateSneakersComponent implements OnInit {
 	public sneakersByUserId: Sneakers[] | undefined;
 	public states: Map<string, string>[];
 	public colors: Map<string, string>[];
-
+	
 	constructor(
 		private sneakersService: SneakersService,
 		private route: ActivatedRoute,
@@ -45,19 +45,19 @@ export class UpdateSneakersComponent implements OnInit {
 		private http: HttpClient,
 		private router: Router,
 		private _location: Location
-	) {
-		this.states = StateOfWear as unknown as Map<string, string>[];
-		this.colors = Colors as unknown as Map<string, string>[];
-	}
-
-	ngOnInit(): void {
-		this.route.paramMap.subscribe((params: ParamMap) => {
-			const sneakersId = <string>params.get('id');
-			this.sneakersService
+		) {
+			this.states = StateOfWear as unknown as Map<string, string>[];
+			this.colors = Colors as unknown as Map<string, string>[];
+		}
+		
+		ngOnInit(): void {
+			this.route.paramMap.subscribe((params: ParamMap) => {
+				const sneakersId = <string>params.get('id');
+				this.sneakersService
 				.getSneakersById(sneakersId)
 				.subscribe((reponse: Sneakers) => {
 					this.sneakersById = reponse;
-
+					
 					this.updateSneakersForm = this.formBuilder.group(
 						{
 							brand: [this.sneakersById?.brand, [Validators.required]],
@@ -65,7 +65,6 @@ export class UpdateSneakersComponent implements OnInit {
 							size: [this.sneakersById?.size, [Validators.required]],
 							stateOfWear: [this.sneakersById?.stateOfWear, [Validators.required]],
 							mainColor: [this.sneakersById?.mainColor],
-							// pictures: this.pictures,
 							createdDate: new Date(),
 							id: this.sneakersByUserId,
 							updateDate: new Date(),
@@ -73,42 +72,64 @@ export class UpdateSneakersComponent implements OnInit {
 						{
 							updateOn: 'blur',
 						}
-					);
-					this.createdPreview$ = this.updateSneakersForm.valueChanges;
-				});
-		});
-
-		this.urlRegex =
-			/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
-	}
-
-	stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
-		return HelperService.stateOfWearToString(<StateOfWear>stateOfWear);
-	}
-
-	colorsToString(color: Colors): string {
-		return HelperService.colorsToString(<Colors>color);
-	}
-
-	onSubmitUpdateForm(): void {
-		const sneakers = <Sneakers>this.updateSneakersForm.getRawValue();
-
-		this.route.paramMap.subscribe((params: ParamMap) => {
-			this.userService.getConnectedUser().subscribe((reponse: User) => {
-				sneakers.user = reponse.id;
-				this.http
-					.put<Sneakers>(
-						`${environment.urlApi}sneakers/${this.sneakersById?.id}`,
-						sneakers
-					)
-					.subscribe((res: Sneakers) => {
-						this.router.navigate(['sneakers', res.id]);
+						);
+						this.createdPreview$ = this.updateSneakersForm.valueChanges;
 					});
-			});
-		});
-	}
+				});
+				
+				this.urlRegex =
+				/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
+			}
+			
+			stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
+				return HelperService.stateOfWearToString(<StateOfWear>stateOfWear);
+			}
+			
+			colorsToString(color: Colors): string {
+				return HelperService.colorsToString(<Colors>color);
+			}
+			
+			onSubmitUpdateForm(): void {
+				const sneakers = <Sneakers>this.updateSneakersForm.getRawValue();
+				const picture = (document.getElementById('picture') as HTMLInputElement).files?.item(0);
+				if (this.updateSneakersForm.invalid || (picture == null && this.sneakersById?.picture == null))
+					return;
 
-	backClicked() {
-		this._location.back();
-	}
-}
+				
+				this.route.paramMap.subscribe((params: ParamMap) => {
+					this.userService.getConnectedUser().subscribe((reponse: User) => {
+						sneakers.userId = reponse.id;
+						if (picture) {
+						picture.arrayBuffer().then((result: ArrayBuffer) => {
+							const reader: FileReader | null = new FileReader();
+							reader.readAsDataURL(
+								new Blob([new Uint8Array(result)], { type: 'image/*' })
+								);
+								reader.onloadend = () => {
+									sneakers.picture = <string> reader?.result?.toString();
+									this.http.put<Sneakers>(
+										`${environment.urlApi}sneakers/${this.sneakersById?.id}`,sneakers)
+										.subscribe((res: Sneakers) => {
+											this.router.navigate(['sneakers', res.id]);
+										});
+									};
+								});
+							} else {
+								sneakers.picture = <string | Blob> this.sneakersById?.picture;
+								this.http
+									.put<Sneakers>(
+										`${environment.urlApi}sneakers/${this.sneakersById?.id}`,
+										sneakers
+										)
+										.subscribe((res: Sneakers) => {
+											this.router.navigate(['sneakers', res.id]);
+										});
+									}
+							});
+						})
+					}
+					
+					backClicked() {
+						this._location.back();
+					}
+				}
