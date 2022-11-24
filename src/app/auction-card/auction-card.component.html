@@ -5,8 +5,11 @@
     <div class="card-body">
         <h3>{{sneakers?.brand}} - {{sneakers?.model}}</h3>
         <div class="time">
-            <p>Prend fin le</p>
-            <h2>{{room?.endDate | date}} à {{room?.endDate | date:'shortTime'}}</h2>
+									<app-countdown
+									*ngIf="room?.endDate"
+									[endDate]="room?.endDate"
+									style="text-align: center"
+								></app-countdown>
         </div>
     </div>
 </div>

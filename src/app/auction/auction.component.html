@@ -1,24 +1,29 @@
 <div class="container">
-	<div class="row"  *ngIf="showMsg">
+	<div class="row" *ngIf="showMsg">
 		<div class="col-xs-12">
-				<p class="alert-success">
-								<strong>Enchère bien prise en compte !</strong>
-				</p>
+			<p class="alert-success">
+				<strong>Enchère bien prise en compte !</strong>
+			</p>
 		</div>
-</div>
+	</div>
 	<div class="room">
 		<div class="image">
-			<img [src] = "sneakers?.picture"
-			/>
+			<img [src]="sneakers?.picture" />
 		</div>
 		<div class="room-details">
+			<h2>Cette enchère se termine dans</h2>
+			<app-countdown
+				*ngIf="room?.endDate"
+				[endDate]="room?.endDate"
+				style="text-align: center"
+			></app-countdown>
 			<div *ngIf="offers.length == 0">
 				<h2>Prix de départ :</h2>
-				<h1>{{ room?.initialPrice | currency:'EUR' }} </h1>
+				<h1>{{ room?.initialPrice | currency: "EUR" }}</h1>
 			</div>
 			<div *ngIf="maxOffer > 0">
 				<h2>Dernière enchère proposée :</h2>
-				<h1>{{ maxOffer | currency:'EUR' }}</h1>
+				<h1>{{ maxOffer | currency: "EUR" }}</h1>
 			</div>
 			<input
 				placeholder="Montant de votre enchère"
@@ -26,24 +31,20 @@
 				[(ngModel)]="bit"
 			/>
 			<button (click)="onSubmitAuction()">Enchérir</button>
-			<p>Prix de départ : {{ room?.initialPrice | currency:'EUR' }}</p>
-			<p>Temps restant pour enchère : {{ room?.endDate | date: "medium":"GMT" }}</p>
-
-			<hr>
-
-			<h3>Description</h3>
-			<p>Marque : {{sneakers?.brand}}</p>
-			<p>Modèle : {{sneakers?.model}}</p>
-			<p>Taille : {{sneakers?.size}}</p>
-			<p>Etat : {{stateOfWearToString(sneakers?.stateOfWear)}}</p>
-			<p>Couleur principale : {{colorsToString(sneakers?.mainColor)}}</p>
-
-			<div class="block-description">
-			</div>
+			<p>Prix de départ : {{ room?.initialPrice | currency: "EUR" }}</p>
 		</div>
 	</div>
 
-	<hr>
+	<div class="description">
+		<h3>Description</h3>
+		<div class="description-details">
+			<p>Marque : <span>{{ sneakers?.brand }}</span></p>
+			<p>Modèle : <span>{{ sneakers?.model }}</span></p>
+			<p>Taille : <span>{{ sneakers?.size }}</span></p>
+			<p>Etat : <span>{{ stateOfWearToString(sneakers?.stateOfWear) }}</span></p>
+			<p>Couleur principale : <span>{{ colorsToString(sneakers?.mainColor) }}</span></p>
+		</div>
+	</div>
 
 	<div class="auctions">
 		<h3>Historique des enchères</h3>
@@ -54,9 +55,8 @@
 			</tr>
 
 			<tr *ngFor="let auction of auctions">
-				<td>{{ auction?.offer | currency:'EUR' }}</td>
+				<td>{{ auction?.offer | currency: "EUR" }}</td>
 				<td>{{ auction?.date | date: "medium":"GMT" }}</td>
-
 			</tr>
 		</table>
 	</div>

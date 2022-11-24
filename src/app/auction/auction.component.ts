@@ -26,14 +26,16 @@ export class AuctionComponent implements OnInit {
 	maxOffer = 0;
 	offers: number[] = [];
 	showMsg = false;
-
+	
 	constructor(
 		private roomService: RoomService,
 		private route: ActivatedRoute,
 		private sneakerService: SneakersService,
 		private userService: UserService,
 		private router: Router
-	) {}
+	) {
+
+	}
 
 	public onSubmitAuction(): void {
 		if (this.room?.initialPrice && this.offers.length === 0) {
@@ -89,19 +91,23 @@ export class AuctionComponent implements OnInit {
 				this.maxOffer = Math.max(...this.offers);
 			});
 		});
+
+
 	}
 
 	public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
 		if (stateOfWear){
 			return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
 		}
-		return "";
+		return '';
 	}
-	
+
 	public colorsToString(color: Colors | undefined): string {
 		if (color){
 			return HelperService.colorsToString(<Colors> color);
 		}
-		return "";
+		return '';
 	}
+
+
 }

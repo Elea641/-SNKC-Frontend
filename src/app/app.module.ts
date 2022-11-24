@@ -35,6 +35,7 @@ import { UpdateSneakersComponent } from './update-sneakers/update-sneakers.compo
 import { DeleteAuctionComponent } from './delete-auction/delete-auction.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { CarrouselRoomComponent } from './carrousel-room/carrousel-room.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
 	declarations: [
@@ -63,7 +64,8 @@ import { CarrouselRoomComponent } from './carrousel-room/carrousel-room.componen
 		UpdateSneakersComponent,
 		DeleteAuctionComponent,
 		CarrouselComponent,
-  CarrouselRoomComponent,
+		CarrouselRoomComponent,
+		CountdownComponent,
 	],
 	imports: [
 		BrowserModule,
