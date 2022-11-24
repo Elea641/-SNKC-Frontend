@@ -31,6 +31,28 @@ static stateOfWearToString(stateofwear: StateOfWear): string{
   }
 }
 
+static stringToStateOfWear(string: string): StateOfWear{
+  switch(string) {
+    case "Neuf":
+    return StateOfWear.Neuf;
+    
+    case " Très Bon état":
+    return StateOfWear['Très bon état'];
+    
+    case "Bon état":
+    return StateOfWear['Bon état'];
+    
+    case "Etat moyen":
+    return StateOfWear['Etat moyen'];
+    
+    case "Usé":
+    return StateOfWear.Usé;
+    
+    default:
+    throw new Error("StateOfWear not recognized");
+  }
+}
+
 static colorsToString(colors: Colors): string{
   switch(colors) {
 
@@ -72,6 +94,53 @@ static colorsToString(colors: Colors): string{
     
     case Colors.Autre:
     return "Autre";
+
+    default:
+    throw new Error("Colors not recognized");
+  }
+}
+
+static stringToColors(string: string): Colors{
+  switch(string) {
+
+    case "Blanc":
+    return Colors.Blanc;
+    
+    case  "Noir":
+    return Colors.Noir;
+    
+    case "Rouge":
+    return Colors.Rouge;
+    
+    case "Bleu":
+    return Colors.Bleu;
+    
+    case "Vert":
+    return Colors.Vert;
+    
+    case "Violet":
+    return Colors.Violet;
+    
+    case "Jaune":
+    return Colors.Jaune;
+    
+    case "Orange":
+    return Colors.Orange;
+    
+    case "Rose":
+    return Colors.Rose;
+    
+    case "Marron":
+    return Colors.Marron;
+    
+    case "Gris":
+    return Colors.Gris;
+    
+    case "Multi":
+    return Colors.Multi;
+    
+    case "Autre":
+    return Colors.Autre;
 
     default:
     throw new Error("Colors not recognized");

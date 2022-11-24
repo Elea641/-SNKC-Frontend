@@ -25,15 +25,24 @@ select{
     text-align: center;
 }
 
-button:hover {
-    border-radius: 2rem;
-    background: #74c2cc;
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: #00adb5;
+	width: 60%;
+	border: 0;
+	margin: 5px;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin: 0;
 }
 
-button:active {
-    border-radius: 2rem;
-    background: #41a1ae;
-    color: white;
+button:hover,.form button:active,.form button:focus {
+	background: #00adb5;
 }
 
 p {

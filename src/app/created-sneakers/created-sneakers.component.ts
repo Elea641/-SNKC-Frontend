@@ -1,13 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-import {
-	FormArray,
-	FormBuilder,
-	FormControl,
-	FormGroup,
-	Validators,
-} from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -34,14 +28,7 @@ export class CreatedSneakersComponent implements OnInit {
 	public urlRegex!: RegExp;
 	public states: Map<string, string>[];
 	public colors: Map<string, string>[];
-
 	public sneakersByUserId: Sneakers[] | undefined;
-	// public pictures: FormArray = new FormArray([
-	// 	new FormControl(
-	// 		null, [Validators.required, Validators.pattern(this.urlRegex)]
-	// 	)
-	// ]
-	// );
 	public id: string | undefined;
 
 	constructor(

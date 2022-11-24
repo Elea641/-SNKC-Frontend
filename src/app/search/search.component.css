@@ -1,0 +1,130 @@
+*{
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.background{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.containerSearch {
+    align-items: center;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10PX;
+    background-color: white;
+    height: 100%;
+    margin: 20px;
+    padding: 40px;
+    position: relative;
+    margin: 2rem;
+    background-color: white;
+}
+
+.form {
+    justify-content: flex-start;
+}
+
+h1 {
+    background-color: white;
+    text-align: center;
+    font-size: 40px;
+    margin: 5%;
+}
+
+p {
+    background-color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+
+img {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+}
+
+#containerButton {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #00adb5;
+    width: 50%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin: 0;
+    justify-content: space-between;
+}
+
+button:hover,.form button:active,.form button:focus {
+    background: #00adb5;
+}
+
+.btn1 {
+    width: 40%;
+    margin: 2%;
+}
+
+select, input{
+    background-color: white;
+    width: 50%;
+    font-size: 16px;
+    text-align: center;
+} 
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    
+    h1 {
+        font-size: 50px;
+    }
+    
+    p {   
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    
+    .containerRoom {
+        width: 70%;
+        padding: 60px;
+    }
+    
+    h1 {
+        font-size: 50px;
+    }
+    
+    p {
+        font-size: 30px;
+    }
+    
+    img{
+        width: 80%;
+        display: block;  
+        margin: 10%;
+        max-height: 25%;
+    }
+}

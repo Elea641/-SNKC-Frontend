@@ -49,10 +49,7 @@
       </div>
 <!-- menu déroulant recherche -->
       <div class="imgSearch">
-        <div class="searchContain">
-          <input *ngIf="isDisplayingSearchBar" type="search" id="search" placeholder=" Rechercher ...">
-        </div>
-        <button (click)="onClick()">
+        <button (click)="onClick()" [routerLink]="['search']">
           <img src="assets/search.png" id="imgSearch">
         </button>
 
