@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 390px) and (max-width: 762px) {
 	.principal {
 		display: flex;
@@ -361,4 +362,5 @@
 	.updateCard {
 		margin-top: 10px;
 	}
+
 }

@@ -16,6 +16,7 @@ export class Sneakers {
 		public updateDate: Date,
 		public user: number,
 		public picture: Blob | string,
-		public mainColor?: Colors
+		public mainColor?: Colors,
+		public userId?: number
 	) {}
 }
