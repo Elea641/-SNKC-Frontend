@@ -1,5 +1,4 @@
 <nav class="navbar">
-
 	<div class="hamburger-menu">
 		<input id="menu__toggle" type="checkbox" />
 		<label class="menu__btn" for="menu__toggle">
@@ -19,22 +18,32 @@
 			<li>
 				<a class="menu__item" [routerLink]="['auctions']">{{ auctions }}</a>
 			</li>
+			<li>
+				<a class="menu__item" [routerLink]="['/search']">Recherche</a>
+			</li>
 			<div class="menu-compte">
-				<hr/>
-			<li *ngIf="connected">
-				<a class="menu__item" [routerLink]="['/profile/me']">{{ profile }}</a>
-			</li>
-			<li *ngIf="connected">
-				<a class="menu__item" (click)="logout()" [routerLink]="[]">{{ disconnect }}</a>
-			</li>
-			<li class="nav-item1" *ngIf="connected == false">
-				<a class="menu__item" [routerLink]="['/login']">Connexion</a>
-			</li>
-		</div>
+				<hr />
+				<li *ngIf="connected">
+					<a class="menu__item" [routerLink]="['/profile/me']">{{ profile }}</a>
+				</li>
+				<li *ngIf="connected">
+					<a class="menu__item" (click)="logout()" [routerLink]="[]">{{
+						disconnect
+					}}</a>
+				</li>
+				<li class="nav-item1" *ngIf="connected == false">
+					<a class="menu__item" [routerLink]="['/login']">Connexion</a>
+				</li>
+			</div>
 		</ul>
 	</div>
 
-	<div class="imgLogo">
-		<img src="assets/LOGO SNK.jpg" id="imgLogo" [routerLink]="['/']" />
+	<div class="right-nav">
+		<div class="imgSearch">
+			<img src="assets/search.png" id="imgSearch" [routerLink]="['/search']" />
+		</div>
+		<div class="imgLogo">
+			<img src="assets/LOGO SNK.jpg" id="imgLogo" [routerLink]="['/']" />
+		</div>
 	</div>
 </nav>

@@ -11,9 +11,19 @@ nav{
 	z-index: 2;
 }
 
+.right-nav {
+	display: flex;
+	align-items: center;
+}
+
 img {
-  height: 10vh;
+  max-height: 10vh;
 		cursor: pointer;
+		margin-left: 1rem;
+}
+
+#imgSearch {
+	max-width: 10vw;
 }
 
 #menu__toggle {
