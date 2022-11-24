@@ -4,7 +4,7 @@ ul {
 
 .carouselContainer {
     width: 80%;
-    margin: 10%;
+    margin: 2% 10% 0% 10%;
 }
 
 .carousel-items {
@@ -44,8 +44,8 @@ h1 {
     margin-bottom: 30px;
     margin-left: 20px;
 }
-  
-@media screen and (min-width: 768px) and (max-width: 992px) {   
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
     div {
         width: 25%;
     }
@@ -56,4 +56,3 @@ h1 {
         width: 20%;
     }
 }
-    
