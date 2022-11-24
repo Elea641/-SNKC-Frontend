@@ -130,11 +130,6 @@ select {
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-	.containerPreview {
-		width: 40%;
-		margin: 20px auto;
-	}
-	
 	.containerForm {
 		width: 40%;
 		margin: 20px auto;
@@ -176,11 +171,6 @@ select {
 		display: flex;
 		flex-direction: row;
 		height: 100%;
-	}
-	
-	.containerPreview {
-		width: 40%;
-		margin: 20px auto;
 	}
 	
 	.containerForm {
