@@ -1,6 +1,6 @@
 <h1>MA COLLECTION</h1>
 <div id="containerButton">
-    <button [routerLink]="['/sneakers/create']">Add Sneakers</button>
+    <button [routerLink]="['/sneakers/create']">Ajouter une paire</button>
 </div>
 <div class="containerCollection">
     <div *ngFor="let sneaker of sneakers | paginate: {itemsPerPage: sneakersPerPage, currentPage: currentPage}">

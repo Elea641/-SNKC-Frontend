@@ -1,1 +1,46 @@
-<p>search works!</p>
+<div class="background">
+  <h1>Recherche par Enchère</h1>
+  <div class="containerSearch">
+    <form class="test" [formGroup]="searchForm">
+      <div class="containerForm">
+        <div class="form">
+          <label for="brand">Marque </label>
+          <select #brandSelect formControlName="brand" (change)="selectChangeBrand($event)">
+            <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+          </select>
+        </div>
+        <div class="form">
+          <label for="model">Modèle </label>
+          <select #modelSelect formControlName="model" (change)="selectChangeModel($event)">
+            <option *ngFor="let model of models" [value]="model">{{model}}</option>
+          </select>
+        </div>
+        <div class="form">
+          <label for="size">Taille </label>
+          <select #sizeSelect formControlName="size" (change)="selectChangeSize($event)">
+            <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+          </select>
+        </div>
+        <div class="form">
+          <label for="stateOfWear">Etat sneakers </label>
+          <select #stateOfWear formControlName="stateOfWear" (change)="selectChangeStateOfWear($event)">
+            <option id="optionForm" *ngFor="let state of states | keyvalue" [ngValue]="state.value">{{state.key}}</option>
+          </select>
+        </div>
+        <div class="form">
+          <label for="mainColor">Couleur </label>
+          <select #mainColor formControlName="mainColor" (change)="selectChangeMainColor($event)">
+            <option id="optionForm" *ngFor="let color of colors | keyvalue" [ngValue]="color.value">{{color.key}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <div id="containerButton">
+      <button (click)="onSubmitSearch()">Lancer la recherche</button>
+    </div>
+  </div>
+  <div *ngFor="let room of rooms">
+    <a [routerLink]="['/auction/', room.id]">
+      <app-auction-card [room]="room"></app-auction-card>
+    </a>
+  </div>

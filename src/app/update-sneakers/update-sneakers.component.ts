@@ -16,6 +16,7 @@ import { Colors } from '../models/enum/colors';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-update-sneakers',
@@ -42,7 +43,8 @@ export class UpdateSneakersComponent implements OnInit {
 		private formBuilder: FormBuilder,
 		private userService: UserService,
 		private http: HttpClient,
-		private router: Router
+		private router: Router,
+		private _location: Location
 	) {
 		this.states = StateOfWear as unknown as Map<string, string>[];
 		this.colors = Colors as unknown as Map<string, string>[];
@@ -104,5 +106,9 @@ export class UpdateSneakersComponent implements OnInit {
 					});
 			});
 		});
+	}
+
+	backClicked() {
+		this._location.back();
 	}
 }

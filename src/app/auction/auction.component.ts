@@ -10,6 +10,7 @@ import { HelperService } from '../services/helper.service';
 import { RoomService } from '../services/room.service';
 import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-auction',
@@ -26,13 +27,14 @@ export class AuctionComponent implements OnInit {
 	maxOffer = 0;
 	offers: number[] = [];
 	showMsg = false;
-	
+
 	constructor(
 		private roomService: RoomService,
 		private route: ActivatedRoute,
 		private sneakerService: SneakersService,
 		private userService: UserService,
-		private router: Router
+		private router: Router,
+		private _location: Location
 	) {
 
 	}
@@ -107,6 +109,10 @@ export class AuctionComponent implements OnInit {
 			return HelperService.colorsToString(<Colors> color);
 		}
 		return '';
+	}
+
+	backClicked() {
+		this._location.back();
 	}
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
 	templateUrl: './header-nav.component.html',
 	styleUrls: ['./header-nav.component.css'],
 })
-export class HeaderNavComponent {
+export class HeaderNavComponent implements OnInit {
 	public createdSneakers = 'Ajouter une paire';
 	public collection = 'Ma collection';
 	public auctions = 'Salle d\'enchères';
@@ -19,11 +19,19 @@ export class HeaderNavComponent {
 	public isDisplayingSearchBar = false;
 	public id: string | undefined;
 
-	constructor(private authService: AuthService, private router: Router) {}
+	public connected = false;
 
-	onClick(): void {
-		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
+	constructor(
+		private authService: AuthService,
+		private router: Router,
+	) {}
+
+	ngOnInit(): void {
+		if (sessionStorage.getItem('token') != null) {
+			this.connected = true;
+		}
 	}
+
 	public logout() {
 		this.authService.logout();
 		this.router.navigate(['']);
