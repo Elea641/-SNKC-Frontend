@@ -96,6 +96,14 @@ button:hover,.form button:active,.form button:focus {
 	background: #00adb5;
 }
 
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	align-items: flex-end;
+	margin-top: 1.3rem;
+	margin-left: 5rem;
+}
+
 .description {
 	margin: 1rem;
 background-color: rgb(237, 237, 237);
@@ -164,7 +172,7 @@ padding: 2rem;
 	h1 {
 		text-align: left;
 	}
-	
+
 	h2 {
 		margin-top: 4rem;
 	}
