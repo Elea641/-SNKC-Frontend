@@ -77,9 +77,5 @@ export class SearchComponent {
 				this.filterservice.filterRooms(params).subscribe((rooms: Room[]) => {
 					this.rooms = rooms;
 				})
-				
-				// this.filterservice.filterRoomsBrandAndModel(<string>this.selectBrand, <string>this.selectModel).subscribe((response: Room[]) => {
-				// 	this.rooms = response;
-				// });
 			}
 		}

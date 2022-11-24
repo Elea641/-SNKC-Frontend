@@ -53,6 +53,14 @@ label{
   background-color: white;
 }
 
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	align-items: flex-end;
+	margin-top: 1.3rem;
+	margin-left: 5rem;
+}
+
 .colorForm{
   background-color: white;
 }
