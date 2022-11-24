@@ -1,5 +1,11 @@
 <div class="background">
     <div class="containerForm">
+          <button
+          class="btn-back"
+          (click)="backClicked()"
+        >
+          Retour
+        </button>
       <div class="form-card" *ngIf="updateSneakersForm">
         <h1>MODIFIER MA SNEAKERS</h1>
         <form [formGroup]="updateSneakersForm">

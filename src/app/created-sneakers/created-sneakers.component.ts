@@ -15,6 +15,7 @@ import { Sneakers } from '../models/sneakers';
 import { User } from '../models/user';
 import { HelperService } from '../services/helper.service';
 import { UserService } from '../services/user.service';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-created-sneakers',
@@ -38,6 +39,7 @@ export class CreatedSneakersComponent implements OnInit {
 		private userService: UserService,
 		private http: HttpClient,
 		private router: Router,
+		private _location: Location
 	) {
 		this.states = StateOfWear as unknown as Map<string, string>[];
 		this.colors = Colors as unknown as Map<string, string>[];
@@ -105,5 +107,9 @@ export class CreatedSneakersComponent implements OnInit {
 
 	public onSubmitNewPicture(event: Event): void {
 		this.picture = (event.target as HTMLInputElement).files?.item(0);
+	}
+
+	backClicked() {
+		this._location.back();
 	}
 }
