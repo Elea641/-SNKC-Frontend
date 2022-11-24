@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+	Component,
+	ElementRef,
+	OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -7,20 +11,32 @@ import { AuthService } from '../services/auth.service';
 	templateUrl: './header-nav.component.html',
 	styleUrls: ['./header-nav.component.css'],
 })
-export class HeaderNavComponent {
+export class HeaderNavComponent implements OnInit {
+
 	public createdSneakers = 'Ajouter une paire';
 	public collection = 'Ma collection';
 	public auctions = 'Salle d\'enchères';
 	public favorite = 'Mes favoris';
 	public imgLogo = 'imgLogo';
 	public profile = 'Gérer mon profil';
-	public disconnect = 'Déconnection';
+	public disconnect = 'Déconnexion';
 	public search = 'Rechercher';
 	public isDisplayingSearchBar = false;
 	public id: string | undefined;
 
-	constructor(private authService: AuthService,
-				private router: Router) {}
+	public connected = false;
+
+	constructor(
+		private authService: AuthService,
+		private router: Router,
+		private eRef: ElementRef
+	) {}
+
+	ngOnInit(): void {
+		if (sessionStorage.getItem('token') != null) {
+			this.connected = true;
+		}
+	}
 
 	onClick(): void {
 		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
@@ -28,5 +44,5 @@ export class HeaderNavComponent {
 	public logout() {
 		this.authService.logout();
 		this.router.navigate(['']);
-}
+	}
 }

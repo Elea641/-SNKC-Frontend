@@ -9,13 +9,12 @@
 
 }
 
-h2 {
-	text-align: center;
-	margin: 1rem;
-}
-
 h1 {
 	text-align: center;
+}
+
+h2 {
+	margin-top: 1rem;
 }
 
 h3 {
@@ -76,7 +75,6 @@ td {
 }
 
 button {
-	margin: 10%;
 	text-transform: uppercase;
 	outline: 0;
 	background: #00adb5;
@@ -98,7 +96,48 @@ button:hover,.form button:active,.form button:focus {
 	background: #00adb5;
 }
 
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	align-items: flex-end;
+	margin-top: 1.3rem;
+	margin-left: 5rem;
+}
+
+.description {
+	margin: 1rem;
+background-color: rgb(237, 237, 237);
+padding: 2rem;
+}
+
+.description h3 {
+	margin-bottom: 1.5rem;
+}
+
+.description-details {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+.description-details p {
+	display: inline-block;
+	font-size: 1em;
+	list-style-type: none;
+	padding: 1em;
+}
+
+.description-details p span {
+	display: block;
+	font-size: 2rem;
+}
+
 @media screen and (min-width: 768px) and (max-width: 992px) {
+	h1 {
+		text-align: left;
+	}
+
 	.container {
 		margin: 3rem;
 	}
@@ -123,9 +162,21 @@ button:hover,.form button:active,.form button:focus {
 	table {
 		margin: 2rem;
 	}
+
+	h2 {
+		margin-top: 3rem;
+	}
 }
 
 @media screen and (min-width: 993px) {
+	h1 {
+		text-align: left;
+	}
+
+	h2 {
+		margin-top: 4rem;
+	}
+
 	.container {
 		margin: 3rem;
 	}

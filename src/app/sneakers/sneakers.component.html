@@ -1,24 +1,49 @@
- <div class="background">
-  <div class="containerSneakers">
-    <div id="containerButton">
-      <button class="btn1" [routerLink]="['/sneakers', id, 'update']">Update Sneakers</button>
-      <button class="btn2" (click)="deleteSneakers()" [routerLink]="['/sneakers/:id/delete']">Delete Sneakers</button>
-    </div>
-    <h1>SNEAKERS</h1>
-    <div class="containerSneakersDetails">
-      <div class="containerImg">
-        <!-- <img [src]="sneakersById?.pictures" [alt]="sneakersById?.brand"> -->
-      </div>
-      <div class="containerDetails">
-        <h2>Détails de la Sneakers</h2>
-        <h3>Marque : {{sneakersById?.brand | titlecase}}</h3>
-        <h3>Model : {{sneakersById?.model | titlecase}}</h3>
-        <p>Postée {{ sneakersById?.createdDate | date: 'le d MMMM yyyy, à HH:mm' }}</p>
-        <p>Taille : {{sneakersById?.size}}</p>
-        <p>L'état global de ma sneakers : {{stateOfWearToString(sneakersById?.stateOfWear)}}</p>
-        <p *ngIf="sneakersById?.mainColor">Ma couleur : {{colorsToString(sneakersById?.mainColor)}}</p> 
-      </div>
-    </div>
-  </div>
-</div>
 
+	<button
+	class="btn-back"
+	(click)="backClicked()"
+>
+	Retour
+</button>
+<div class="background">
+	<div class="containerSneakers">
+		<div class="containerSneakersDetails">
+			<div class="containerImg">
+				<img [src]="sneakersById?.picture" [alt]="sneakersById?.brand" />
+			</div>
+			<div class="containerDetails">
+				<h1>{{ sneakersById?.model | titlecase }}</h1>
+				<h2>{{ sneakersById?.brand | titlecase }}</h2>
+				<div class="details-p">
+					<p>Taille :</p>
+						<div class="cercle">
+							{{ sneakersById?.size }}
+					</div>
+				</div>
+				<div class="details-p"></div>
+				<br />
+				<div class="details-p">
+					<p>L'état global :</p>
+					<p class="state">{{ stateOfWearToString(sneakersById?.stateOfWear) }}</p>
+				</div>
+				<br />
+				<div class="details-p">
+					<p *ngIf="sneakersById?.mainColor">Couleur principale :</p>
+					<p class="color">{{ colorsToString(sneakersById?.mainColor) }}</p>
+				</div>
+			</div>
+		</div>
+		<div id="containerButton">
+			<button class="btn1" [routerLink]="['/sneakers', id, 'update']">
+				Modifier la sneakers
+			</button>
+			<button
+				class="btn2"
+				(click)="deleteSneakers()"
+				[routerLink]="['/sneakers/:id/delete']"
+			>
+				Supprimer la Sneakers
+			</button>
+		</div>
+	</div>
+</div>

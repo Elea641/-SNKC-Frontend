@@ -10,6 +10,7 @@ import { HelperService } from '../services/helper.service';
 import { RoomService } from '../services/room.service';
 import { SneakersService } from '../services/sneakers.service';
 import { UserService } from '../services/user.service';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-auction',
@@ -32,8 +33,11 @@ export class AuctionComponent implements OnInit {
 		private route: ActivatedRoute,
 		private sneakerService: SneakersService,
 		private userService: UserService,
-		private router: Router
-	) {}
+		private router: Router,
+		private _location: Location
+	) {
+
+	}
 
 	public onSubmitAuction(): void {
 		if (this.room?.initialPrice && this.offers.length === 0) {
@@ -89,19 +93,27 @@ export class AuctionComponent implements OnInit {
 				this.maxOffer = Math.max(...this.offers);
 			});
 		});
+
+
 	}
 
 	public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
 		if (stateOfWear){
 			return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
 		}
-		return "";
+		return '';
 	}
-	
+
 	public colorsToString(color: Colors | undefined): string {
 		if (color){
 			return HelperService.colorsToString(<Colors> color);
 		}
-		return "";
+		return '';
 	}
+
+	backClicked() {
+		this._location.back();
+	}
+
+
 }
