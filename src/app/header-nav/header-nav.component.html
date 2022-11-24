@@ -1,64 +1,40 @@
 <nav class="navbar">
+
+	<div class="hamburger-menu">
+		<input id="menu__toggle" type="checkbox" />
+		<label class="menu__btn" for="menu__toggle">
+			<span></span>
+		</label>
+
+		<ul class="menu__box">
+			<li><a class="menu__item" [routerLink]="['']">Home</a></li>
+			<li>
+				<a class="menu__item" [routerLink]="['sneakers', 'create']">{{
+					createdSneakers
+				}}</a>
+			</li>
+			<li>
+				<a class="menu__item" [routerLink]="['collection']">{{ collection }}</a>
+			</li>
+			<li>
+				<a class="menu__item" [routerLink]="['auctions']">{{ auctions }}</a>
+			</li>
+			<div class="menu-compte">
+				<hr/>
+			<li *ngIf="connected">
+				<a class="menu__item" [routerLink]="['/profile/me']">{{ profile }}</a>
+			</li>
+			<li *ngIf="connected">
+				<a class="menu__item" (click)="logout()" [routerLink]="[]">{{ disconnect }}</a>
+			</li>
+			<li class="nav-item1" *ngIf="connected == false">
+				<a class="menu__item" [routerLink]="['/login']">Connexion</a>
+			</li>
+		</div>
+		</ul>
+	</div>
+
 	<div class="imgLogo">
 		<img src="assets/LOGO SNK.jpg" id="imgLogo" [routerLink]="['/']" />
-	</div>
-	<!-- menu burger -->
-	<div class="right">
-		<div class="burger">
-			<label for="btn" class="icon">
-				<svg viewBox="0 0 100 80" width="40" height="40">
-					<rect width="100" height="15"></rect>
-					<rect y="35" width="100" height="15"></rect>
-					<rect y="70" width="100" height="15"></rect>
-				</svg>
-			</label>
-			<input class="bug" type="checkbox" id="btn" />
-			<ul class="nav-menu">
-				<li class="nav-item">
-					<a [routerLink]="['sneakers', 'create']">{{ createdSneakers }}</a>
-				</li>
-				<div class="trait_dessus"><hr /></div>
-				<li class="nav-item">
-					<a [routerLink]="['collection']">{{ collection }}</a>
-				</li>
-				<div class="trait_dessus"><hr /></div>
-				<li class="nav-item">
-					<a [routerLink]="['auctions']">{{ auctions }}</a>
-				</li>
-			</ul>
-		</div>
-		<!-- menu déroulant photo -->
-		<div class="imgProfile">
-			<label for="btn2" class="icon2">
-				<img src="assets/profil.png" class="profile" id="profile" />
-			</label>
-			<input class="bug" type="checkbox" id="btn2" />
-			<ul class="nav-menu1">
-				<li class="nav-item1" *ngIf="connected">
-					<a [routerLink]="['/profile/me']">{{ profile }}</a>
-				</li>
-				<div class="trait_dessus"><hr /></div>
-				<li class="nav-item1" *ngIf="connected">
-					<a (click)="logout()" [routerLink]="[]">{{ disconnect }}</a>
-				</li>
-				<li class="nav-item1" *ngIf="connected == false">
-					<a [routerLink]="['/login']">Connexion</a>
-				</li>
-			</ul>
-		</div>
-		<!-- menu déroulant recherche -->
-		<div class="imgSearch">
-			<div class="searchContain">
-				<input
-					*ngIf="isDisplayingSearchBar"
-					type="search"
-					id="search"
-					placeholder=" Rechercher ..."
-				/>
-			</div>
-			<button (click)="onClick()">
-				<img src="assets/search.png" id="imgSearch" />
-			</button>
-		</div>
 	</div>
 </nav>
