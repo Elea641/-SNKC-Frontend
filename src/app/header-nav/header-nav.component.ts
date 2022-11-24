@@ -1,8 +1,4 @@
-import {
-	Component,
-	ElementRef,
-	OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -12,7 +8,6 @@ import { AuthService } from '../services/auth.service';
 	styleUrls: ['./header-nav.component.css'],
 })
 export class HeaderNavComponent implements OnInit {
-
 	public createdSneakers = 'Ajouter une paire';
 	public collection = 'Ma collection';
 	public auctions = 'Salle d\'enchères';
@@ -29,7 +24,6 @@ export class HeaderNavComponent implements OnInit {
 	constructor(
 		private authService: AuthService,
 		private router: Router,
-		private eRef: ElementRef
 	) {}
 
 	ngOnInit(): void {
@@ -38,9 +32,6 @@ export class HeaderNavComponent implements OnInit {
 		}
 	}
 
-	onClick(): void {
-		this.isDisplayingSearchBar = !this.isDisplayingSearchBar;
-	}
 	public logout() {
 		this.authService.logout();
 		this.router.navigate(['']);
