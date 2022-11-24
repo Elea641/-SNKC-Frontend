@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { RegisterRequest } from './../interfaces/register-request';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../interfaces/login-response';
 import { User } from '../models/user';
@@ -14,7 +14,7 @@ import { TokenContent } from '../models/tokenContent';
 	providedIn: 'root',
 })
 export class AuthService {
-	public currentUser: Subject<User | undefined>;
+	public currentUser: BehaviorSubject<User | undefined>;
 
 	constructor(
 		private http: HttpClient,
@@ -22,7 +22,7 @@ export class AuthService {
 		private router: Router
 	) {
 		const token = sessionStorage.getItem('token');
-		this.currentUser = new Subject();
+		this.currentUser = new BehaviorSubject<User | undefined>(undefined);
 		if (token) {
 			this.userService.getConnectedUser().subscribe((user: User) => {
 				this.currentUser.next(user);
