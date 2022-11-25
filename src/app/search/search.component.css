@@ -88,7 +88,15 @@ button:hover,.form button:active,.form button:focus {
     background: #00adb5;
 }
 
-select, input{
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	align-items: flex-end;
+	margin-top: 1.3rem;
+	margin-left: 5rem;
+}
+
+select, input, label{
     background-color: white;
     width: 50%;
     font-size: 16px;

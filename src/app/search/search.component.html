@@ -1,3 +1,9 @@
+<button
+class="btn-back"
+(click)="backClicked()"
+>
+Retour
+</button>
 <div class="background">
   <h1>Recherche par Enchère</h1>
   <div class="containerSearch">
@@ -6,30 +12,35 @@
         <div class="form">
           <label for="brand">Marque </label>
           <select #brandSelect formControlName="brand" (change)="selectChangeBrand($event)">
+            <option default value=""></option>
             <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
           </select>
         </div>
         <div class="form">
           <label for="model">Modèle </label>
           <select #modelSelect formControlName="model" (change)="selectChangeModel($event)">
+            <option default value=""></option>
             <option *ngFor="let model of models" [value]="model">{{model}}</option>
           </select>
         </div>
         <div class="form">
           <label for="size">Taille </label>
           <select #sizeSelect formControlName="size" (change)="selectChangeSize($event)">
+            <option default value=""></option>
             <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
           </select>
         </div>
         <div class="form">
           <label for="stateOfWear">Etat sneakers </label>
           <select #stateOfWear formControlName="stateOfWear" (change)="selectChangeStateOfWear($event)">
+            <option default value=""></option>
             <option id="optionForm" *ngFor="let state of states | keyvalue" [ngValue]="state.value">{{state.key}}</option>
           </select>
         </div>
         <div class="form">
           <label for="mainColor">Couleur </label>
           <select #mainColor formControlName="mainColor" (change)="selectChangeMainColor($event)">
+            <option default value=""></option>
             <option id="optionForm" *ngFor="let color of colors | keyvalue" [ngValue]="color.value">{{color.key}}</option>
           </select>
         </div>

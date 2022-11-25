@@ -6,6 +6,7 @@ import { Room } from '../models/room';
 import { filterservice } from '../services/filter.service';
 import { HelperService } from '../services/helper.service';
 import { RoomService } from '../services/room.service';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-search',
@@ -30,7 +31,8 @@ export class SearchComponent {
 	constructor(private roomService: RoomService,
 		private filterservice: filterservice,
 		private helperservice: HelperService,
-		private formBuilder: FormBuilder) { 
+		private formBuilder: FormBuilder,
+		private _location: Location) { 
 			this.states = StateOfWear as unknown as Map<string, string>[]; 
 			this.colors = Colors as unknown as Map<string, string>[];
 		}
@@ -77,5 +79,9 @@ export class SearchComponent {
 				this.filterservice.filterRooms(params).subscribe((rooms: Room[]) => {
 					this.rooms = rooms;
 				})
+			}
+
+			backClicked() {
+				this._location.back();
 			}
 		}
