@@ -1,4 +1,4 @@
-nav{
+nav {
 	background-color: white;
 	opacity: 1;
 	padding: 10px;
@@ -11,15 +11,24 @@ nav{
 	z-index: 2;
 }
 
+.overlay {
+	position: fixed;
+	left: 300px;
+	height: 100vh;
+	width: calc(100vw - 300px);
+	top: 0;
+	z-index: 100;
+}
+
 .right-nav {
 	display: flex;
 	align-items: center;
 }
 
 img {
-  max-height: 10vh;
-		cursor: pointer;
-		margin-left: 1rem;
+	max-height: 10vh;
+	cursor: pointer;
+	margin-left: 1rem;
 }
 
 #imgSearch {
@@ -29,20 +38,25 @@ img {
 #menu__toggle {
 	opacity: 0;
 }
-#menu__toggle:checked + .menu__btn > span {
+
+#menu__toggle:checked+.menu__btn>span {
 	transform: rotate(45deg);
 }
-#menu__toggle:checked + .menu__btn > span::before {
+
+#menu__toggle:checked+.menu__btn>span::before {
 	top: 0;
 	transform: rotate(0deg);
 }
-#menu__toggle:checked + .menu__btn > span::after {
+
+#menu__toggle:checked+.menu__btn>span::after {
 	top: 0;
 	transform: rotate(90deg);
 }
-#menu__toggle:checked ~ .menu__box {
+
+#menu__toggle:checked~.menu__box {
 	left: 0 !important;
 }
+
 .menu__btn {
 	position: fixed;
 	top: 40px;
@@ -52,9 +66,10 @@ img {
 	cursor: pointer;
 	z-index: 3;
 }
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -62,14 +77,17 @@ img {
 	background-color: #53b2be;
 	transition-duration: .25s;
 }
-.menu__btn > span::before {
+
+.menu__btn>span::before {
 	content: '';
 	top: -8px;
 }
-.menu__btn > span::after {
+
+.menu__btn>span::after {
 	content: '';
 	top: 8px;
 }
+
 .menu__box {
 	display: block;
 	position: fixed;
@@ -85,6 +103,7 @@ img {
 	transition-duration: .25s;
 	z-index: 2;
 }
+
 .menu__item {
 	display: block;
 	padding: 12px 24px;
@@ -95,6 +114,7 @@ img {
 	text-decoration: none;
 	transition-duration: .25s;
 }
+
 .menu__item:hover {
 	background-color: #CFD8DC;
 }

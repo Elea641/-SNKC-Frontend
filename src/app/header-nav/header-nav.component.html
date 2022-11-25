@@ -1,6 +1,6 @@
 <nav class="navbar">
 	<div class="hamburger-menu">
-		<input id="menu__toggle" type="checkbox" />
+		<input id="menu__toggle" type="checkbox"  (change)="onMenuChange($event)"/>
 		<label class="menu__btn" for="menu__toggle">
 			<span></span>
 		</label>
@@ -47,4 +47,4 @@
 		</div>
 	</div>
 </nav>
-
+<div class="overlay" *ngIf="displayOverlay" (click)="onClickOnOverlay()"></div>
