@@ -18,6 +18,7 @@ export class HeaderNavComponent implements OnInit {
 	public search = 'Rechercher';
 	public isDisplayingSearchBar = false;
 	public id: string | undefined;
+	public displayOverlay = false;
 
 	public connected = false;
 
@@ -35,5 +36,14 @@ export class HeaderNavComponent implements OnInit {
 	public logout() {
 		this.authService.logout();
 		this.router.navigate(['']);
+	}
+
+	onMenuChange(event: Event): void {
+		this.displayOverlay = (event.target as HTMLInputElement).checked;
+		console.log(this.displayOverlay)
+	}
+
+	onClickOnOverlay(): void {
+		document.getElementById('menu__toggle')?.click();
 	}
 }

@@ -180,7 +180,7 @@
 	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) {
 	.principal {
 		display: flex;
 		justify-content: space-evenly;
@@ -358,9 +358,4 @@
 	.updateCard {
 		margin-top: 10px;
 	}
-
-	@media screen and (min-width: 993px){
-
-	}
-
 }
