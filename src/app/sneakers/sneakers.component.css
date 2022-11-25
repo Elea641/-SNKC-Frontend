@@ -118,12 +118,24 @@ button {
 	background: red;
 }
 
+.btn3 {
+	width: 30%;
+	margin: 2%;
+	background: #00adb5;
+}
+
+.btnTop {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0;
+}
+
 .btn-back {
 	background-color: rgb(186, 186, 186);
+	margin: 0;
+	margin: 16.6562px;
 	width: 6rem;
-	align-items: flex-end;
-	margin-top: 1.3rem;
-	margin-left: 5rem;
 }
 
 .btn2:hover,
@@ -185,6 +197,10 @@ select {
 		justify-content: space-around;
 		margin-top: 2rem;
 	}
+	
+	.btn3 {
+		width: 25%;
+	}
 }
 
 @media screen and (min-width: 993px) {
@@ -219,5 +235,9 @@ select {
 		justify-content: space-around;
 		flex-direction: row;
 		margin-top: 2rem;
+	}
+
+	.btn3 {
+		width: 15%;
 	}
 }
