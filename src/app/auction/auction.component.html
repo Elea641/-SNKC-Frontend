@@ -31,12 +31,14 @@
 				<h2>Dernière enchère proposée :</h2>
 				<h1>{{ maxOffer | currency: "EUR" }}</h1>
 			</div>
+			<div *ngIf="room?.ownerId != currentUser?.id">
 			<input
 				placeholder="Montant de votre enchère"
 				type="number"
 				[(ngModel)]="bit"
 			/>
-			<button (click)="onSubmitAuction()">Enchérir</button>
+			<button class="bit-button" (click)="onSubmitAuction()">Enchérir</button>
+		</div>
 			<p>Prix de départ : {{ room?.initialPrice | currency: "EUR" }}</p>
 		</div>
 	</div>

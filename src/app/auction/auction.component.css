@@ -50,6 +50,7 @@ img {
 input {
 	padding: 5px;
 	font-size: 16px;
+	margin-right: 1rem;
 }
 
 .auctions {
@@ -92,6 +93,12 @@ button {
 	width: 40%;
 }
 
+.bit-button {
+	width: 30%;
+	margin: auto;
+	margin-top: 1rem;
+}
+
 button:hover,.form button:active,.form button:focus {
 	background: #00adb5;
 }
@@ -99,9 +106,8 @@ button:hover,.form button:active,.form button:focus {
 .btn-back {
 	background-color: rgb(186, 186, 186);
 	width: 6rem;
-	align-items: flex-end;
 	margin-top: 1.3rem;
-	margin-left: 5rem;
+	margin-bottom: 1.3rem;
 }
 
 .description {
@@ -135,7 +141,7 @@ padding: 2rem;
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
 	h1 {
-		text-align: left;
+		text-align: center;
 	}
 
 	.container {
@@ -170,7 +176,7 @@ padding: 2rem;
 
 @media screen and (min-width: 993px) {
 	h1 {
-		text-align: left;
+		text-align: center;
 	}
 
 	h2 {
@@ -198,6 +204,7 @@ padding: 2rem;
 	.image {
 		margin: 3rem;
 		max-height: 80vh;
+		max-width: 50vw;
 	}
 
 	.auctions {
