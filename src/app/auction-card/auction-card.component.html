@@ -4,6 +4,7 @@
     </div>
     <div class="card-body">
         <h3>{{sneakers?.brand}} - {{sneakers?.model}}</h3>
+								<p>Prix de départ : {{room?.initialPrice | currency: "EUR" }}</p>
         <div class="time">
 									<app-countdown
 									*ngIf="room?.endDate"
