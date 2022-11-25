@@ -24,6 +24,7 @@ import { Location } from '@angular/common';
 	styleUrls: ['./update-sneakers.component.css'],
 })
 export class UpdateSneakersComponent implements OnInit {
+	
 	public createdPreview$!: Observable<Sneakers>;
 	public sneakersById: Sneakers | undefined;
 	public stateOfWear: number | undefined;
