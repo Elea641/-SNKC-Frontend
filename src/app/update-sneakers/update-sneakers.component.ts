@@ -24,6 +24,7 @@ import { Location } from '@angular/common';
 	styleUrls: ['./update-sneakers.component.css'],
 })
 export class UpdateSneakersComponent implements OnInit {
+	
 	public createdPreview$!: Observable<Sneakers>;
 	public sneakersById: Sneakers | undefined;
 	public stateOfWear: number | undefined;
@@ -57,7 +58,6 @@ export class UpdateSneakersComponent implements OnInit {
 				.getSneakersById(sneakersId)
 				.subscribe((reponse: Sneakers) => {
 					this.sneakersById = reponse;
-					
 					this.updateSneakersForm = this.formBuilder.group(
 						{
 							brand: [this.sneakersById?.brand, [Validators.required]],
@@ -91,31 +91,14 @@ export class UpdateSneakersComponent implements OnInit {
 			
 			onSubmitUpdateForm(): void {
 				const sneakers = <Sneakers>this.updateSneakersForm.getRawValue();
-				const picture = (document.getElementById('picture') as HTMLInputElement).files?.item(0);
-				if (this.updateSneakersForm.invalid || (picture == null && this.sneakersById?.picture == null))
+				if (this.updateSneakersForm.invalid || !this.sneakersById?.picture)
 					return;
 
 				
 				this.route.paramMap.subscribe((params: ParamMap) => {
 					this.userService.getConnectedUser().subscribe((reponse: User) => {
 						sneakers.userId = reponse.id;
-						if (picture) {
-						picture.arrayBuffer().then((result: ArrayBuffer) => {
-							const reader: FileReader | null = new FileReader();
-							reader.readAsDataURL(
-								new Blob([new Uint8Array(result)], { type: 'image/*' })
-								);
-								reader.onloadend = () => {
-									sneakers.picture = <string> reader?.result?.toString();
-									this.http.put<Sneakers>(
-										`${environment.urlApi}sneakers/${this.sneakersById?.id}`,sneakers)
-										.subscribe((res: Sneakers) => {
-											this.router.navigate(['sneakers', res.id]);
-										});
-									};
-								});
-							} else {
-								sneakers.picture = <string | Blob> this.sneakersById?.picture;
+						sneakers.picture = <string | Blob> this.sneakersById?.picture;
 								this.http
 									.put<Sneakers>(
 										`${environment.urlApi}sneakers/${this.sneakersById?.id}`,
@@ -124,10 +107,22 @@ export class UpdateSneakersComponent implements OnInit {
 										.subscribe((res: Sneakers) => {
 											this.router.navigate(['sneakers', res.id]);
 										});
-									}
 							});
 						})
 					}
+
+					onSubmitNewPicture(event: Event): void {
+						const picture = <File> (event.target as HTMLInputElement).files?.item(0);
+						picture.arrayBuffer().then((result: ArrayBuffer) => {
+						const reader: FileReader | null = new FileReader();
+						const blob = new Blob([new Uint8Array(result)], { type: 'image/*' });
+						reader.readAsDataURL(blob);
+						reader.onloadend = () => {
+							if (this.sneakersById)
+								this.sneakersById.picture = <string> reader?.result?.toString();
+						};
+						});
+					  }
 					
 					backClicked() {
 						this._location.back();

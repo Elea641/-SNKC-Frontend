@@ -4,17 +4,18 @@
           >
           Retour
         </button>
-        <div class="containerForm">
+        <div class="containerForm" *ngIf="sneakersById">
           <div class="form-card" *ngIf="updateSneakersForm">
             <h1>MODIFIER MA SNEAKERS</h1>
             <form [formGroup]="updateSneakersForm">
               <div class="colorForm">
                 <div class="containerImg">
-                  <img [src]="sneakersById?.picture" [alt]="sneakersById?.brand" />
+                  <img [src]="sneakersById.picture" [alt]="sneakersById.brand" />
                 </div>
                 <div class="form-group">
-                  <label for="picture">Photo</label>
+                  <label for="picture" type="file" id="picture" placeholder="Sélectionnez une photo">Photo</label>
                   <input
+                    (change)="onSubmitNewPicture($event)"
                     id="picture"
                     type="file"
                     placeholder="Sélectionnez une photo"
