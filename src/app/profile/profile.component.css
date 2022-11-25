@@ -156,7 +156,6 @@
 	select {
 		background-color: white;
 		width: 50%;
-		border-radius: 2rem;
 		font-size: 16px;
 		text-align: center;
 	}
@@ -173,7 +172,6 @@
 	}
 
 	input {
-		border-radius: 2rem;
 		text-align: center;
 	}
 
@@ -182,7 +180,7 @@
 	}
 }
 
-@media screen and (min-width: 763px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
 	.principal {
 		display: flex;
 		justify-content: space-evenly;
@@ -338,7 +336,6 @@
 	select {
 		background-color: white;
 		width: 50%;
-		border-radius: 2rem;
 		font-size: 16px;
 		text-align: center;
 	}
@@ -355,12 +352,15 @@
 	}
 
 	input {
-		border-radius: 2rem;
 		text-align: center;
 	}
 
 	.updateCard {
 		margin-top: 10px;
+	}
+
+	@media screen and (min-width: 993px){
+
 	}
 
 }
