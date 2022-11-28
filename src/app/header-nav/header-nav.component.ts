@@ -40,7 +40,6 @@ export class HeaderNavComponent implements OnInit {
 
 	onMenuChange(event: Event): void {
 		this.displayOverlay = (event.target as HTMLInputElement).checked;
-		console.log(this.displayOverlay)
 	}
 
 	onClickOnOverlay(): void {
