@@ -1,10 +1,5 @@
 <div class="container">
-	<button
-	class="btn-back"
-	(click)="backClicked()"
->
-	Retour
-</button>
+	<button class="btn-back" (click)="backClicked()">Retour</button>
 	<div class="row" *ngIf="showMsg">
 		<div class="col-xs-12">
 			<p class="alert-success">
@@ -16,7 +11,7 @@
 		<div class="image">
 			<img [src]="sneakers?.picture" />
 		</div>
-		<div class="room-details">
+		<div *ngIf="!winner" class="room-details">
 			<h2>Cette enchère se termine dans</h2>
 			<app-countdown
 				*ngIf="room?.endDate"
@@ -32,25 +27,47 @@
 				<h1>{{ maxOffer | currency: "EUR" }}</h1>
 			</div>
 			<div *ngIf="room?.ownerId != currentUser?.id">
-			<input
-				placeholder="Montant de votre enchère"
-				type="number"
-				[(ngModel)]="bit"
-			/>
-			<button class="bit-button" (click)="onSubmitAuction()">Enchérir</button>
-		</div>
+				<input
+					placeholder="Montant de votre enchère"
+					type="number"
+					[(ngModel)]="bit"
+				/>
+				<button class="bit-button" (click)="onSubmitAuction()">Enchérir</button>
+			</div>
 			<p>Prix de départ : {{ room?.initialPrice | currency: "EUR" }}</p>
 		</div>
-	</div>
 
+		<div *ngIf="winner && winner.id == room?.ownerId " class="room-details">
+			<h1>Nous sommes désolés {{ winner.username }},</h1>
+			<h1>personne n'a enchéri sur cette paire.</h1>
+		</div>
+		<div *ngIf="winner && winner.id != room?.ownerId" class="room-details">
+			<h1>Le gagnant de l'enchère est :</h1>
+			<h1>{{ winner.username }}</h1>
+			<br />
+			<h3>Il/elle remporte cette magnifique paire pour la maudite somme de</h3>
+			<h3>{{ maxOffer | currency: "EUR" }} !!</h3>
+		</div>
+	</div>
+	
 	<div class="description">
 		<h3>Description</h3>
 		<div class="description-details">
-			<p>Marque : <span>{{ sneakers?.brand }}</span></p>
-			<p>Modèle : <span>{{ sneakers?.model }}</span></p>
-			<p>Taille : <span>{{ sneakers?.size }}</span></p>
-			<p>Etat : <span>{{ stateOfWearToString(sneakers?.stateOfWear) }}</span></p>
-			<p>Couleur principale : <span>{{ colorsToString(sneakers?.mainColor) }}</span></p>
+			<p>
+				Marque : <span>{{ sneakers?.brand }}</span>
+			</p>
+			<p>
+				Modèle : <span>{{ sneakers?.model }}</span>
+			</p>
+			<p>
+				Taille : <span>{{ sneakers?.size }}</span>
+			</p>
+			<p>
+				Etat : <span>{{ stateOfWearToString(sneakers?.stateOfWear) }}</span>
+			</p>
+			<p>
+				Couleur principale : <span>{{ colorsToString(sneakers?.mainColor) }}</span>
+			</p>
 		</div>
 	</div>
 

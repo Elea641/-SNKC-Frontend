@@ -12,7 +12,7 @@ export class UserService {
 	constructor(private http: HttpClient) {}
 
 	getUserById(id: string): Observable<User> {
-		return this.http.get<User>(environment.urlApi + id);
+		return this.http.get<User>(environment.urlApi + 'users/' + id);
 	}
 
 	getConnectedUser(): Observable<User> {
