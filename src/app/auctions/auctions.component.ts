@@ -8,7 +8,8 @@ import { RoomService } from '../services/room.service';
 	styleUrls: ['./auctions.component.css'],
 })
 export class AuctionsComponent implements OnInit {
-	usersRooms: Room[] = [];
+	openRooms: Room[] = [];
+	closedRooms: Room[] = [];
 	currentPage = 1;
 	roomsPerPage = 4;
 
@@ -16,7 +17,10 @@ export class AuctionsComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.roomService
-			.getAllRoomsByUserId()
-			.subscribe((response: Room[]) => (this.usersRooms = response));
+			.getOpenRoomsByUser()
+			.subscribe((response: Room[]) => (this.openRooms = response));
+		this.roomService
+			.getClosedRoomsByUser()
+			.subscribe((res: Room[]) => (this.closedRooms = res));
 	}
 }
