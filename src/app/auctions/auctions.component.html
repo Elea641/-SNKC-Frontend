@@ -1,17 +1,35 @@
 <div id="containerButton">
 	<button [routerLink]="['/auction/create']">Créer une salle aux enchères</button>
 </div>
-<h1>Mes salles aux enchères</h1>
+<h1>Mes salles aux enchères ouvertes</h1>
 <hr />
 <div class="list">
 	<div
 		*ngFor="
-			let room of usersRooms
+			let openRoom of openRooms
 				| paginate: { itemsPerPage: roomsPerPage, currentPage: currentPage }
 		"
 	>
-		<a [routerLink]="['/auction/', room.id]">
-			<app-auction-card [room]="room"></app-auction-card>
+		<a [routerLink]="['/auction/', openRoom.id]">
+			<app-auction-card [room]="openRoom"></app-auction-card>
+		</a>
+	</div>
+</div>
+<div class="pagination">
+	<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+<h1>Mes salles aux enchères fermées</h1>
+<hr />
+<div class="list">
+	<div
+		*ngFor="
+			let closedRoom of closedRooms
+				| paginate: { itemsPerPage: roomsPerPage, currentPage: currentPage }
+		"
+	>
+		<a [routerLink]="['/auction/', closedRoom.id]">
+			<app-auction-card [room]="closedRoom"></app-auction-card>
 		</a>
 	</div>
 </div>

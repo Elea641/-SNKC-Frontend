@@ -42,4 +42,12 @@ export class RoomService {
 	postAuction(auction: Auction): Observable<Auction> {
 		return this.http.post<Auction>(`${environment.urlApi}auctions`, auction);
 	}
+
+	getOpenRoomsByUser(): Observable<Room[]> {
+		return this.http.get<Room[]>(`${environment.urlApi}rooms/open`);
+	}
+
+	getClosedRoomsByUser(): Observable<Room[]> {
+		return this.http.get<Room[]>(`${environment.urlApi}rooms/closed`);
+	}
 }
