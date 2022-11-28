@@ -32,7 +32,9 @@ export class CreatedSneakersComponent implements OnInit {
 	public states: Map<string, string>[];
 	public colors: Map<string, string>[];
 	public sneakersByUserId: Sneakers[] | undefined;
-	public picture: File | null | undefined;
+	selectedFiles?: FileList;
+	picture?: File;
+	preview = '';
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -105,8 +107,25 @@ export class CreatedSneakersComponent implements OnInit {
 		return '';
 	}
 
-	public onSubmitNewPicture(event: Event): void {
-		this.picture = (event.target as HTMLInputElement).files?.item(0);
+	public onSubmitNewPicture(event: any): void {
+		this.preview = '';
+		this.selectedFiles = event.target.files;
+
+		if (this.selectedFiles) {
+		  const file: File | null = this.selectedFiles.item(0);
+	
+		  if (file) {
+			this.preview = '';
+			this.picture = file;
+	
+			const reader = new FileReader();
+	
+			reader.onload = (e: any) => {
+			  this.preview = e.target.result;
+			};
+			reader.readAsDataURL(this.picture);
+		  }
+		}
 	}
 
 	backClicked() {

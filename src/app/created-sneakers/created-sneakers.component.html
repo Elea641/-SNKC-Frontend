@@ -9,6 +9,9 @@
 			<h1>AJOUTER SNEAKERS</h1>
 			<form [formGroup]="createdSneakersForm">
 				<div class="colorForm">
+					<div class="containerImg">
+						<img [src]="preview" *ngIf="preview" [alt]="" />
+					  </div>
 					<div class="form-group">
 						<label for="picture">Photo</label>
 						<input
