@@ -27,6 +27,7 @@ export class AuctionComponent implements OnInit {
 	maxOffer = 0;
 	offers: number[] = [];
 	showMsg = false;
+	winner: User | undefined;
 
 	constructor(
 		private roomService: RoomService,
@@ -35,9 +36,7 @@ export class AuctionComponent implements OnInit {
 		private userService: UserService,
 		private router: Router,
 		private _location: Location
-	) {
-
-	}
+	) {}
 
 	public onSubmitAuction(): void {
 		if (this.room?.initialPrice && this.offers.length === 0) {
@@ -86,27 +85,50 @@ export class AuctionComponent implements OnInit {
 				this.sneakerService
 					.getSneakersById(this.room.sneakersId.toString())
 					.subscribe((res: Sneakers) => (this.sneakers = res));
+
+				const now = new Date().getTime();
+				const endDate = new Date(this.room.endDate).getTime();
+				const distance = <number>endDate - now;
+
+				setTimeout(() => {
+					this.onAuctionEnd();
+				}, distance);
 			});
-			this.roomService.getAuctionsbyRoomId(this.roomId).subscribe((res: Auction[]) => {
-				this.auctions = res;
-				this.offers = this.auctions.map((auction: Auction) => auction.offer);
-				this.maxOffer = Math.max(...this.offers);
+
+			this.roomService
+				.getAuctionsbyRoomId(this.roomId)
+				.subscribe((res: Auction[]) => {
+					this.auctions = res;
+					this.offers = this.auctions.map((auction: Auction) => auction.offer);
+					this.maxOffer = Math.max(...this.offers);
+				});
+		});
+	}
+
+	public onAuctionEnd(): void {
+		this.route.paramMap.subscribe((params: ParamMap) => {
+			const id = <string>params.get('id');
+			this.roomService.getRoomById(<string> id).subscribe((res) => {
+				this.room = res;
+				this.userService
+					.getUserById(<string>this.room.winnerId?.toString())
+					.subscribe((response: User) => {
+						this.winner = response;
+					});
 			});
 		});
-
-
 	}
 
 	public stateOfWearToString(stateOfWear: StateOfWear | undefined): string {
-		if (stateOfWear){
-			return HelperService.stateOfWearToString(<StateOfWear> stateOfWear);
+		if (stateOfWear) {
+			return HelperService.stateOfWearToString(<StateOfWear>stateOfWear);
 		}
 		return '';
 	}
 
 	public colorsToString(color: Colors | undefined): string {
-		if (color){
-			return HelperService.colorsToString(<Colors> color);
+		if (color) {
+			return HelperService.colorsToString(<Colors>color);
 		}
 		return '';
 	}
@@ -114,6 +136,4 @@ export class AuctionComponent implements OnInit {
 	backClicked() {
 		this._location.back();
 	}
-
-
 }

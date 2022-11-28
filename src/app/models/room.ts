@@ -7,6 +7,6 @@ export class Room {
 		public startDate: Date,
 		public endDate: Date,
 		public attendeesId: number[],
-		public winnerAuctionId?: number
+		public winnerId?: number
 	) {}
 }
