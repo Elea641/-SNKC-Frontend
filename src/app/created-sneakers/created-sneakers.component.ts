@@ -32,9 +32,9 @@ export class CreatedSneakersComponent implements OnInit {
 	public states: Map<string, string>[];
 	public colors: Map<string, string>[];
 	public sneakersByUserId: Sneakers[] | undefined;
-	selectedFiles?: FileList;
-	picture?: File;
-	preview = '';
+	public selectedFiles?: FileList;
+	public picture?: File;
+	public preview = '';
 
 	constructor(
 		private formBuilder: FormBuilder,

@@ -1,17 +1,17 @@
 <div class="principal">
 	<div class="profile-card">
 		<div class="card-header">
-			<h1>{{name}} {{firstname}}</h1>
+			<h1>{{user?.username | titlecase}}</h1>
 		</div>
 		<img class="image" src="assets/Gramille.jpeg" alt="profile Image">
 		<div class="card-info">
-			<u><strong>Pseudo :</strong></u>
-			<p>{{pseudo}}</p>
+			<u><strong>Nom d'utilisateur :</strong></u>
+			<p>{{user?.username}}</p>
 			<br>
-			<u><strong>Descriptif :</strong></u>
+			<u><strong>Email :</strong></u>
 			<br>
 			<br>
-			<p>Je suis une passionnée, les Air Max et Tn font parties de mes best !</p>
+			<p>{{user?.email}}</p>
 		</div>
 
 		<div class="bottom">
