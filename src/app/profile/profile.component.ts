@@ -36,7 +36,9 @@ export class ProfileComponent{
 
     onSubmit(): void {
         if (this.updateProfileForm?.valid) {
-            this.userService.updateMe(this.user).subscribe((userEdited: User) => {
+			const formUser = this.updateProfileForm.getRawValue();
+			formUser.picture = this.user.picture;
+            this.userService.updateMe(formUser).subscribe((userEdited: User) => {
                 this.initForm(userEdited);
             });
         }
