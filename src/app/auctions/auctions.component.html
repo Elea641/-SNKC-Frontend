@@ -3,6 +3,7 @@
 </div>
 <h1>Mes salles aux enchères ouvertes</h1>
 <hr />
+<p *ngIf="openRooms.length == 0" class="no-rooms"> Vous n'avez aucune salle ouverte </p>
 <div class="list">
 	<div
 		*ngFor="
@@ -19,8 +20,28 @@
 	<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
 </div>
 
+<h1>Les salles ouvertes auxquelles je participe</h1>
+<hr />
+<p *ngIf="attendingOpenRooms.length == 0" class="no-rooms"> Vous ne participez à aucune vente </p>
+<div class="list">
+	<div
+		*ngFor="
+			let attendingOpenRoom of attendingOpenRooms
+				| paginate: { itemsPerPage: roomsPerPage, currentPage: currentPage }
+		"
+	>
+		<a [routerLink]="['/auction/', attendingOpenRoom.id]">
+			<app-auction-card [room]="attendingOpenRoom"></app-auction-card>
+		</a>
+	</div>
+</div>
+<div class="pagination">
+	<pagination-controls  (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
 <h1>Mes salles aux enchères fermées</h1>
 <hr />
+<p *ngIf="closedRooms.length == 0" class="no-rooms"> Vous n'avez aucune salle fermées </p>
 <div class="list">
 	<div
 		*ngFor="

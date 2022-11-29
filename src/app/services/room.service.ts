@@ -54,4 +54,8 @@ export class RoomService {
 	getClosedRoomsByUser(): Observable<Room[]> {
 		return this.http.get<Room[]>(`${environment.urlApi}rooms/closed`);
 	}
+
+	getAttendingOpenRooms(): Observable<Room[]> {
+		return this.http.get<Room[]>(`${environment.urlApi}rooms/open/attending`);
+	}
 }
