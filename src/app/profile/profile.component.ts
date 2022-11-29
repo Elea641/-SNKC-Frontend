@@ -19,6 +19,7 @@ export class ProfileComponent{
     public updateProfileForm!: FormGroup;
     public img: string = "assets/profil-vide.png";
     public picture?: File;
+	public showMsg = false;
 
     constructor(private formBuilder: FormBuilder,
                 private authService: AuthService, 
@@ -39,6 +40,7 @@ export class ProfileComponent{
         if (this.updateProfileForm?.valid) {
 			const formUser = this.updateProfileForm.getRawValue();
 			formUser.picture = this.user.picture;
+			this.showMsg = true;
             this.userService.updateMe(formUser).subscribe((userEdited: User) => {
                 this.initForm(userEdited);
 				this.authService.refreshToken().subscribe(

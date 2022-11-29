@@ -151,6 +151,7 @@
 		-webkit-transition: all 0.3 ease;
 		transition: all 0.3 ease;
 		cursor: pointer;
+		margin-bottom: 1rem;
 	}
 
 	select {
@@ -176,6 +177,11 @@
 	.updateCard {
 		margin-top: 10px;
 	}
+
+	.row {
+		padding-left: 2rem;
+		padding-bottom: 0,5rem;
+	}	
 }
 
 @media screen and (min-width: 768px) {
@@ -353,5 +359,10 @@
 
 	.updateCard {
 		margin-top: 10px;
+	}
+
+	.row {
+		padding-left: 4rem;
+		padding-bottom: 1rem;
 	}
 }
