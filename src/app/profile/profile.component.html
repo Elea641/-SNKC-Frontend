@@ -1,17 +1,17 @@
-<div class="principal">
+<div class="principal" *ngIf="user">
 	<div class="profile-card">
 		<div class="card-header">
-			<h1>{{user?.username | titlecase}}</h1>
+			<h1>{{user.username | titlecase}}</h1>
 		</div>
-		<img class="image" src="assets/Gramille.jpeg" alt="profile Image">
+		<img class="image" [src]="user.picture ? user.picture : img" alt="profile Image">
 		<div class="card-info">
 			<u><strong>Nom d'utilisateur :</strong></u>
-			<p>{{user?.username}}</p>
+			<p>{{user.username}}</p>
 			<br>
 			<u><strong>Email :</strong></u>
 			<br>
 			<br>
-			<p>{{user?.email}}</p>
+			<p>{{user.email}}</p>
 		</div>
 
 		<div class="bottom">
@@ -26,7 +26,9 @@
 		</div>
 		<form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
 			<div class="updateCard">
-
+				<input type="file" (change)="selectFile($event)" 
+				placeholder="Sélectionnez une photo"
+				accept="image/*">
 				<div class="form-group">
 					<label for="text">Nom d'utilisateur </label>
 					<input type="text" formControlName="username"/>
@@ -44,3 +46,4 @@
 		</form>
 	</div>
 </div>
+<div *ngIf="!user">Chargement en cours ...</div>

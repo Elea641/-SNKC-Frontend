@@ -3,6 +3,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
 import {User} from "../models/user";
 import {UserService} from "../services/user.service";
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-profile',
@@ -15,65 +18,56 @@ export class ProfileComponent implements OnInit{
 	public firstname: string = 'Camille';
 	public pseudo: string = 'Pépito 👐';
 	public displayForm = false;
-	public selectedFiles?: FileList;
-	public picture?: File;
-	public preview = '';
-	public user: User | undefined
-
-
+	public user!: User;
 	public updateProfileForm!: FormGroup;
+	public img: string = "assets/profil-vide.png";
+	public picture?: File;
 
 	constructor(private formBuilder: FormBuilder,
 				private authService: AuthService, 
-				private userService: UserService) {
-
+				private userService: UserService,
+				private http: HttpClient,
+				private router: Router) {
+		this.authService.currentUser.subscribe(
+			(user: User | undefined) => {
+				if (user) {
+					this.user = <User> this.authService.currentUser.getValue();
+					this.initForm(this.user);
+				}
+			}
+		)
 	}
 
 	ngOnInit(): void {
-		this.userService
-		.getConnectedUser()
-		.subscribe((response: User) => {
-			this.user = response;
-			this.initForm(<User>response)})
+	
     }
 
 	onSubmit(): void {
 		if (this.updateProfileForm?.valid) {
-			this.userService.updateMe(this.updateProfileForm.getRawValue()).subscribe(
-				(user: User) => {
-					this.initForm(user);
-				}
-			)
+			this.userService.updateMe(this.user).subscribe((userEdited: User) => {
+				this.initForm(userEdited);
+			});
 		}
 	}
 
 	private initForm(user: User): void {
 		this.updateProfileForm = this.formBuilder.group({
-			username: new FormControl(user?.username),
-			email: new FormControl(user?.email, [Validators.required, Validators.email]),
+			username: new FormControl(user.username),
+			email: new FormControl(user.email, [Validators.required, Validators.email]),
 			password: new FormControl(''),
+			picture: new FormControl(user.picture),
 		});
 		this.displayForm = true;
 	}
 
-	public onSubmitNewPicture(event: any): void {
-		this.preview = '';
-		this.selectedFiles = event.target.files;
-
-		if (this.selectedFiles) {
-		  const file: File | null = this.selectedFiles.item(0);
-	
-		  if (file) {
-			this.preview = '';
-			this.picture = file;
-	
+	public selectFile(event: any): void {
+		if (event.target.files) {
 			const reader = new FileReader();
-	
-			reader.onload = (e: any) => {
-			  this.preview = e.target.result;
-			};
-			reader.readAsDataURL(this.picture);
-		  }
+			reader.readAsDataURL(event.target.files[0]);
+			reader.onload = (event: any) => {;
+				this.img = event.target.result;
+				this.user.picture = event.target.result;
+			}
 		}
 	}
 }

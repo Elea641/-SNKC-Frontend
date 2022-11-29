@@ -24,6 +24,6 @@ export class UserService {
 		);
 	}
 	updateMe(user: object): Observable<User> {
-		return this.http.patch<User>(environment.urlApi + 'users/me', user);
+		return this.http.put<User>(environment.urlApi + 'users/me', user);
 	}
 }
