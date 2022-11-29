@@ -12,5 +12,6 @@ export class User {
 		public updateDate: Date,
 		public roles: Role[],
 		public avatar?: string,
+		public picture?: Blob | string,
 	) {}
 }
