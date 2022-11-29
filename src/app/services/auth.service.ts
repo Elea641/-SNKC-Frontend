@@ -69,4 +69,10 @@ export class AuthService {
 		);
 		return tokenContent.id;
 	}
+
+	public getCurrentUser(): void {
+		this.userService.getConnectedUser().subscribe((user: User) => {
+			this.currentUser.next(user);
+		})
+	}
 }

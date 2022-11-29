@@ -151,6 +151,7 @@
 		-webkit-transition: all 0.3 ease;
 		transition: all 0.3 ease;
 		cursor: pointer;
+		margin-bottom: 1rem;
 	}
 
 	select {
@@ -161,12 +162,10 @@
 	}
 
 	button:hover {
-		border-radius: 2rem;
 		background: #74c2cc;
 	}
 
 	button:active {
-		border-radius: 2rem;
 		background: #41a1ae;
 		color: white;
 	}
@@ -178,6 +177,11 @@
 	.updateCard {
 		margin-top: 10px;
 	}
+
+	.row {
+		padding-left: 2rem;
+		padding-bottom: 0,5rem;
+	}	
 }
 
 @media screen and (min-width: 768px) {
@@ -341,12 +345,10 @@
 	}
 
 	button:hover {
-		border-radius: 2rem;
 		background: #74c2cc;
 	}
 
 	button:active {
-		border-radius: 2rem;
 		background: #41a1ae;
 		color: white;
 	}
@@ -357,5 +359,10 @@
 
 	.updateCard {
 		margin-top: 10px;
+	}
+
+	.row {
+		padding-left: 4rem;
+		padding-bottom: 1rem;
 	}
 }
