@@ -73,6 +73,6 @@ export class AuthService {
 	public getCurrentUser(): void {
 		this.userService.getConnectedUser().subscribe((user: User) => {
 			this.currentUser.next(user);
-		})
+		});
 	}
 }
