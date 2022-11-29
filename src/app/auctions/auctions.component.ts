@@ -10,6 +10,7 @@ import { RoomService } from '../services/room.service';
 export class AuctionsComponent implements OnInit {
 	openRooms: Room[] = [];
 	closedRooms: Room[] = [];
+	attendingOpenRooms: Room[] = [];
 	currentPage = 1;
 	roomsPerPage = 4;
 
@@ -22,5 +23,11 @@ export class AuctionsComponent implements OnInit {
 		this.roomService
 			.getClosedRoomsByUser()
 			.subscribe((res: Room[]) => (this.closedRooms = res));
+		this.roomService
+			.getAttendingOpenRooms()
+			.subscribe(
+				(resAttendingOpenRooms: Room[]) =>
+					(this.attendingOpenRooms = resAttendingOpenRooms)
+			);
 	}
 }

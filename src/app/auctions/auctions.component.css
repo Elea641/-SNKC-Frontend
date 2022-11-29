@@ -53,10 +53,12 @@ button:hover,.form button:active,.form button:focus {
     font-size: 16px;
   }
 
-
-
   .pagination {
     display: flex;
     justify-content: center;
     margin: 2rem;
   }
+
+		.no-rooms {
+			text-align: center;
+		}
