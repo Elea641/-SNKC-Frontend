@@ -1,11 +1,5 @@
-<button
-class="btn-back"
-(click)="backClicked()"
->
-Retour
-</button>
 <div class="background">
-  <h1>Recherche par Enchère</h1>
+  <h1>Recherche par enchère</h1>
   <div class="containerSearch">
     <form class="test" [formGroup]="searchForm">
       <div class="containerForm">
@@ -31,7 +25,7 @@ Retour
           </select>
         </div>
         <div class="form">
-          <label for="stateOfWear">Etat sneakers </label>
+          <label for="stateOfWear">État sneakers </label>
           <select #stateOfWear formControlName="stateOfWear" (change)="selectChangeStateOfWear($event)">
             <option default value=""></option>
             <option id="optionForm" *ngFor="let state of states | keyvalue" [ngValue]="state.value">{{state.key}}</option>
@@ -55,3 +49,7 @@ Retour
       <app-auction-card [room]="room"></app-auction-card>
     </a>
   </div>
+
+		<div class="no-result" *ngIf="rooms.length == 0">
+			<p>Il n'y a pas de résultat à votre recherche *smiley triste*</p>
+		</div>

@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { RegisterRequest } from './../interfaces/register-request';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../interfaces/login-response';
 import { User } from '../models/user';
@@ -73,6 +73,6 @@ export class AuthService {
 	public getCurrentUser(): void {
 		this.userService.getConnectedUser().subscribe((user: User) => {
 			this.currentUser.next(user);
-		})
+		});
 	}
 }
