@@ -5,6 +5,7 @@ import {User} from "../models/user";
 import {UserService} from "../services/user.service";
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoginResponse } from '../interfaces/login-response';
 
 @Component({
     selector: 'app-profile',
@@ -40,6 +41,12 @@ export class ProfileComponent{
 			formUser.picture = this.user.picture;
             this.userService.updateMe(formUser).subscribe((userEdited: User) => {
                 this.initForm(userEdited);
+				this.authService.refreshToken().subscribe(
+					(loginResponse: LoginResponse) => {
+						this.authService.setTokenToSession(loginResponse.accessToken, loginResponse.refreshToken);
+						this.authService.getCurrentUser();
+					}
+				);
             });
         }
     }
