@@ -5,6 +5,7 @@ import { Room } from '../models/room';
 import { Sneakers } from '../models/sneakers';
 import { RoomService } from '../services/room.service';
 import { SneakersService } from '../services/sneakers.service';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-auction-creation',
@@ -20,7 +21,8 @@ export class AuctionCreationComponent implements OnInit {
 		private sneakersService: SneakersService,
 		private formBuilder: FormBuilder,
 		private router: Router,
-		private roomService: RoomService
+		private roomService: RoomService,
+		private _location: Location
 	) {}
 
 	selectChangeHandler(event: Event) {
@@ -51,4 +53,9 @@ export class AuctionCreationComponent implements OnInit {
 			}
 		);
 	}
+
+	backClicked() {
+		this._location.back();
+	}
+
 }

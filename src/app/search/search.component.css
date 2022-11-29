@@ -101,15 +101,20 @@ select, input, label{
     width: 50%;
     font-size: 16px;
     text-align: center;
-} 
+}
+
+.no-result {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-    
+
     h1 {
         font-size: 50px;
     }
-    
-    p {   
+
+    p {
         font-size: 30px;
     }
 
@@ -145,23 +150,23 @@ select, input, label{
 }
 
 @media screen and (min-width: 993px) {
-    
+
     .containerRoom {
         width: 70%;
         padding: 60px;
     }
-    
+
     h1 {
         font-size: 50px;
     }
-    
+
     p {
         font-size: 30px;
     }
-    
+
     img{
         width: 80%;
-        display: block;  
+        display: block;
         margin: 10%;
         max-height: 25%;
     }
@@ -175,12 +180,12 @@ select, input, label{
         flex-direction: column;
         width: 100%;
       }
-  
+
       .containerForm {
           display: flex;
           width: 100%;
       }
-  
+
       #containerButton {
           display: flex;
           align-items: center;
@@ -188,7 +193,7 @@ select, input, label{
           flex-wrap: wrap;
           width: 40%;
       }
-  
+
       select, input{
           width: 95%;
           font-size: 16px;

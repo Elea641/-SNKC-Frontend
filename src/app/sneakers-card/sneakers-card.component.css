@@ -55,6 +55,11 @@
     margin: 1rem;
   }
 
+		.card__thumbnail {
+			width: 15rem;
+			height: 20rem;
+	}
+
   .text {
     color: #fff;
     font-size: 40px;

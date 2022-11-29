@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Room } from '../models/room';
 import { AuthService } from '../services/auth.service';
 import { RoomService } from '../services/room.service';
-import { SneakersService } from '../services/sneakers.service';
 
 @Component({
 	selector: 'app-carrousel-room',
@@ -20,7 +19,7 @@ export class CarrouselRoomComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.roomService.getOpenRoomsByUser().subscribe((response: Room[]) => {
+		this.roomService.getLastCreatedRooms().subscribe((response: Room[]) => {
 			this.rooms = response;
 		});
 	}
