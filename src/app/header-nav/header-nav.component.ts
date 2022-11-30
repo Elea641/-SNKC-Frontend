@@ -35,7 +35,10 @@ export class HeaderNavComponent implements OnInit {
 
 	public logout() {
 		this.authService.logout();
-		this.router.navigate(['']);
+		this.router.navigate([''])
+		.then(() => {
+			window.location.reload();
+		});
 	}
 
 	onMenuChange(event: Event): void {
