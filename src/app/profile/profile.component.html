@@ -51,3 +51,10 @@
 	</div>
 </div>
 <div *ngIf="!user">Chargement en cours ...</div>
+<button
+				class="btn2"
+				(click)="deleteUserById()"
+				[routerLink]="['/user/:id/delete']"
+			>
+				Supprimer la Sneakers
+			</button>

@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
 
 		if(sessionStorage.getItem('token') != null) {
 			this.connected = true;
+		}else{
+			this.connected = false;
 		}
 	}
 }
