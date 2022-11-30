@@ -19,7 +19,7 @@ export class CarrouselRoomComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.roomService.getLastCreatedRooms().subscribe((response: Room[]) => {
+		this.roomService.getAllOpenRooms().subscribe((response: Room[]) => {
 			this.rooms = response;
 		});
 	}

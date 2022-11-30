@@ -28,6 +28,10 @@ export class AuctionComponent implements OnInit {
 	offers: number[] = [];
 	showMsg = false;
 	winner: User | undefined;
+	errorMessage = '';
+	showErrorMessage = false;
+	lastAuction: Auction | undefined;
+
 
 	constructor(
 		private roomService: RoomService,
@@ -41,33 +45,48 @@ export class AuctionComponent implements OnInit {
 	public onSubmitAuction(): void {
 		if (this.room?.initialPrice && this.offers.length === 0) {
 			if (this.bit > this.room.initialPrice) {
+				this.showErrorMessage = false;
 				this.offers.unshift(this.bit);
 				this.maxOffer = this.bit;
 				this.showMsg = true;
 				const auction: Auction = new Auction(this.room.id, this.bit);
+				auction.userUsername = this.currentUser?.username;
 				this.roomService
 					.postAuction(auction)
-					.subscribe((response: Auction) => this.auctions?.unshift(response));
+					.subscribe((response: Auction) => {
+						this.auctions?.unshift(response);
+						this.lastAuction = response;
+					});
+
 			} else {
+				this.errorMessage = 'L\'offre doit être supérieure au prix de départ';
+				this.showErrorMessage = true;
 				throw new Error('L\'offre doit être supérieure au prix de départ');
 			}
 		} else if (this.maxOffer > 0) {
 			if (this.bit > Math.max(...this.offers)) {
+				this.showErrorMessage = false;
 				this.offers.unshift(this.bit);
 				this.maxOffer = this.bit;
 				this.showMsg = true;
 				const auction: Auction = new Auction(this.room?.id, this.bit);
+				auction.userUsername = this.currentUser?.username;
 				this.roomService
 					.postAuction(auction)
-					.subscribe((response: Auction) => this.auctions?.unshift(response));
+					.subscribe((response: Auction) => {
+						this.auctions?.unshift(response);
+						this.lastAuction = response;
+					});
 			} else {
+				this.errorMessage = 'L\' offre doit être supérieure à l\' offre en cours';
+				this.showErrorMessage = true;
 				throw new Error('L\' offre doit être supérieure à l\' offre en cours');
 			}
 		}
 	}
 
 	deleteRoom() {
-		if (confirm('Are you sure to delete this room ?')) {
+		if (confirm('Êtes-vous sûr de vouloir supprimer cette salle ?')) {
 			this.roomService.deleteRoom(<string>this.roomId).subscribe((_) => {
 				this.router.navigate(['/auction', this.room?.id, 'delete']);
 			});
@@ -101,6 +120,7 @@ export class AuctionComponent implements OnInit {
 					this.auctions = res;
 					this.offers = this.auctions.map((auction: Auction) => auction.offer);
 					this.maxOffer = Math.max(...this.offers);
+					this.lastAuction = res[res.length - 1];
 				});
 		});
 	}
@@ -108,7 +128,7 @@ export class AuctionComponent implements OnInit {
 	public onAuctionEnd(): void {
 		this.route.paramMap.subscribe((params: ParamMap) => {
 			const id = <string>params.get('id');
-			this.roomService.getRoomById(<string> id).subscribe((res) => {
+			this.roomService.getRoomById(<string>id).subscribe((res) => {
 				this.room = res;
 				this.userService
 					.getUserById(<string>this.room.winnerId?.toString())

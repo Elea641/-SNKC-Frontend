@@ -56,7 +56,7 @@ export class SearchComponent {
 	}
 
 	ngOnInit(): void {
-		this.roomService.getRoomsAll().subscribe((response: Room[]) => {
+		this.roomService.getAllOpenRooms().subscribe((response: Room[]) => {
 			this.rooms = response;
 		});
 

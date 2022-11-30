@@ -6,7 +6,10 @@
 	color: rgb(3, 101, 3);
 	background-color: rgb(172, 217, 172);
 	padding: 2rem;
+}
 
+.error-message {
+	color: red;
 }
 
 h1 {
@@ -78,7 +81,7 @@ td {
 button {
 	text-transform: uppercase;
 	outline: 0;
-	background: #00adb5;
+	background: red;
 	width: 40%;
 	border: 0;
 	padding: 15px;
@@ -97,10 +100,15 @@ button {
 	width: 30%;
 	margin: auto;
 	margin-top: 1rem;
+	background-color:#00adb5;
+}
+
+.bit-button:hover {
+	background: #018f96;
 }
 
 button:hover,.form button:active,.form button:focus {
-	background: #00adb5;
+	background: rgb(189, 4, 4);
 }
 
 .btn-back {
@@ -108,6 +116,10 @@ button:hover,.form button:active,.form button:focus {
 	width: 6rem;
 	margin-top: 1.3rem;
 	margin-bottom: 1.3rem;
+}
+
+.btn-back:hover {
+	background: #00adb5;
 }
 
 .description {
@@ -220,7 +232,7 @@ padding: 2rem;
 	}
 
 	.btn1 {
-		width: 30%;
+		width: 20%;
 	}
 
 }
