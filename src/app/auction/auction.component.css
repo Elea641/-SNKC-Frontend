@@ -1,0 +1,238 @@
+.container {
+	margin: 1rem;
+}
+
+.alert-success {
+	color: rgb(3, 101, 3);
+	background-color: rgb(172, 217, 172);
+	padding: 2rem;
+}
+
+.error-message {
+	color: red;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	margin-top: 1rem;
+}
+
+h3 {
+	text-align: center;
+}
+
+h4 {
+	margin-top: 1rem;
+}
+
+.image {
+	text-align: center;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.bid {
+	margin: 1rem;
+	background-color: white;
+	border-radius: 2rem;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.bid:hover {
+	background: #74c2cc;
+}
+
+input {
+	padding: 5px;
+	font-size: 16px;
+	margin-right: 1rem;
+}
+
+.auctions {
+	margin: 1rem;
+}
+
+table {
+	width: 100%;
+	margin-top: 1rem;
+}
+
+table,
+th,
+td {
+	border: 2px solid #41a1ae;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: 1rem;
+	text-align: center;
+}
+
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: red;
+	width: 40%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.btn1 {
+	width: 40%;
+}
+
+.bit-button {
+	width: 30%;
+	margin: auto;
+	margin-top: 1rem;
+	background-color:#00adb5;
+}
+
+.bit-button:hover {
+	background: #018f96;
+}
+
+button:hover,.form button:active,.form button:focus {
+	background: rgb(189, 4, 4);
+}
+
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	margin-top: 1.3rem;
+	margin-bottom: 1.3rem;
+}
+
+.btn-back:hover {
+	background: #00adb5;
+}
+
+.description {
+	margin: 1rem;
+background-color: rgb(237, 237, 237);
+padding: 2rem;
+}
+
+.description h3 {
+	margin-bottom: 1.5rem;
+}
+
+.description-details {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+.description-details p {
+	display: inline-block;
+	font-size: 1em;
+	list-style-type: none;
+	padding: 1em;
+}
+
+.description-details p span {
+	display: block;
+	font-size: 2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	h1 {
+		text-align: center;
+	}
+
+	.container {
+		margin: 3rem;
+	}
+
+	.room {
+		display: flex;
+	}
+
+	.room-details > * {
+		margin-top: 1.5rem;
+	}
+
+	.image {
+		max-width: 50%;
+		margin: 1.5rem;
+	}
+
+	.auctions {
+		margin: 4rem;
+	}
+
+	table {
+		margin: 2rem;
+	}
+
+	h2 {
+		margin-top: 3rem;
+	}
+}
+
+@media screen and (min-width: 993px) {
+	h1 {
+		text-align: center;
+	}
+
+	h2 {
+		margin-top: 4rem;
+	}
+
+	.container {
+		margin: 3rem;
+	}
+
+	.room {
+		display: flex;
+		justify-content: center;
+	}
+
+	.room-details {
+		margin: 2rem;
+	}
+
+	.room-details > * {
+		margin-top: 1.5rem;
+	}
+
+
+	.image {
+		margin: 3rem;
+		max-height: 80vh;
+		max-width: 50vw;
+	}
+
+	.auctions {
+		margin: 8rem;
+	}
+
+	.auctions > h3 {
+		margin: 1.5rem;
+	}
+
+	button {
+		width: 60%;
+	}
+
+	.btn1 {
+		width: 20%;
+	}
+
+}

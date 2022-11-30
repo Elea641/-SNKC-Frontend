@@ -1,0 +1,202 @@
+*{
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.background{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.containerSearch {
+    align-items: center;
+    width: 100%;
+    padding: 10PX;
+    background-color: white;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.form {
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+h1 {
+    background-color: white;
+    text-align: center;
+    font-size: 40px;
+    margin: 5%;
+}
+
+p {
+    background-color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+
+img {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+}
+
+#containerButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 20px;
+    width: 50%;
+    background-color: white;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #00adb5;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin: 0;
+    justify-content: space-between;
+}
+
+button:hover,.form button:active,.form button:focus {
+    background: #00adb5;
+}
+
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	align-items: flex-end;
+	margin-top: 1.3rem;
+	margin-left: 5rem;
+}
+
+select, input, label{
+    background-color: white;
+    width: 50%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.no-result {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .test {
+        width: 80%;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .containerForm {
+        display: flex;
+        width: 100%;
+    }
+
+    #containerButton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 60%;
+    }
+
+    select, input{
+        width: 95%;
+        font-size: 16px;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 993px) {
+
+    .containerRoom {
+        width: 70%;
+        padding: 60px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    img{
+        width: 80%;
+        display: block;
+        margin: 10%;
+        max-height: 25%;
+    }
+
+    .test {
+        width: 80%;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .containerForm {
+          display: flex;
+          width: 100%;
+      }
+
+      #containerButton {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          width: 40%;
+      }
+
+      select, input{
+          width: 95%;
+          font-size: 16px;
+          text-align: center;
+      }
+}

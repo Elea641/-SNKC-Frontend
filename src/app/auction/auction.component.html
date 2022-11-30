@@ -1,0 +1,101 @@
+<div class="container">
+	<button class="btn-back" (click)="backClicked()">Retour</button>
+	<div class="row" *ngIf="showMsg">
+		<div class="col-xs-12">
+			<p class="alert-success">
+				<strong>Enchère bien prise en compte !</strong>
+			</p>
+		</div>
+	</div>
+	<div class="room">
+		<div class="image">
+			<img [src]="sneakers?.picture" />
+		</div>
+		<div *ngIf="!winner" class="room-details">
+			<h2 style="text-align: center">Cette enchère se termine dans</h2>
+			<app-countdown
+				*ngIf="room?.endDate"
+				[endDate]="room?.endDate"
+				style="text-align: center"
+			></app-countdown>
+			<div *ngIf="offers.length == 0">
+				<h2>Prix de départ :</h2>
+				<h1>{{ room?.initialPrice | currency: "EUR" }}</h1>
+			</div>
+			<div *ngIf="maxOffer > 0 && lastAuction?.userId != currentUser?.id">
+				<h2>Dernière enchère proposée :</h2>
+				<h1>{{ maxOffer | currency: "EUR" }}</h1>
+			</div>
+
+			<div *ngIf="maxOffer > 0 && lastAuction?.userId == currentUser?.id">
+				<h2 style="text-align: center">{{currentUser?.username}} vous êtes le dernier à avoir enchéri à hauteur de :</h2>
+				<h1>{{ maxOffer | currency: "EUR" }}</h1>
+			</div>
+
+			<div *ngIf="room?.ownerId != currentUser?.id && lastAuction?.userId != currentUser?.id" >
+				<input
+					placeholder="Montant de votre enchère"
+					type="number"
+					[(ngModel)]="bit"
+				/>
+				<p class="error-message" *ngIf="showErrorMessage">{{errorMessage}}</p>
+				<button class="bit-button" (click)="onSubmitAuction()">Enchérir</button>
+			</div>
+			<p>Prix de départ : {{ room?.initialPrice | currency: "EUR" }}</p>
+		</div>
+
+		<div *ngIf="winner && winner.id == room?.ownerId " class="room-details">
+			<h1>Nous sommes désolés {{ winner.username }},</h1>
+			<h1>personne n'a enchéri sur cette paire.</h1>
+		</div>
+		<div *ngIf="winner && winner.id != room?.ownerId" class="room-details">
+			<h1>Le gagnant de l'enchère est :</h1>
+			<h1>{{ winner.username }}</h1>
+			<br />
+			<h3>Il/elle remporte cette magnifique paire pour la maudite somme de</h3>
+			<h3>{{ maxOffer | currency: "EUR" }} !!</h3>
+		</div>
+	</div>
+
+	<div class="description">
+		<h3>Description</h3>
+		<div class="description-details">
+			<p>
+				Marque : <span>{{ sneakers?.brand }}</span>
+			</p>
+			<p>
+				Modèle : <span>{{ sneakers?.model }}</span>
+			</p>
+			<p>
+				Taille : <span>{{ sneakers?.size }}</span>
+			</p>
+			<p>
+				Etat : <span>{{ stateOfWearToString(sneakers?.stateOfWear) }}</span>
+			</p>
+			<p>
+				Couleur principale : <span>{{ colorsToString(sneakers?.mainColor) }}</span>
+			</p>
+		</div>
+	</div>
+
+	<div class="auctions">
+		<h3>Historique des enchères</h3>
+		<table>
+			<tr>
+				<th>Pseudo</th>
+				<th>Montant enchère</th>
+				<th>Date et heure</th>
+			</tr>
+
+			<tr *ngFor="let auction of auctions">
+				<td>{{ auction?.userUsername }}</td>
+				<td>{{ auction?.offer | currency: "EUR" }}</td>
+				<td>{{ auction?.date | date: "medium":"GMT" }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<div *ngIf="currentUser?.id == room?.ownerId">
+		<button class="btn1" (click)="deleteRoom()">Supprimer la salle</button>
+	</div>
+</div>

@@ -1,0 +1,72 @@
+.form-card {
+	box-sizing: border-box;
+	width: 80%;
+	height: 200px;
+	margin: 10% auto;
+	padding: 10px 30px;
+	box-shadow: lightgray 4px 4px 20px;
+}
+
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: #00adb5;
+	width: 60%;
+	border: 0;
+	margin: 5px;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin: 0;
+}
+
+button:hover,.form button:active,.form button:focus {
+	background: #00adb5;
+}
+
+.action-buttons {
+	display: flex;
+	justify-content: center;
+  }
+
+select{
+	background-color: white;
+	width: 50%;
+	border-radius: 2rem;
+	font-size: 16px;
+	text-align: center;
+}
+
+
+p {
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 24px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	button {
+					width: 50%;
+	}
+	.form-card {
+					height: 200px;
+	}
+}
+
+@media screen and (min-width: 993px) {
+	button {
+					width: 40%;
+	}
+
+	.form-card {
+					height: 200px;
+	}
+
+	p {
+					margin-bottom: 50px;
+	}
+
+}

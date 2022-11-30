@@ -1,0 +1,55 @@
+          <button
+          class="btn-back"
+          (click)="backClicked()"
+          >
+          Retour
+        </button>
+        <div class="containerForm" *ngIf="sneakersById">
+          <div class="form-card" *ngIf="updateSneakersForm">
+            <h1>MODIFIER MA SNEAKERS</h1>
+            <form [formGroup]="updateSneakersForm">
+              <div class="colorForm">
+                <div class="containerImg">
+                  <img [src]="sneakersById.picture" [alt]="sneakersById.brand" />
+                </div>
+                <div class="form-group">
+                  <label for="picture" type="file" id="picture" placeholder="Sélectionnez une photo">Photo</label>
+                  <input
+                    (change)="onSubmitNewPicture($event)"
+                    id="picture"
+                    type="file"
+                    placeholder="Sélectionnez une photo"
+                    accept="image/*"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="brand">Marque </label>
+                  <input id="brand" type="text" formControlName="brand">
+                </div>
+                <div class="form-group">
+                  <label for="model">Modèle </label>
+                  <input id="model" type="text" formControlName="model">
+                </div>
+                <div class="form-group">
+                  <label for="size">Taille </label>
+                  <input id="size" type="text" formControlName="size">
+                </div>
+                <div class="form-group">
+                  <label for="stateOfWear">Etat sneakers </label>
+                  <select id="stateOfWear" formControlName="stateOfWear">
+                    <option id="optionForm" *ngFor="let state of states | keyvalue " [ngValue]="state.value">{{state.key}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mainColor">Couleur </label>
+                  <select id="mainColor" formControlName="mainColor">
+                    <option id="optionForm" *ngFor="let color of colors | keyvalue" [ngValue]="color.value">{{color.key}}</option>
+                  </select>
+                </div>
+                <div class="action-buttons">
+                  <button type="submit" (click)="onSubmitUpdateForm()" [disabled]="updateSneakersForm.invalid">Modifier votre Sneakers </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>

@@ -1,0 +1,51 @@
+<div class="btnTop">
+	<button
+	class="btn-back"
+	(click)="backClicked()"
+>
+	Retour
+</button>
+	<button class="btn3" [routerLink]="['/sneakers/create']">Ajouter une paire</button>
+</div>
+	<div class="background">
+	<div class="containerSneakers">
+		<div class="containerSneakersDetails">
+			<div class="containerImg">
+				<img [src]="sneakersById?.picture" [alt]="sneakersById?.brand" />
+			</div>
+			<div class="containerDetails">
+				<h1>{{ sneakersById?.model | titlecase }}</h1>
+				<h2>{{ sneakersById?.brand | titlecase }}</h2>
+				<div class="details-p">
+					<p>Taille :</p>
+						<div class="cercle">
+							{{ sneakersById?.size }}
+					</div>
+				</div>
+				<div class="details-p"></div>
+				<br />
+				<div class="details-p">
+					<p>L'état global :</p>
+					<p class="state">{{ stateOfWearToString(sneakersById?.stateOfWear) }}</p>
+				</div>
+				<br />
+				<div class="details-p">
+					<p *ngIf="sneakersById?.mainColor">Couleur principale :</p>
+					<p class="color">{{ colorsToString(sneakersById?.mainColor) }}</p>
+				</div>
+			</div>
+		</div>
+		<div id="containerButton">
+			<button class="btn1" [routerLink]="['/sneakers', id, 'update']">
+				Modifier la sneakers
+			</button>
+			<button
+				class="btn2"
+				(click)="deleteSneakers()"
+				[routerLink]="['/sneakers/:id/delete']"
+			>
+				Supprimer la Sneakers
+			</button>
+		</div>
+	</div>
+</div>

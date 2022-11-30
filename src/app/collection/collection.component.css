@@ -1,0 +1,87 @@
+.containerCollection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+div {
+    width: 35%;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 40px;
+				margin: 0.5rem 0 0.5rem 2rem;
+
+}
+
+#containerButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: #00adb5;
+	width: 20%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin-right: 1.5rem;
+}
+
+button:hover,.form button:active,.form button:focus {
+	background: #00adb5;
+}
+
+  select{
+    background-color: white;
+    width: 50%;
+    border-radius: 2rem;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    width: 96%;
+  }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    div {
+        width: 25%;
+    }
+
+    button {
+        width: 25%;
+      }
+    }
+
+@media screen and (min-width: 993px) {
+    div {
+        width: 20%;
+    }
+
+    button {
+        width: 15%;
+      }
+
+						h1 {
+							font-size: 40px;
+							margin: 1rem 0 1rem 5rem;
+
+			}
+    }

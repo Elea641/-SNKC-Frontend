@@ -1,0 +1,59 @@
+<div id="containerButton">
+	<button [routerLink]="['/auction/create']">Créer une salle aux enchères</button>
+</div>
+<h1>Mes salles aux enchères ouvertes</h1>
+<hr />
+<p *ngIf="openRooms.length == 0" class="no-rooms"> Vous n'avez aucune salle ouverte </p>
+<div class="list">
+	<div
+		*ngFor="
+			let openRoom of openRooms
+				| paginate: { itemsPerPage: roomsPerPage, currentPage: currentPage }
+		"
+	>
+		<a [routerLink]="['/auction/', openRoom.id]">
+			<app-auction-card [room]="openRoom"></app-auction-card>
+		</a>
+	</div>
+</div>
+<div class="pagination">
+	<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+<h1>Les salles ouvertes auxquelles je participe</h1>
+<hr />
+<p *ngIf="attendingOpenRooms.length == 0" class="no-rooms"> Vous ne participez à aucune vente </p>
+<div class="list">
+	<div
+		*ngFor="
+			let attendingOpenRoom of attendingOpenRooms
+				| paginate: { itemsPerPage: roomsPerPage, currentPage: currentPage }
+		"
+	>
+		<a [routerLink]="['/auction/', attendingOpenRoom.id]">
+			<app-auction-card [room]="attendingOpenRoom"></app-auction-card>
+		</a>
+	</div>
+</div>
+<div class="pagination">
+	<pagination-controls  (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+<h1>Mes salles aux enchères fermées</h1>
+<hr />
+<p *ngIf="closedRooms.length == 0" class="no-rooms"> Vous n'avez aucune salle fermées </p>
+<div class="list">
+	<div
+		*ngFor="
+			let closedRoom of closedRooms
+				| paginate: { itemsPerPage: roomsPerPage, currentPage: currentPage }
+		"
+	>
+		<a [routerLink]="['/auction/', closedRoom.id]">
+			<app-auction-card [room]="closedRoom"></app-auction-card>
+		</a>
+	</div>
+</div>
+<div class="pagination">
+	<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>

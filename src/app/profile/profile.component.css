@@ -1,0 +1,402 @@
+
+@media screen and (min-width: 390px) and (max-width: 762px) {
+	.principal {
+		display: flex;
+		flex-direction: column;
+		margin: 35px;
+	}
+
+	.profile-card {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid gray;
+		transition: all 150ms ease-in-out;
+
+	}
+
+	.profile-card:hover {
+		border: 1px solid blue;
+		box-shadow: 0 0 10px 1px;
+	}
+
+	.card-header {
+		align-self: center;
+		text-align: center;
+		background: #00adb5;
+		color: #FAFAFA;
+		border-left: 66px solid #00adb5;
+		border-right: 65px solid #00adb5;
+		padding-bottom: 115px;
+		transition: all 150ms ease-in-out;
+
+	}
+
+	.card-header:hover {
+		background: #0960a5;
+		border-left: 66px solid #0960a5;
+		border-right: 65px solid #0960a5;
+	}
+
+	.image {
+		margin-top: -90px;
+		height: 150px;
+		width: 150px;
+		align-self: center;
+		border-radius: 50%;
+		transition: all 150ms ease-in-out;
+		z-index: 0;
+
+	}
+
+	.image:hover {
+		border-radius: 10%;
+	}
+
+	.card-info {
+		padding: 1em;
+	}
+
+	.profile-card2 {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid gray;
+		transition: all 150ms ease-in-out;
+		margin-top: 20px;
+	}
+
+	.profile-card2:hover {
+		border: 1px solid blue;
+		box-shadow: 0 0 10px 1px;
+	}
+
+	.card-header2 {
+		align-self: center;
+		text-align: center;
+		background: #00adb5;
+		color: #FAFAFA;
+		border-left: 66px solid #00adb5;
+		border-right: 65px solid #00adb5;
+		transition: all 150ms ease-in-out;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+
+	.card-header2:hover {
+		background: #0960a5;
+		border-left: 66px solid #0960a5;
+		border-right: 65px solid #0960a5;
+	}
+
+	.image2 {
+		margin-top: -90px;
+		height: 150px;
+		width: 150px;
+		align-self: center;
+		border-radius: 50%;
+		transition: all 150ms ease-in-out;
+		z-index: 100;
+	}
+
+	.image2:hover {
+		border-radius: 10%;
+	}
+
+	.card-info2 {
+		padding: 1em;
+	}
+
+	.bottom2 h2 {
+		text-align: center;
+	}
+
+	.card-footer2 {
+		width: 310px;
+		border-top: 1px solid gray;
+		align-self: center;
+	}
+
+	.card-footer2 ul {
+		display: flex;
+		justify-content: flex-start;;
+	}
+
+	.card-footer2 ul li:last-child {
+		margin-left: 85px;
+	}
+
+	.form-group {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 10px;
+
+	}
+
+	#containerButton {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+	}
+
+	.btn-validate {
+		text-transform: uppercase;
+		outline: 0;
+		background: #00adb5;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		-webkit-transition: all 0.3 ease;
+		transition: all 0.3 ease;
+		cursor: pointer;
+		margin-bottom: 1rem;
+	}
+
+	select {
+		background-color: white;
+		width: 50%;
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.btn-validate:hover {
+		background: #74c2cc;
+	}
+
+	.btn-validate:active {
+		background: #41a1ae;
+		color: white;
+	}
+
+	.btn-delete {
+		text-transform: uppercase;
+		outline: 0;
+		background: red;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		cursor: pointer;
+		width: 35%;
+		margin: 10%;
+	}
+
+	input {
+		text-align: center;
+	}
+
+	.updateCard {
+		margin-top: 10px;
+	}
+
+	.row {
+		padding-left: 2rem;
+		padding-bottom: 0,5rem;
+	}
+
+	.upload {
+		margin-left: 10px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.principal {
+		display: flex;
+		justify-content: space-evenly;
+		margin: 10px;
+	}
+
+	.profile-card {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid gray;
+		transition: all 150ms ease-in-out;
+
+	}
+
+	.profile-card:hover {
+		border: 1px solid blue;
+		box-shadow: 0 0 10px 1px;
+	}
+
+	.card-header {
+		align-self: center;
+		text-align: center;
+		background: #00adb5;
+		color: #FAFAFA;
+		border-left: 66px solid #00adb5;
+		border-right: 65px solid #00adb5;
+		padding-bottom: 115px;
+		transition: all 150ms ease-in-out;
+
+	}
+
+	.card-header:hover {
+		background: #0960a5;
+		border-left: 66px solid #0960a5;
+		border-right: 65px solid #0960a5;
+	}
+
+	.image {
+		margin-top: -90px;
+		height: 150px;
+		width: 150px;
+		align-self: center;
+		border-radius: 50%;
+		transition: all 150ms ease-in-out;
+		z-index: 0;
+
+	}
+
+	.image:hover {
+		border-radius: 10%;
+	}
+
+	.card-info {
+		padding: 1em;
+	}
+
+	.profile-card2 {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid gray;
+		transition: all 150ms ease-in-out;
+	}
+
+	.profile-card2:hover {
+		border: 1px solid blue;
+		box-shadow: 0 0 10px 1px;
+	}
+
+	.card-header2 {
+		align-self: center;
+		text-align: center;
+		background: #00adb5;
+		color: #FAFAFA;
+		border-left: 66px solid #00adb5;
+		border-right: 65px solid #00adb5;
+		transition: all 150ms ease-in-out;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+
+	.card-header2:hover {
+		background: #0960a5;
+		border-left: 66px solid #0960a5;
+		border-right: 65px solid #0960a5;
+	}
+
+	.image2 {
+		margin-top: -90px;
+		height: 150px;
+		width: 150px;
+		align-self: center;
+		border-radius: 50%;
+		transition: all 150ms ease-in-out;
+		z-index: 100;
+	}
+
+	.image2:hover {
+		border-radius: 10%;
+	}
+
+	.card-info2 {
+		padding: 1em;
+	}
+
+	.bottom2 h2 {
+		text-align: center;
+	}
+
+	.card-footer2 {
+		width: 310px;
+		border-top: 1px solid gray;
+		align-self: center;
+	}
+
+	.card-footer2 ul {
+		display: flex;
+		justify-content: flex-start;;
+	}
+
+	.card-footer2 ul li:last-child {
+		margin-left: 85px;
+	}
+
+	.form-group {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 10px;
+
+	}
+
+	#containerButton {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+	}
+
+	.btn-validate {
+		text-transform: uppercase;
+		outline: 0;
+		background: #00adb5;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		-webkit-transition: all 0.3 ease;
+		transition: all 0.3 ease;
+		cursor: pointer;
+	}
+
+	select {
+		background-color: white;
+		width: 50%;
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.btn-validate:hover {
+		background: #74c2cc;
+	}
+
+	.btn-validate:active {
+		background: #41a1ae;
+		color: white;
+	}
+
+	input {
+		text-align: center;
+	}
+
+	.updateCard {
+		margin-top: 10px;
+	}
+
+	.row {
+		padding-left: 4rem;
+		padding-bottom: 1rem;
+	}
+
+	.upload {
+		margin-left: 10px;
+	}
+
+	.btn-delete {
+		text-transform: uppercase;
+		outline: 0;
+		background: red;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		cursor: pointer;
+		width: 15%;
+		margin: 2%;
+	}
+}

@@ -1,0 +1,49 @@
+.form-card {
+    box-sizing: border-box;
+    width: 50%;
+    margin: 8% auto;
+    padding: 10px 30px;
+    box-shadow: lightgray 4px 4px 20px;
+  }
+
+  .form-group {
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  input, textarea {
+    width: 50%;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+  }
+
+  button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #00adb5;
+    width: 60%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+  button:hover,.form button:active,.form button:focus {
+    background: #00adb5;
+  }
+
+		.btn-back {
+			background-color: rgb(186, 186, 186);
+			width: 6rem;
+			margin: 1.3rem 0 1.3rem 2.5rem;
+		}

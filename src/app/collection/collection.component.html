@@ -1,0 +1,17 @@
+<h1>MA COLLECTION</h1>
+<div id="containerButton">
+    <button [routerLink]="['/sneakers/create']">Ajouter une paire</button>
+</div>
+<div class="containerCollection">
+    <div *ngFor="let sneaker of sneakers | paginate: {itemsPerPage: sneakersPerPage, currentPage: currentPage}">
+        <a [routerLink]="['/sneakers/', sneaker.id]">
+            <app-sneakers-card [sneakers]="sneaker"></app-sneakers-card>
+        </a>
+        <!-- <app-like [sneakerId]="sneaker.id.toString()"></app-like> -->
+    </div>
+</div>
+<div class="pagination">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+

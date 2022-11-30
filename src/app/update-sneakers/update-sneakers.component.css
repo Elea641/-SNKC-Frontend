@@ -1,0 +1,214 @@
+* {
+	background-color: white;
+	margin: 2%;
+}
+
+.background {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.containerForm {
+	width: 90%;
+	margin: 20px auto;
+}
+
+P {
+	background-color: white;
+	margin: 0;
+}
+
+img {
+	font-size: 16px;
+	background-color: white;
+	margin: 0;
+	max-width: 80%;
+	padding: 10%;
+}
+
+h1 {
+	background-color: white;
+	margin-top: 2%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
+h2 {
+	background-color: white;
+	margin: 0;
+}
+
+h3 {
+	background-color: white;
+	margin: 0;
+}
+
+label {
+	background-color: white;
+}
+
+.colorForm {
+	background-color: white;
+}
+
+.form-group {
+	margin: 10px auto;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+}
+
+input, textarea {
+	width: 50%;
+	background-color: white;
+	text-align: center;
+}
+
+button {
+	text-transform: uppercase;
+	outline: 0;
+	background: #00adb5;
+	width: 60%;
+	border: 0;
+	margin: 5px;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin: 0;
+}
+
+button:hover,.form button:active,.form button:focus {
+	background: #00adb5;
+}
+
+.action-buttons {
+	display: flex;
+	justify-content: center;
+}
+
+.btn-back {
+	background-color: rgb(186, 186, 186);
+	width: 6rem;
+	align-items: flex-end;
+	margin-top: 1.3rem;
+	margin-left: 5rem;
+}
+
+select {
+	background-color: white;
+	width: 50%;
+	font-size: 16px;
+	text-align: center;
+}
+
+.form-card {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 20px auto;
+	padding: 40px;
+	background-color: white;
+	position: relative;
+	background-color: white;
+	box-shadow: 5px 5px 10px #999;
+}
+
+.sneakers-card {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 20px auto;
+	padding: 40px;
+	background-color: white;
+	position: relative;
+	background-color: white;
+	box-shadow: 5px 5px 10px #999;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.containerForm {
+		width: 40%;
+		margin: 20px auto;
+	}
+	
+	h1 {
+		margin-top: 5%;
+		margin-bottom: 10%;
+	}
+	
+	.form-card {
+		padding: 10px;
+		height: 100%;
+		margin: 20px;
+	}
+	
+	.sneakers-card {
+		padding: 10px;
+		height: 100%;
+		margin: 20px;
+	}
+	
+	.background {
+		display: flex;
+		flex-direction: row;
+	}
+	
+	button {
+		height: 60px;
+	}
+	
+	.form-group {
+		margin: 15px auto;
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.background {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+	}
+	
+	.containerForm {
+		width: 40%;
+		margin: 20px auto;
+	}
+	
+	h1 {
+		margin-top: 5%;
+		margin-bottom: 10%;
+	}
+	
+	input,
+	textarea {
+		font-size: 16px;
+	}
+	
+	select {
+		font-size: 16px;
+	}
+	
+	button {
+		height: 50px;
+	}
+	
+	.form-card {
+		padding: 10px;
+		height: 100%;
+		margin: 20px;
+	}
+	
+	.sneakers-card {
+		padding: 10px;
+		height: 100%;
+		margin: 20px;
+	}
+	
+	.form-group {
+		margin: 25px auto;
+	}
+}

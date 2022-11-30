@@ -1,0 +1,11 @@
+<div class="register-page">
+	<div class="form">
+		<form [formGroup]="form" (ngSubmit)="onRegisterSubmit()" class="register-form">
+			<input type="text" formControlName="username" placeholder="Nom utilisateur"/>
+			<input type="text" formControlName="email" placeholder="E-mail"/>
+			<input type="password" formControlName="password" placeholder="Mot de passe"/>
+			<button>S'incrire</button>
+			<p class="message">Déja enregisté ? <a [routerLink]="['/login']">Se connecter</a></p>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<button class="btn-back" (click)="backClicked()">Retour</button>
+<div class="form-card">
+    <h2>Créer ma salle d'enchères</h2>
+    <form [formGroup]="roomForm">
+
+        <div class="form-group">
+            <label for="sneakers-select">Choisissez une paire :</label>
+            <select name="sneakersId" id="sneakers-select" (change)="selectChangeHandler($event)" formControlName="sneakersId">
+                <option default>Choisissez la paire de sneakers</option>
+                <option *ngFor="let sneakers of sneakersByUserId" value="{{sneakers.id}}">
+                    {{sneakers.brand}} - {{sneakers.model}} - {{sneakers.mainColor}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="initialPrice">Prix de départ :</label>
+            <input id="initialPrice" type="number" formControlName="initialPrice">
+        </div>
+								<p>* Les enchères se clôtureront automatiquement au bout de 7 jours.</p>
+        <div class="action-buttons">
+            <button type="submit" (click)="onSubmitForm()" [disabled]="roomForm.invalid">Enregistrer</button>
+        </div>
+
+    </form>
+</div>
