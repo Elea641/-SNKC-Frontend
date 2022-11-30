@@ -18,7 +18,7 @@
 			<br>
 			<p>{{user.email}}</p>
 		</div>
-		
+
 		<div class="bottom">
 			<div class="form-card">
 			</div>
@@ -30,24 +30,31 @@
 		</div>
 		<form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
 			<div class="updateCard">
-				<input type="file" (change)="selectFile($event)" 
+				<input class="upload" type="file" (change)="selectFile($event)"
 				placeholder="Sélectionnez une photo"
 				accept="image/*">
 				<div class="form-group">
 					<label for="text">Nom d'utilisateur </label>
 					<input type="text" formControlName="username"/>
 				</div>
-				
+
 				<div class="form-group">
 					<label for="email">Email </label>
 					<input type="email" formControlName="email"/>
 				</div>
-				
+
 				<div id="containerButton">
-					<button type="submit">Valider</button>
+					<button class="btn-validate" type="submit">Valider</button>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
 <div *ngIf="!user">Chargement en cours ...</div>
+<button
+				class="btn-delete"
+				(click)="deleteUserById()"
+				[routerLink]="['/user/:id/delete']"
+			>
+				Supprimer mon compte
+			</button>

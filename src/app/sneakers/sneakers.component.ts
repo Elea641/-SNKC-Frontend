@@ -33,7 +33,6 @@ export class SneakersComponent implements OnInit {
 				.getSneakersById(this.id)
 				.subscribe((reponse: Sneakers) => {
 					this.sneakersById = reponse;
-					console.log(this.sneakersById);
 				});
 		});
 	}

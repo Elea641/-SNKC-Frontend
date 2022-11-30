@@ -22,10 +22,7 @@ export class HeaderNavComponent implements OnInit {
 
 	public connected = false;
 
-	constructor(
-		private authService: AuthService,
-		private router: Router,
-	) {}
+	constructor(private authService: AuthService, private router: Router) {}
 
 	ngOnInit(): void {
 		if (sessionStorage.getItem('token') != null) {
@@ -35,7 +32,9 @@ export class HeaderNavComponent implements OnInit {
 
 	public logout() {
 		this.authService.logout();
-		this.router.navigate(['']);
+		this.router.navigate(['']).then(() => {
+			window.location.reload();
+		});
 	}
 
 	onMenuChange(event: Event): void {
