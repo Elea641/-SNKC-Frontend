@@ -69,7 +69,7 @@ import { CountdownComponent } from './countdown/countdown.component';
 	],
 	imports: [
 		BrowserModule,
-		RouterModule.forRoot(routes),
+		RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}),
 		HttpClientModule,
 		ReactiveFormsModule,
 		FormsModule,

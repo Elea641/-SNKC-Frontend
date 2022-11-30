@@ -12,7 +12,7 @@
 			<img [src]="sneakers?.picture" />
 		</div>
 		<div *ngIf="!winner" class="room-details">
-			<h2>Cette enchère se termine dans</h2>
+			<h2 style="text-align: center">Cette enchère se termine dans</h2>
 			<app-countdown
 				*ngIf="room?.endDate"
 				[endDate]="room?.endDate"
@@ -22,16 +22,23 @@
 				<h2>Prix de départ :</h2>
 				<h1>{{ room?.initialPrice | currency: "EUR" }}</h1>
 			</div>
-			<div *ngIf="maxOffer > 0">
+			<div *ngIf="maxOffer > 0 && lastAuction?.userId != currentUser?.id">
 				<h2>Dernière enchère proposée :</h2>
 				<h1>{{ maxOffer | currency: "EUR" }}</h1>
 			</div>
-			<div *ngIf="room?.ownerId != currentUser?.id">
+
+			<div *ngIf="maxOffer > 0 && lastAuction?.userId == currentUser?.id">
+				<h2 style="text-align: center">{{currentUser?.username}} vous êtes le dernier à avoir enchéri à hauteur de :</h2>
+				<h1>{{ maxOffer | currency: "EUR" }}</h1>
+			</div>
+
+			<div *ngIf="room?.ownerId != currentUser?.id && lastAuction?.userId != currentUser?.id" >
 				<input
 					placeholder="Montant de votre enchère"
 					type="number"
 					[(ngModel)]="bit"
 				/>
+				<p class="error-message" *ngIf="showErrorMessage">{{errorMessage}}</p>
 				<button class="bit-button" (click)="onSubmitAuction()">Enchérir</button>
 			</div>
 			<p>Prix de départ : {{ room?.initialPrice | currency: "EUR" }}</p>
@@ -49,7 +56,7 @@
 			<h3>{{ maxOffer | currency: "EUR" }} !!</h3>
 		</div>
 	</div>
-	
+
 	<div class="description">
 		<h3>Description</h3>
 		<div class="description-details">
@@ -75,11 +82,13 @@
 		<h3>Historique des enchères</h3>
 		<table>
 			<tr>
+				<th>Pseudo</th>
 				<th>Montant enchère</th>
 				<th>Date et heure</th>
 			</tr>
 
 			<tr *ngFor="let auction of auctions">
+				<td>{{ auction?.userUsername }}</td>
 				<td>{{ auction?.offer | currency: "EUR" }}</td>
 				<td>{{ auction?.date | date: "medium":"GMT" }}</td>
 			</tr>

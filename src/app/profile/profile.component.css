@@ -140,7 +140,7 @@
 		margin-top: 40px;
 	}
 
-	button {
+	.btn-validate {
 		text-transform: uppercase;
 		outline: 0;
 		background: #00adb5;
@@ -161,19 +161,26 @@
 		text-align: center;
 	}
 
-	button:hover {
+	.btn-validate:hover {
 		background: #74c2cc;
 	}
 
-	button:active {
+	.btn-validate:active {
 		background: #41a1ae;
 		color: white;
 	}
 
-	.btn2 {
-		width: 40%;
-		margin: 2%;
+	.btn-delete {
+		text-transform: uppercase;
+		outline: 0;
 		background: red;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		cursor: pointer;
+		width: 35%;
+		margin: 10%;
 	}
 
 	input {
@@ -188,7 +195,7 @@
 		padding-left: 2rem;
 		padding-bottom: 0,5rem;
 	}
-	
+
 	.upload {
 		margin-left: 10px;
 	}
@@ -334,7 +341,7 @@
 		margin-top: 40px;
 	}
 
-	button {
+	.btn-validate {
 		text-transform: uppercase;
 		outline: 0;
 		background: #00adb5;
@@ -354,11 +361,11 @@
 		text-align: center;
 	}
 
-	button:hover {
+	.btn-validate:hover {
 		background: #74c2cc;
 	}
 
-	button:active {
+	.btn-validate:active {
 		background: #41a1ae;
 		color: white;
 	}
@@ -378,5 +385,18 @@
 
 	.upload {
 		margin-left: 10px;
+	}
+
+	.btn-delete {
+		text-transform: uppercase;
+		outline: 0;
+		background: red;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		cursor: pointer;
+		width: 15%;
+		margin: 2%;
 	}
 }

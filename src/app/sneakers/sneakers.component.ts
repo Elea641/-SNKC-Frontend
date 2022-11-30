@@ -52,7 +52,7 @@ export class SneakersComponent implements OnInit {
 	}
 
 	public deleteSneakers() {
-		if (confirm('Are you sure to delete your sneakers?')) {
+		if (confirm('Êtes-vous sûr de vouloir supprimer cette sneakers ?')) {
 			this.sneakersService.deleteSneakersById(<string>this.id).subscribe((_) => {
 				this.router.navigate(['/delete']);
 			});

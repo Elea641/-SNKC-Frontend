@@ -7,15 +7,6 @@
     box-shadow: lightgray 4px 4px 20px;
 }
 
-button {
-    background-color: white;
-    width: 70%;
-    height: 70px;
-    border-radius: 2rem;
-    padding: 15px;
-    font-size: 20px;
-    text-align: center;
-}
 
 select{
     background-color: white;
@@ -64,13 +55,13 @@ p {
     button {
         width: 40%;
     }
-    
+
     .form-card {
         height: 200px;
     }
-    
+
     p {
         margin-bottom: 50px;
     }
-    
+
 }
