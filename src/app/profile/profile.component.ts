@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
 import {User} from "../models/user";
@@ -12,7 +12,7 @@ import { LoginResponse } from '../interfaces/login-response';
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent{
+export class ProfileComponent implements OnInit{
 
     public displayForm = false;
     public user!: User;
@@ -20,6 +20,7 @@ export class ProfileComponent{
     public img: string = "assets/profil-vide.png";
     public picture?: File;
 	public showMsg = false;
+    public currentUser: User | undefined;
 
     constructor(private formBuilder: FormBuilder,
                 private authService: AuthService, 
@@ -34,6 +35,12 @@ export class ProfileComponent{
                 }
             }
         )
+    }
+
+    ngOnInit(){
+        this.userService
+			.getConnectedUser()
+			.subscribe((response: User) => (this.currentUser = response));
     }
 
     onSubmit(): void {
@@ -52,6 +59,18 @@ export class ProfileComponent{
             });
         }
     }
+
+    public deleteUserById() {
+		if (confirm('Voulez-vous supprimer profil?')) {
+			this.userService.deleteUserById(<string>this.currentUser?.id.toString()).subscribe((_) => {
+				this.authService.logout();
+                this.router.navigate([''])
+                .then(() => {
+                    window.location.reload();
+                });
+			});
+		}
+	}
 
     private initForm(user: User): void {
         this.updateProfileForm = this.formBuilder.group({

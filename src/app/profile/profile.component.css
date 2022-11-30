@@ -170,6 +170,12 @@
 		color: white;
 	}
 
+	.btn2 {
+		width: 40%;
+		margin: 2%;
+		background: red;
+	}
+
 	input {
 		text-align: center;
 	}
