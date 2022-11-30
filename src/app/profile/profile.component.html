@@ -30,7 +30,7 @@
 		</div>
 		<form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
 			<div class="updateCard">
-				<input type="file" (change)="selectFile($event)" 
+				<input class="upload" type="file" (change)="selectFile($event)" 
 				placeholder="Sélectionnez une photo"
 				accept="image/*">
 				<div class="form-group">

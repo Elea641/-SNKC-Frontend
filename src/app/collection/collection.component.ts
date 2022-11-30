@@ -10,7 +10,7 @@ import { SneakersService } from '../services/sneakers.service';
 export class CollectionComponent implements OnInit {
 	public sneakers: Sneakers[] = [];
 	public currentPage = 1;
-	public sneakersPerPage = 10;
+	public sneakersPerPage = 9;
 
 	constructor(
 		private sneakersService: SneakersService,

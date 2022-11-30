@@ -58,19 +58,15 @@
     }
     
     a:focus {
-        border-radius: 2rem;
         background: #74c2cc;
     }
     
     a:hover {
-        border-radius: 2rem;
         background: #74c2cc;
     }
     
     a:active {
-        border-radius: 2rem;
         background: #41a1ae;
-        color: black;
     }
     
     #trait_dessus {
