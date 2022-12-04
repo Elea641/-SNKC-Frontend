@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 @Component({
 	selector: 'app-header-nav',
@@ -19,15 +21,20 @@ export class HeaderNavComponent implements OnInit {
 	public isDisplayingSearchBar = false;
 	public id: string | undefined;
 	public displayOverlay = false;
+	public currentUser: User | undefined;
 
 	public connected = false;
 
-	constructor(private authService: AuthService, private router: Router) {}
+	constructor(private authService: AuthService, private router: Router, private userService: UserService) {}
 
 	ngOnInit(): void {
 		if (sessionStorage.getItem('token') != null) {
 			this.connected = true;
 		}
+
+		this.userService.getConnectedUser().subscribe((response: User) => this.currentUser = response);
+
+
 	}
 
 	public logout() {

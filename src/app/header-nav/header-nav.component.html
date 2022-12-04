@@ -39,6 +39,7 @@
 	</div>
 
 	<div class="right-nav">
+		<p *ngIf="currentUser">Bienvenue {{currentUser.username}}</p>
 		<div class="imgSearch">
 			<img src="assets/search.png" id="imgSearch" [routerLink]="['/search']" />
 		</div>

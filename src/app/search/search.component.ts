@@ -21,7 +21,7 @@ export class SearchComponent {
 		'Converse',
 		'Lacoste',
 		'New Balance',
-		'Reebook',
+		'Reebok',
 		'Vans',
 	];
 	public models: string[] = [

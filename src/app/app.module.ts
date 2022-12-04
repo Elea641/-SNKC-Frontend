@@ -65,7 +65,7 @@ import { CountdownComponent } from './countdown/countdown.component';
 		DeleteAuctionComponent,
 		CarrouselComponent,
 		CarrouselRoomComponent,
-		CountdownComponent,
+		CountdownComponent
 	],
 	imports: [
 		BrowserModule,

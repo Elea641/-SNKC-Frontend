@@ -5,23 +5,22 @@ import { AuthService } from '../services/auth.service';
 import { SneakersService } from '../services/sneakers.service';
 
 @Component({
-  selector: 'app-carrousel',
-  templateUrl: './carrousel.component.html',
-  styleUrls: ['./carrousel.component.css']
+	selector: 'app-carrousel',
+	templateUrl: './carrousel.component.html',
+	styleUrls: ['./carrousel.component.css'],
 })
 export class CarrouselComponent implements OnInit {
+	public sneakers: Sneakers[] = [];
 
-  public sneakers: Sneakers[] = [];
-
-  constructor(
+	constructor(
 		private sneakersService: SneakersService,
 		private route: ActivatedRoute,
-		private authService: AuthService){
-		}
+		private authService: AuthService
+	) {}
 
-		ngOnInit(): void {
-				this.sneakersService.getSneakersAll().subscribe((response: Sneakers[]) => {
-					this.sneakers = response;
-				});
-			}
+	ngOnInit(): void {
+		this.sneakersService.getSneakersAll().subscribe((response: Sneakers[]) => {
+			this.sneakers = response;
+		});
+	}
 }
