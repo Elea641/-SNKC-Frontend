@@ -14,7 +14,7 @@ ul {
     scroll-snap-type: x mandatory;
 }
 .carousel-item {
-    flex: 1 0 450px;
+    flex: 1 0 200px;
     margin-left: 1rem;
     scroll-snap-align: start;
 }
